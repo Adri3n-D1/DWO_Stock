@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-88</title>
+    </head>
+    <body>
+        <div class="page-content">
+            <div class="block">
+                <p>1</p>
+            </div>
+            <div class="block">
+                <p>2</p>
+                <div class="eye left"></div>
+                <div class="nose-top left"></div>
+            </div>
+            <div class="block">
+                <p>3</p>
+                <div class="eye right"></div>
+                <div class="nose-top right"></div>
+            </div>
+            <div class="block">
+                <p>4</p>
+            </div>
+            <div class="block">
+                <p>5</p>
+            </div>
+            <div class="block">
+                <p>6</p>
+                <div class="nose-bottom left"></div>
+                <div class="tooth left"></div>
+            </div>
+            <div class="block">
+                <p>7</p>
+                <div class="nose-bottom right"></div>
+                <div class="tooth right"></div>
+            </div>
+            <div class="block">
+                <p>8</p>
+            </div>
+        </div>
+    </body>
+    <style type="text/css">
+        /* Je sais c'est pas un fond vert mais bon, j'avais déjà trouvé ce truc là :) */
+        .page-content {
+            width: 800px;
+            height: 400px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #42e700b2;
+            background-image: url("https://www.transparenttextures.com/patterns/random-grey-variations.png");
+            background-size: 550px;
+        }
+        /* La page est découpé en 8 blocs identiques*/
+        .block {
+            box-sizing: border-box;
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .block p {
+            margin: 5px;
+            font-size: 1.6em;
+        }
+        .block:nth-child(7)  p {
+            text-align: right;
+        }
+        /* Réglages des partie du visage dont les propriétés sont identiques */
+        .eye,
+        .nose-top,
+        .nose-bottom,
+        .tooth {
+            background-color: #000;
+            position: absolute;
+        }
+        /* Réglage puis positionnement des yeux (bloc 2 et 3) */
+        .eye {            
+            width: 100px;
+            height: 100px;
+            bottom: 32px;
+        }
+        .eye.left {
+            right: 32px;
+        }
+        .eye.right {
+            left: 32px;
+        }
+        /* Réglage puis positionnement du nez (bloc 2 et 3) */
+        .nose-top {            
+            width: 32px;
+            height: 32px;
+            bottom: 0;
+        }
+        .nose-top.left {
+            right: 0;
+        }
+        .nose-top.right {
+            left: 0;
+        }
+        /* Réglage puis positionnement du nez (bloc 6 et 7) */
+        .nose-bottom {
+            width: 32px;
+            height: 60px;
+            top: 0;
+        }
+        .nose-bottom.left{
+            right: 0;
+        }
+        .nose-bottom.right {
+            left: 0;
+        }
+        /* Réglage puis positionnement des dents (bloc 6 et 7) */
+        .tooth {
+            width: 32px;
+            height: 80px;
+            top: 15px;
+        }
+        .tooth.left{
+            right: 32px;
+        }
+        .tooth.right {
+            left: 32px;
+        }
+        /*////////////////////////////////////////*/
+    </style>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-67</title>
+</head>
+<body>
+    <div class="page-content">
+        <p class="top left">Top Left</p>
+        <p class="top right">Top Right</p>
+        <p class="center">Center</p>
+        <p class="bottom left">Bottom Left</p>
+        <p class="bottom right">Bottom right</p>
+    </div>
+    <style>
+        .page-content {
+            position: relative;
+            height: 400px;
+            background: center / cover no-repeat url("C:/Users/Adrien/Pictures/wallpapers/white-winter-bridge-cmgw5mq23dasvttz.jpg");
+        }
+        p {
+            padding: 15px;
+            margin: 0;
+            position: absolute;
+            font-weight: 900;
+        }
+        .top {
+            top: 0;
+        }
+        .bottom {
+            bottom: 0;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            right: 0;
+        }
+        .center {
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</body>
+</html>

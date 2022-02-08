@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-77</title>
+</head>
+<body>
+    <div class="bb8">
+        <div class="bb8-head-top"></div>
+        <div class="bb8-head-bottom">
+            <div class="motif left"></div>
+            <div class="motif right"></div>
+            <div class="motif bottom"></div>
+            <div class="motif center"></div>
+        </div>
+        <div class="bb8-body">
+            <div class="motif circle left">
+                <div class="motif sub-circle"></div>
+            </div>
+            <div class="motif circle right">
+                <div class="motif sub-circle"></div></div>
+            <div class="motif circle bottom">
+                <div class="motif sub-circle"></div>
+            </div>
+            <div class="motif line top"></div>
+            <div class="motif line left"></div>
+            <div class="motif line right"></div>
+            <div class="motif point left"></div>
+            <div class="motif point right"></div>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        .bb8 {
+            width: 400px;
+            margin: auto;
+        }
+        /* Tête de bb8 */
+        .bb8-head-top {
+            margin: auto;
+            height: 105px;
+            width: 210px;
+            border: 15px solid #09323c;
+            border-bottom: 0;
+            border-radius: 165px 165px 0 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .bb8-head-bottom .motif.left {
+            background-color: #09323c;
+            z-index: 2;
+            height: 12px;
+            width: 46px;
+            transform: rotate(233deg);
+            top: 128px;
+            left: 312px;
+        }
+        .bb8-head-bottom .motif.right {
+            background-color: #09323c;
+            z-index: 2;
+            height: 12px;
+            width: 46px;
+            transform: rotate(-233deg);
+            top: 128px;
+            left: 515px;
+        }
+        .bb8-head-bottom .motif.bottom {
+        }
+        .bb8-head-bottom .motif.center {
+            background-color: #dbd8d8;
+            height: 50px;
+            width: 210px;
+            z-index: 1;
+            top: 118px;
+            left: 333px;
+        }
+        /* Corps de bb8 */
+        .bb8-body {
+            margin: auto;
+            height: 350px;
+            width: 350px;
+            border-radius: 50%;
+            border: 15px solid #09323c;
+            overflow: hidden;
+            position: relative;
+        }
+        .motif {
+            position: absolute;
+        }
+        .circle {
+            background-color: #d4b60d;
+            height: 160px;
+            width: 160px;
+            border: 15px solid #09323c;
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+        }
+        .circle.left {
+            top: 0%;
+            left: -12%;
+        }
+        .circle.right {
+            height: 190px;
+            width: 190px;
+            top: -62%;
+            left: 76%;
+        }        
+        .circle.bottom {
+            top: -55%;
+            left: 31%;
+        }
+        .sub-circle {
+            background-color: #ffffff;
+            height: 60px;
+            width: 60px;
+            border: 15px solid #09323c;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .line {
+            background-color: #09323c;
+            height: 15px;
+            width: 200px;
+            position: absolute;
+            z-index: 1;
+        }
+        .line.top {
+            top: 80px;
+            left: 110px;
+        }
+        .line.left {
+            top: 200px;
+            left: 16px;
+            transform: rotate(230deg);
+        }
+        .line.right {
+            top: 234px;
+            left: 168px;
+            transform: rotate(130deg);
+        }
+        .point {
+            background-color: #09323c;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+        }
+        .point.left {
+            top: 245px;
+            left: 76px;
+        }
+        .point.right {
+            top: 150px;
+            left: 250px;
+        }
+    </style>
+</body>
+</html>

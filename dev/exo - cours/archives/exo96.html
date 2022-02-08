@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-96</title>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body>
+    <div class="page-content">
+        <section class="left">
+            <header>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </header>
+            <main>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </main>
+            <footer></footer>
+        </section>
+        <section class="right">
+            <header>
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </header>
+            <main>
+                <div class="square"></div>
+                <div class="square"></div>
+                <div class="square"></div>
+            </main>
+            <footer></footer>
+        </section>
+    </div>
+<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d8b81aecd8239cf',m:'iawA2m7HFlQ64Tt.bcchvnvBKv17q1VmOFJordCJSVU-1644057479-0-Af2jThZWPEDN9B45KFQ05dkuGHfW/7HgVsqF7A1SHnYYR/pr6rIUScXjb+RK1nhz6C0dcpyS9/C00bIl+3WQtW42GY67+e1FaIfUA/FAFaYwSkHWGeSOUhkvXeFpiUFGCnj1vGZjnv6XSscWKScxXw8OS11oW0eabNA+yOrhnzmVaIW6m5um9wZiBjtxfhE4gQ==',s:[0xeb660911f4,0xafcbc7465c],}})();</script></body>
+<style type="text/css">
+    body {
+        margin: 0;
+        background-color: #000;
+    }
+    /* La page sera contenu dans 800px */
+    .page-content {        
+        width: 900px;
+        margin: 80px auto;
+    }
+    /* Les deux sections seront inline-block,
+    cela évite qu'elle bouge lors de la transition avec cubic-bezier */
+    section {
+        display: inline-block;
+        margin: 0 50px;
+    }
+    /*  Parametrage des 2 header et des 2 footer */
+    header, footer {
+        background-color: #fff;
+        width: 300px;
+        height: 60px;
+
+    }
+    header {
+        border-radius: 50px 50px 0 0;
+        display: flex;
+    }
+    footer {
+        border-radius: 0 0 50px 50px;
+    }
+
+    /*  Parametrage des points des header */
+    .point {
+        margin: 30px 10px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #dcdcdc;
+    }
+
+    /* Parametrage des carrés */
+    .square {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Réglage couleur + vitesse de transition des carrés de gauche */
+    section.left .square:nth-child(1) {
+        background-color: green;
+        transition-duration: 0.5s;
+    }
+    section.left .square:nth-child(2) {
+        background-color: blue;
+        transition-duration: 1s;
+    }
+    section.left .square:nth-child(3) {
+        background-color: red;
+        transition-duration: 1.5s;
+    }
+
+    /* Réglage couleur + vitesse de transition des carrés de droite */
+    section.right .square:nth-child(1) {
+        background-color: skyblue;
+        transition-duration: 1s;
+    }
+    section.right .square:nth-child(2) {
+        background-color: orange;
+        transition-duration: 0.5s;
+    }
+    section.right .square:nth-child(3) {
+        background-color: plum;
+        transition-duration: 0.7s;
+        transition-timing-function: cubic-bezier(.6,.85,.21,1.53);
+    }
+
+    /* Dès qu'une section est survolée ses carrés se déplacent */
+    section:hover .square {
+        margin-left: 220px;
+    }
+</style>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-76-bis</title>
+</head>
+<body>
+    <h1>Logo <span class="red-google">Google Chrome</span> - Pure Css3</h1>
+    <div class="logo">
+        <div class="center"></div>        
+        <div class="form top"></div>
+        <div class="form left"></div>
+        <div class="yellow"></div>
+    </div>
+    
+    <footer>
+        <p>Réalisation du logo <span class="red-google">Google Chrome</span> en CSS3</p>
+        <p>Exercice proposé par <a href="https://www.youtube.com/watch?v=O0J9MX3jAtg&list=PLEjl4NDJkmlZZRIgQiimNUSIOE6Jg_pEh&index=14">Daniel Snows</a> et réalisé par <a href="https://www.webdragon.fr">Adrien Delcros</a></p>
+    </footer>
+
+    <style>
+        body {
+            margin: 0;
+            background-color: #fff;
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1 {
+            margin-bottom: 79px;
+            font-weight: 100;
+            color: #484f55;
+            text-align: center;
+        }
+        .red-google {
+            color: #ea433b;
+        }
+        /* LOGO CHROME */
+        .logo {
+            background-image: linear-gradient(300deg, #f6cf0d, #fdd901);
+            position: relative;
+            overflow: hidden;
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            margin: auto;
+            transition: transform 1s;
+        }
+        .logo:hover {
+            transform: rotate(180deg);
+        }
+        .center {
+            background-color: #4695ce;
+            /* Positionnement au centre */
+            position: relative;
+            z-index: 4;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /**/
+            height: 33%;
+            width: 33%;
+            border: 15px solid #fff;
+            border-radius: 50%;
+        }
+        .form {
+            height: 120%;
+            width: 120%;
+            position: absolute;
+        }
+        .top {
+            background-image: linear-gradient(45deg, #e43731, #f3806b);
+            transform: rotate(60deg);
+            z-index: 2;
+            top: -75%;
+            left: 0.7%;
+        }
+        .left {
+            z-index: 1;
+            background-image: linear-gradient(45deg, #419756, #5bc154);
+            transform: rotate(15deg);
+            top: 14%;
+            left: -63%;
+        }
+        .yellow {
+            background-color: #f6cf0d;
+            height: 20%;
+            width: 50%;
+            position: absolute;
+            z-index: 3;
+            top: 31%;
+            left: 50%;
+        }
+        /* Footer */
+        footer {
+            margin-top: 222px;
+            font-weight: bold;
+            color: #3b3b3b;
+        }
+        footer a {
+            color: #e96901;
+            text-decoration: none;
+        }
+        footer p {
+            text-align: center;
+        }
+        footer p:first-child {
+            margin-bottom: 50px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<hat>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-79</title>
+</hat>
+<body>
+    <div class="mushroom">
+        <div class="hat">
+            <div class="spot left"></div>
+            <div class="spot middle"></div>
+            <div class="spot right"></div>
+        </div>
+        <div class="face">
+            <div class="eye left">
+                <div class="gleam"></div>
+            </div>
+            <div class="eye right">
+                <div class="gleam"></div>
+            </div>
+        </div>
+    </div>
+    <style type="text/css">
+        body {
+            margin: 50px 0;
+        }
+        /* Centrage du personnage */
+        .mushroom {
+            margin: auto;
+            width: 300px;
+        }
+        /* Le chapeau */
+        .mushroom .hat {
+            background: linear-gradient(#f71818, #f71818 100px, #160303);
+            height: 300px;
+            width: 300px;
+            border-radius: 70% 70% 50% 50%;
+            transform: scale(1, 0.9);
+            transform-origin: top;
+            overflow: hidden;
+        }
+        .mushroom .hat .spot {
+            background-color: #faf8f8;
+            box-sizing: border-box;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: 1px solid #00000082;
+            position: absolute;
+        }
+        .mushroom .hat .spot.left {
+            top: 50px;
+            left: -100px;
+        }
+        .mushroom .hat .spot.middle {
+            left: 50%;
+            transform: translate(-50%, 20%);
+        }
+        .mushroom .hat .spot.left {
+            top: 50px;
+            right: -100px;
+        }
+        .mushroom .hat .spot.right {
+            top: 50px;
+            right: -100px;
+        }
+        /* Le visage */
+        .mushroom .face {
+            background: linear-gradient(#e6a354, #b99264 100px, #50391d);
+            height: 200px;
+            width: 200px;
+            border-radius: 100% 100% 100% 100% / 45% 45% 100% 100%;
+            transform: scale(1, 0.7);
+            position: relative;
+            top: -140px;
+            left: 50px;
+        }
+        .mushroom .face .eye {
+            background-color: #222222;
+            height: 63px;
+            width: 18px;
+            border-radius: 10px;
+            position: absolute;
+            top: 37px;
+        }
+        .mushroom .face .eye.left {
+            left: 49px;
+        }
+        .mushroom .face .eye.right {
+            right: 49px;
+        }
+        .mushroom .face .eye .gleam {
+            background-color: #fff;
+            height: 13px;
+            width: 13px;
+            border-radius: 50%;
+            position: absolute;
+            top: 8px;
+            left: 4px;
+        }
+    </style>
+</body>
+</html>

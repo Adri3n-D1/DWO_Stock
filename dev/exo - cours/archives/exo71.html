@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-71</title>
+</head>
+<body>
+    <div class="page-content">
+        <nav>
+            <div class="rect blue">
+                <div class="menu blue"></div>
+            </div>
+            <div class="rect red">
+                <div class="menu red"></div>
+            </div>
+            <div class="rect green">
+                <div class="menu green"></div>
+            </div>
+        </nav>
+    </div>
+    <style>
+        body {
+            margin: 0;
+        }
+        nav {
+            background-color: #2e98c2;
+            height: 80px;
+        }
+        .rect {
+            display: inline-block;
+            height: 40px;
+            width: 150px;
+            margin: 20px 30px;
+            position: relative;
+        }
+        .blue {
+            background-color: #87ceeb;
+        }
+        .red {
+            background-color: #ff4229;
+        }
+        .green {
+            background-color: #7aeb45;
+        }
+        .rect:hover .menu {
+            height: 350px;
+            width: 200px;
+            position: relative;
+            top: 50px;
+            left: -25px;
+        }
+    </style>
+</body>
+</html>

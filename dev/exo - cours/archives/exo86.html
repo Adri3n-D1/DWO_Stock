@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-87</title>
+    </head>
+    <body>
+        <div class="page-content">
+            <header>
+                <p>Entête</p>
+            </header>
+            <div class="block-main">
+                <nav>
+                    <p>Nav</p>
+                </nav>
+                <article>
+                    <div class="sub-block">
+                        <h1>Article</h1>
+                        <p>Ceci est un article</p>
+                    </div>
+                </article>
+                <div class="various">
+                    <p>Divers</p>
+                </div>
+            </div>
+            <footer>
+                <p>Pieds</p>
+            </footer>
+        </div>
+    </body>
+    <style type="text/css">
+        body {
+            margin: 12px;
+        }
+        .page-content {
+            background-color: #686868;
+            padding: 12px;
+        }
+        /* Ces éléments sont flex pour centrer leur contenu facilement et ont des caracteristiques communes */
+        header,
+        nav,
+        article,
+        .various,
+        footer {
+            box-sizing: border-box;
+            border: 2px solid #4665ee;
+            margin-bottom: 12px;
+            display: flex;
+            background-color: #fff;
+        }
+        /* Parametrage de la hauteur de chaques éléments */
+        header {
+            height: 70px;
+        }
+        nav {
+            height: 100px;
+        }
+        article {            
+            height: 200px;
+        }
+        .various {
+            height: 90px;
+        }
+        footer {
+            height: 70px;
+            margin-bottom: 0;
+        }
+        /* Centrage et parametrage du texte */
+        header p,
+        nav p,
+        article .sub-block,
+        article .sub-block h1,
+        .various p,
+        footer p {
+            margin: auto;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+        /* Cette balise n'est pas affichée à moins de 600px */
+        article p {
+            display: none;
+        }
+        /* À partir de 600px */
+        @media screen and (min-width: 600px) {
+            /* Le conteneur devient flex et sa hauteur est parametrée*/
+            .block-main {
+                display: flex;
+                height: 500px;
+            }
+            nav,
+            article,
+            .various {
+                height: 100%;
+            }
+            nav {
+                width: 15%;
+            }
+            article {
+                width: 70%;
+                margin: 0 12px;
+            }
+            .various {
+                width: 15%;
+            }
+            /* La marge est corrigée car le texte de ce conteneur ne doit plus être centré */
+            article .sub-block {
+                margin: auto 0 auto 15px;
+            }
+            /* Parametrage du texte */
+            article .sub-block h1 {
+                font-weight: 600;
+                font-size: 1.5em;
+            }
+            /* Cet élément doit maintenant être affiché */
+            article p {
+                display: block;
+            }
+            footer {
+                margin-top: 12px;
+            }
+        }
+    </style>
+</html>

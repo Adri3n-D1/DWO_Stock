@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-41 Suite</title>
+</head>
+<body>
+    <div class="page-content">
+        <div class="row1">
+            <div class="col-left"><!--Rectangle bleu --></div>
+            <div class="col-right"><!--Rectangle rouge --></div>
+        </div>
+        <div class="row2"><!--Rectangle vert --></div>
+        <div class="row3">
+            <div class="col-left"><!--Rectangle orange --></div>
+            <div class="col-right">
+                <div class="sub-row1"><!--Rectangle violet --></div>
+                <div class="sub-row2"><!--Rectangle gris --></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        body {
+            margin: 0;
+            font-size: 0;
+        }
+        /* Partie du haut */
+        .row1 {
+            height: 200px;
+        }
+        .row1 .col-left {
+            background-color: #6495ed;
+            display: inline-block;
+            height: 100%;
+            width: 70%;
+        }
+        .row1 .col-right {
+            background-color: #fc1111;
+            display: inline-block;
+            height: 100%;
+            width: 30%;
+        }
+        /* Partie du millieu */
+        .row2 {
+            background-color: #52e752;
+            height: 100px;
+        }
+        /* Partie du bas */
+        .row3 {
+            height: 400px;
+        }
+        .row3 .col-left {
+            background-color: #e95722;
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+        }
+        .row3 .col-right {
+            display: inline-block;
+            width: 80%;
+        }
+        .row3 .col-right .sub-row1 {
+            background-color: #742674;
+            height: 150px;
+        }
+        .row3 .col-right .sub-row2 {
+            background-color: #6b6b6b;
+            height: 250px;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {    
+	font-family: 'Droid Sans', sans-serif;
+}
+h1 {
+    color: #494949;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+/* Color */
+.android-color {
+    color: #a5c63b;
+}
+#head, #body, .antenna, .arm, .leg {
+    background-color: #a5c63b;
+}
+.eye {
+    background-color: #fff;
+}
+
+/* Structure */
+#logo {
+    width: 334px;
+    height: 451px;
+    margin: auto;
+}
+#head {
+    height: 154px;
+    margin-bottom: 15px;
+
+    border-radius: 154px 154px 0 0;
+
+    position: relative;
+}
+#body {
+    height: 284px;
+    border-radius: 0 0 50px 50px;
+    
+    position: relative;
+}
+.antenna {
+    width: 9px;
+    height: 80px;
+
+    border-radius: 10px;
+
+    position: absolute;
+    top: -20px;
+}
+.antenna.left {
+    left: 60px;
+    transform: rotate(-33deg);
+}
+.antenna.right {
+    right: 60px;
+    transform: rotate(33deg);
+}
+.eye {
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+
+    position: absolute;
+    top: 67px;
+}
+.eye.left {
+    left: 80px;
+}
+.eye.right {
+    right: 80px;
+}
+.arm, .leg {
+    width: 77px;
+    height: 233px;
+    border-radius: 50px;
+
+    position: absolute;
+}
+.arm.left {
+    left: -90px;
+}
+.arm.right {
+    right: -90px;
+}
+.leg {
+    top: 188px;
+}
+.leg.left {
+    left: 70px;
+}
+.leg.right {
+    right: 70px;
+}
+/* Transition */
+
+#logo * {
+    transition: all 0.3s ease-out;
+}
+#logo:hover #head {
+    transform: rotate(-4deg);
+}
+#logo:hover .eye.right {
+    height: 2px;
+}
+#logo:hover .arm.left {
+    transform: rotate(15deg);
+}
+#logo:hover .leg.right {
+    top: 150px;
+}
+
+/* Footer */
+footer {
+    margin-top: 222px;
+    font-weight: bold;
+    color: #3b3b3b;
+}
+footer a {
+    color: #e96901;
+    text-decoration: none;
+}
+footer p {
+    text-align: center;
+}
+footer p:first-child {
+    margin-bottom: 50px;
+}

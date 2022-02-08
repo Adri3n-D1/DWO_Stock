@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+    <head>
+        <title>Ma première page HTML</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5.0, minimum-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+    <body>
+       
+<header>
+
+    <div class="header-left">
+        <div class="header-logo" ></div>
+        <a href="" class="header-item" id="menu">
+            <p class="text-item-header">
+                Menu
+                <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </p>
+        </a>
+        <a href="" class="header-item" id="tutorial">
+            <p class="text-item-header">
+                Tutorials
+                <span class="glyphicon glyphicon-triangle-bottom"></span>
+            </p>
+        </a>
+        <a href="" class="header-item" id="reference">
+            <p class="text-item-header" style="left: 5px;">
+                References<br>
+                <span class="glyphicon glyphicon-triangle-bottom" style="left: 29px;"></span>
+            </p>
+        </a>
+        <a href="" class="header-item" id="exercice">
+            <p class="text-item-header" style="left: 10px;">
+                Exercices<br>
+                <span class="glyphicon glyphicon-triangle-bottom" style="left: 29px;"></span>
+            </p>
+        </a>
+        <a href="" class="header-item" id="video">
+            <p class="text-item-header" style="left: 21px;">
+                Videos
+                <div>New</div>
+            </p>
+        </a>
+    </div>
+
+    <div class="header-right">
+        <a href="" class="header-item-right" id="website">
+            <div class="btn-header-item-right btn-header-item-website">
+                <p>Website</p>
+                <div>New</div>
+            </div>
+        </a>
+        <a href="" class="header-item-right" id="paid-course">
+            <div class="btn-header-item-right btn-header-item-paid-courses">
+                <p>Paid courses</p>
+            </div>
+        </a>
+        <a href="" class="header-item-right" id="login">
+            <div class="btn-header-item-right btn-header-item-login">
+                <p>Login</p>
+            </div>
+        </a>
+    </div>
+
+</header>
+
+<nav>
+    <div class="nav-item-left">
+        <div class="nav-logo"><span class="glyphicon" style="color: white;">&#xe021;</span></div>
+        <div class="nav-item" id="html" style="left: 54px;">HTML</div>
+        <div class="nav-item" id="css" style="left: 111px;">CSS</div>
+        <div class="nav-item" id="javascript" style="left: 159px;">JAVASCRIPT</div>
+        <div class="nav-item" id="sql" style="left: 260px;">SQL</div>
+        <div class="nav-item" id="python" style="left: 308px;">PYTHON</div>
+        <div class="nav-item" id="php" style="left: 384px;">PHP</div>
+        <div class="nav-item" id="bootstrap" style="left: 431px;">BOOSTRAP</div>
+        <div class="nav-item" id="how-to" style="left: 528px;">HOW TO</div>
+        <div class="nav-item" id="w3css" style="left: 605px;">W3.CSS</div>
+        <div class="nav-item" id="java" style="left: 678px;">JAVA</div>
+        <div class="nav-item" id="jquery" style="left: 729px;">JQUERY</div>
+        <div class="nav-item" id="cplusplus" style="left: 803px;">C++</div>
+        <div class="nav-item" id="csharp" style="left: 856px;">C#</div>
+        <div class="nav-item" id="r" style="left: 900px;">R</div>
+        <div class="nav-item" id="react" style="left: 933px;">React</div>
+    </div>
+
+    <div class="nav-item-right">
+        <div class="nav-item" style="right: 68px;"><span class="glyphicon glyphicon-adjust"></span></div>
+        <div class="nav-item" style="right: 34px;"><span class="glyphicon glyphicon-globe"></span></div>
+        <div class="nav-item" style="right: 0px;"><span class="glyphicon glyphicon-search"></span></p> </div>
+    </div>
+</nav>
+
+
+<style>
+a{
+    text-decoration: none;
+    color: black;
+}
+header{
+    position: relative;
+    height: 100px;
+}
+.header-left{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 50%;
+}
+.header-logo{
+    width: 65px;
+    height: 65px;
+    background-image: url(w3schools.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 26px;
+    left: 12px;
+}
+.header-item{
+    position:absolute;
+    top: 0px;
+    width: 116px;
+    height: 100px;
+    cursor: pointer;
+}
+.header-item:hover{
+    color: white;
+    background-color: rgb(4, 170, 109);
+}
+.text-item-header{
+    position: absolute;
+    top: 34px;
+    left: 10px;
+    font-size: 18px;
+    white-space: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+#menu{
+    left: 101px;
+    display:  none;
+}
+#tutorial{
+    left: 101px;
+}
+#reference{
+    left: 218px;
+}
+#exercice{
+    left: 335px;
+}
+#video{
+    left: 452px;
+    width: 140px !important;
+}
+#video div{
+    position: absolute;
+    top: 36px;
+    left: 80px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 44px;
+    text-align: center;
+    background-color: white;
+    color: black !important;
+}
+/*//////////////////////////////////*/
+
+.header-right{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 50%;
+}
+.header-item-right{
+    position: absolute;
+    top: 0px;
+    width: 150px;
+    height: 110px;
+}
+#website{
+    right: 298px;
+}
+#paid-course{
+    right: 149px;
+}
+#login{
+    right: 0px;
+}
+.btn-header-item-right{
+    border-radius: 25px;
+    width: 130px;
+    height: 40px;  
+    top: 26px;
+    position: absolute;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+.btn-header-item-right>p{
+    position: absolute;
+    top: 6px;
+    font-size: 18px;
+}
+.btn-header-item-website>div{
+    position: absolute;
+    top: 8px;
+    left: 80px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 25px;
+    width: 44px;
+    text-align: center;
+    background-color: white;
+    color: black !important;
+}
+.btn-header-item-website{
+    background-color: #FFC0C7;
+}
+.btn-header-item-website>p{
+    left: 14px;
+}
+.btn-header-item-paid-courses>p{
+    left: 14px;
+}
+.btn-header-item-login{
+    background-color: rgb(4, 170, 109);
+    color: white;
+}
+.btn-header-item-login>p{
+    left: 42px;
+}
+.btn-header-item-right:hover{
+    color: white;
+    background-color: rgb(4, 170, 109);
+}
+/*////////////////////////////////////*/
+
+nav{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    height: 50px;
+    background-color: #282A35;
+}
+.nav-item-left{
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 50%;
+}
+.nav-item-right{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    width: 50%;
+}
+.nav-logo{
+    width: 52px;
+    height: 50px;
+    display: inline-block;
+    background-color: #282A35;
+    position: absolute;
+    top: -2px;
+    left: 0px;
+    font-size: 19px;
+    text-align: center;
+    padding-top: 12px;
+    cursor: pointer;
+}
+.nav-item{
+    height: 50px;
+    background-color: #282A35;
+    color: white;
+    position: absolute;
+    top: 0px;
+    margin: -2px;
+    padding: 14px 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.nav-item:hover{
+    background-color: black;
+}
+.nav-logo:hover{
+    background-color: black;
+}
+@media screen and (max-width: 990px) {
+    #website,
+    #video,
+    #java,
+    #jquery,
+    #cplusplus,
+    #csharp,
+    #r,
+    #react {
+        display: none;
+    }
+       
+}
+@media screen and (max-width: 550px) {
+    #tutorial,
+    #reference,
+    #exercice,
+    #paid-course,
+    #sql,
+    #python,
+    #php,
+    #bootstrap,
+    #howto,
+    #w3css {
+        display: none;
+    }
+    #menu {
+        display: block;
+    }
+    
+}
+</style>
+
+    <script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d6b294c7bacee8d',m:'x9Yd.cQ4d7EQuUPa5kWEPZGWXnI1uM_1zmxt.Laetp0-1643718315-0-AQSV04MlBl8HzkPM9Y914zOMj1siAyjM1tW8rR5buz0KlJm3hQn7BB5VCBJ/bqyfBnQvTa3Kd1j+iTq9Di3BnsPDsJUtsycfJtrCbIg1r5NwMLjKY6QN5oB2rd7rEq/EfTGZWfYruCD7Pu5QypI8XSsEdxXO4csKDVLOWbKPXQX4AdQZctt/X067Y/uVxljL3g==',s:[0x5eefbb076a,0x60e19de6f3],}})();</script></body>
+</html>

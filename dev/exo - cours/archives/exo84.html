@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-84</title>
+    </head>
+    <body>
+        <div class="page-content">
+            <div class="container top">
+                <div class="rect blue"></div>
+                <div class="rect red"></div>
+                <div class="rect green"></div>
+            </div>
+            <div class="container bottom">
+                <div class="sub-container left rect orange"></div>
+                <div class="sub-container right">
+                    <div class="rect purple"></div>
+                    <div class="rect gray"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style type="text/css">
+        .page-content {
+            max-width: 600px;
+            height: 360px;
+            margin: auto;
+        }
+        .container.top {
+            height: 40%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .container.bottom {
+            height: 60%;
+            display: flex;
+        }
+        .sub-container.left {
+            width: 15%;
+        }
+        .sub-container.right {
+            width: 85%;
+        }
+        .rect {
+            box-sizing: border-box;
+            border: 2px solid #fff;
+        }
+        .blue {
+            background-color: #00c3ff;
+            width: 70%;
+            height: 60%;
+        }
+        .red {
+            background-color: #fc2c10;
+            width: 30%;
+            height: 60%;
+        }
+        .green {
+            background-color: #2efa39;
+            width: 100%;
+            height: 40%;
+        }
+        .orange {
+            background-color: #f5911e;
+        }
+        .purple {
+            background-color: #b700ff;
+            height: 40%;
+        }
+        .gray {
+            background-color: #424242;
+            height: 60%;
+        }
+    </style>
+</html>

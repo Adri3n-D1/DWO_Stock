@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-74</title>
+</head>
+<body>
+    <div class="page-content">
+        <header>
+            <div class="col-left">
+                <a href="#"><img src="img-exo74/GitHub-Mark-Light-32px.png" alt="logo de GitHub"></a>
+                <a class="link-arrow" href="#">Why GitHub?</a>
+                <a href="#">Team</a>
+                <a href="#">Enterprise</a>
+                <a class="link-arrow" href="#">Explore</a>
+                <a href="#">Marketplace</a>
+                <a class="link-arrow" href="#">Pricing</a>
+            </div>
+            <div class="col-right">
+                <input type="text" placeholder="Search GitHub"><label class="item-search">/</label>
+                <a href="#">Sign in</a>
+                <a href="#">Sign Up</a>
+            </div>
+        </header>
+        <main>
+            <h1>Where the world builds software</h1>
+            <p>Millions of developers and companies build, ship, and maintain their software on GitHub—the largest and most advanced development platform in the world.</p>
+            <form action="cible.php" method="post">
+                <input type="text" placeholder="Email address">
+                <input type="submit" value="Sign up for GitHub">
+            </form>
+        </main>
+        <div id="main-img"></div>
+        <footer>
+            <div class="col">
+                <h3>73+ million</h3>
+                <p>Developers</p>
+            </div>
+            <div class="col">
+                <h3>4+ million</h3>
+                <p>Organisations</p>
+            </div>
+            <div class="col">
+                <h3>200+ million</h3>
+                <p>Repositories</p>
+            </div>
+            <div class="col">
+                <h3>84%</h3>
+                <p>Fortune 100</p>
+            </div>
+    </div>
+    <div class="footer-img"></div>
+    <div class="footer-img-2"></div>
+    <div class="footer-img-3"></div>
+    <style>
+    body {
+        margin: 0;
+        font-family: "Alliance No.1",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+        background-color: #030e22;
+    }
+    .page-content {
+        max-width: 1250px;
+        margin: auto;
+    }
+    /* Header général */
+    header {
+        padding: 17px 0.5%;
+    }
+    header .col-left,
+    header .col-right {
+        display: inline-block;
+        margin-left: 6px;
+    }
+    header .col-left{
+        margin-left: 6px;
+        width: 560px;
+    }
+    header .col-right {
+        width: 390px;
+        float: right;
+        position: relative;
+        top: 8px;
+    }
+    header a {
+        padding: 0 0.5%;
+        font-size: 16px;
+        color: #fff; 
+        text-decoration: 0;
+        vertical-align: middle;
+    }
+    /* Colonne de gauche du header */
+    header .col-left a:first-child {
+        margin-right: 8px;
+    }
+    header .col-left a:hover {            
+        color: #b8b8b8;
+        transition: color 1s;
+    }
+    header .col-left a img {
+        position: relative;
+        top: 2px;
+    }
+    header .col-left .link-arrow {
+        margin-right: 9px;
+        padding-right: 14px;
+        background: 100% 72% / 10px 10px no-repeat url("img-exo74/link-arrow.png");
+    }        
+    /* Colonne de droite du header */
+    /* input */
+    header .col-right{
+        position: relative;
+        top: 3px;
+    }
+    header .col-right input, header label {
+        box-sizing: border-box;
+        display: inline-block;
+        background-color: #ffffff0e;
+        border: 1px solid #b8b8b8;
+    }
+    header .col-right input {
+        height: 32px;
+        width: 174px;
+        border-right: 0;
+        border-radius: 8px 0 0 8px;
+    }
+    header label {
+        padding: 2px;
+        height: 32px;
+        width: 30px;
+        border-left: 0;
+        border-radius: 0 8px 8px 0;
+        position: relative;
+        top: -1px;
+        color: #b8b8b8;
+    }
+    header input::-webkit-input-placeholder {
+        padding-left: 12px;
+        color: #fff;
+    }
+    header input:focus {
+        background-color: #ffffff;
+        outline: 0;
+        width: 204px;
+        border-radius: 8px;
+    }
+    header input:focus+label {
+        display: none;
+    }
+    /* sign in et sign out */
+    header .col-right a {
+        padding: 5px 15px;
+    }
+    header .col-right a:last-child {
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+    /* main */
+    main {
+        width: 545px;
+        display: inline-block;
+    }
+    main h1 {
+        margin-top: 80px;
+        font-size: 78px;
+        color: #fff;
+        padding: 20px;
+        line-height: 75px;
+        letter-spacing: -4px;
+    }
+    main p {
+        margin-top: -72px;
+        padding: 20px;
+        line-height: 30px;
+        color: #8193b2;
+        font-size: 24px;
+    }
+    main input {
+        box-sizing: border-box;
+        padding: 20px;
+        border: 0;
+        border-radius: 9px;
+        font-size: 16px;
+    }
+    main input:first-child {
+        margin-left: 20px;
+        background-color: #fff;
+        width: 320px;
+    }
+    main input:last-child {
+        padding-top: 15px;
+        height: 58px;
+        background-color: #2ea44f;
+        font-weight: 900;
+        color: #fff;
+    }
+    #main-img {
+        margin-top: 20px;
+        height: 570px;
+        width: 500px;
+        background: center / contain no-repeat url("img-exo74/globe-700.jpg");
+        float: right;
+    }
+    footer {
+        margin-top: 100px;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        position: relative;
+        z-index: 1;
+    }
+    footer .col {
+        font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace !important;
+        display: inline-block;
+        color: #fff;
+        margin-right: 7%;
+    }
+    footer .col:last-child {
+        margin-right: 0;
+    }
+    footer p {
+        font-size: 12px;
+    }
+    .footer-img {
+        position: fixed;
+        bottom: 0;
+        height: 80px;
+        width: 100%;
+        border-radius: 616px / 41px;
+        background-color: #fff;
+    }
+    .footer-img-2 {
+        position: fixed;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        background-color: #fff;
+    }
+    .footer-img-3 {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        height: 400px;
+        width: 500px;
+        background: center / 500px 500px no-repeat url("img-exo74/astro-mona.webp");
+    }
+</style>
+</body>
+</html>

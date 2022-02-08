@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-40</title>
+</head>
+<body>
+    <div class="page-content">   
+        <div class="moon"></div> 
+        <div class="sun"></div>         
+    </div>
+    <style>
+        .moon {
+            position: relative;
+            z-index: 2;
+            height: 300px;
+            width: 300px;
+            background-image: url("img/moon.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .sun {
+            position: relative;
+            z-index: 1;
+            height: 300px;
+            width: 300px;
+            margin-top: -300px;
+            margin-left: 300px;
+            border-radius: 50%;
+            background-image: url("img/sun.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+        .page-content:hover .moon {
+            margin-left: 300px;
+        }
+        .moon {
+            transition: margin 2s ease-in-out;
+        }
+    </style>
+</body>
+</html>

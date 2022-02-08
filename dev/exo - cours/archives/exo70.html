@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-70</title>
+</head>
+<body>
+    <div class="page-content">
+        <div class="rect-black"></div>
+        <div class="rect-orange"></div>
+        <div class="rect-blue"></div>
+        <div class="rect-pink"></div>
+        <div class="smiley">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="lip left"></div>
+            <div class="lip middle"></div>
+            <div class="lip right"></div>
+        </div>
+    </div>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+        .page-content {
+            position: relative;
+        }
+        .rect-black {
+            background-color: #000;
+            height: 70px;
+            width: 100%;
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            left: 0;
+
+        }
+        .rect-orange {
+            background-color: #ff5100;
+            width: 70px;
+            height: 100%;
+            position: fixed;
+        }
+        .rect-blue {
+            background-color: #0099ff;
+            width: 70px;
+            height: 100%;
+            position: fixed;
+            right: 0;
+        }
+        .rect-pink {
+            background-color: #f8c5f6;
+            height: 70px;
+            width: 100%;
+            position: fixed;
+            z-index: -1;
+            bottom: 0;
+        }
+        .smiley {
+            height: 250px;
+            width: 40%;
+            position: fixed;
+            left: 50%;
+            top: 110px;
+            transform: translate(-50%, 0);
+        }
+        .eye {
+            background-color: #808080;
+            border-radius: 50%;
+            position: fixed;
+        }
+        .eye.left {
+            height: 60px;
+            width: 60px;
+            left: 25%;
+        }
+        .eye.right {
+            height: 65px;
+            width: 65px;
+            left: 60%;
+        }
+        .lip {
+            position: fixed;
+            bottom: 0;
+        }
+        .lip.left {
+            background-color: #9cee22;
+            height: 155px;
+            width: 10%;
+        }
+        .lip.middle {
+            background-color: #ff2d2d;
+            height: 55px;
+            width: 80%;
+            left: 10%;
+        }
+        .lip.right {
+            background-color: #442fff;
+            height: 155px;
+            width: 10%;
+            left: 90%;
+        }
+
+    </style>
+</body>
+</html>

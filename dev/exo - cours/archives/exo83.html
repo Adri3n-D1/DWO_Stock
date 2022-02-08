@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-83</title>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="container left">
+                <div class="sub-container">
+                    <div class="element"><span class="txt">1</span></div>
+                    <div class="element"><span class="txt">2</span></div>
+                    <div class="element"><span class="txt">3</span></div>
+                    <div class="element"><span class="txt">4</span></div>
+                </div>
+            </div>
+            <div class="container right">
+                <div class="sub-container">
+                    <div class="element"><span class="txt">1</span></div>
+                    <div class="element"><span class="txt">2</span></div>
+                    <div class="element"><span class="txt">3</span></div>
+                    <div class="element"><span class="txt">4</span></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style type="text/css">
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .container {
+            width: fit-content;
+            border: 3px solid #fe2121;
+            margin-bottom: 5px;
+        }
+        .sub-container {
+            padding: 3px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .container.left .sub-container {
+            max-width: 500px;
+        }
+        .element {
+            box-sizing: border-box;
+            width: 250px;
+            height: 140px;
+            border: 3px solid #fff;
+            background-color: #6495ed;
+            display: flex;
+        }
+        .element:nth-child(1) {
+            order: 2;
+        }
+        .element:nth-child(2) {
+            height: 80px;
+            order: 1;
+        }
+        .element:nth-child(3) {
+            order: 3;
+        }
+        .element:nth-child(4) {
+            order: 4;
+        }
+        .txt {
+            margin: auto;
+            color: #fff;
+            font-size: 1.7em;
+            font-weight: 600;
+        }
+        @media screen and (min-width: 850px) {
+            .container.left .sub-container {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .container.left .element {
+                height: 166px;
+            }
+            .container.left .element:nth-child(1) {
+                order: 1;
+            }
+            .container.left .element:nth-child(2) {
+                order: 2;
+                width: 250px;
+            }
+            .container.left .element:nth-child(3) {
+                order: 3;
+                width: 250px;
+            }
+            .container.left .element:nth-child(4) {
+                order: 4;
+            }
+            .container.left .element {
+                width: 500px;
+            }
+        }
+    </style>
+</html>

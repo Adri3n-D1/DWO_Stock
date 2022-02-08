@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-89</title>
+    </head>
+    <body>
+        <div class="page-content">
+            <header>
+                <div id="header-top">
+                    <h1>Header</h1>
+                </div>
+                <div id="header-bottom">
+                    <a href="#" class="menu"><p>Accueil</p></a>
+                    <a href="#" class="menu"><p>Page 1</p></a>
+                    <a href="#" class="menu"><p>Page 2</p></a>
+                    <a href="#" class="menu"><p>Page 3</p></a>
+                </div>
+            </header>
+            <div id="block-main">
+                <aside>
+                    <p>Aside</p>
+                </aside>
+                <section>
+                    <p>Section</p>
+                </section>
+                <aside>
+                    <p>Aside</p>
+                </aside>
+            </div>
+            <footer>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+                <a href="#">Lien</a>
+            </footer>
+        </div>
+    </body>
+    <style>
+        body, h1, p, a {
+            margin: 0;
+            padding: 0;
+            text-decoration: 0;
+        }
+        .page-content {
+            padding: 12px 30px 50px 30px;
+            background-color: #fd9cc2;
+        }
+        /* Le header du haut */
+        #header-top {
+            padding: 6px 20px 20px;
+            border-radius: 6px 6px 0 0;
+            background-color: #3e0b42;
+        }
+        #header-top h1::first-letter {
+            color: #fff;
+        }
+        #header-top h1 {
+            color: #bd7591;
+        }
+        /* Le header du bas */
+        #header-bottom {
+            padding: 12px;
+            background-color: #6e1d83;
+            display: flex;
+            justify-content: space-around;
+        }
+        #header-bottom .menu {
+            width: 100px;
+            height: 30px;
+            border-radius: 6px;
+            background-color: #3e0b42;
+            color: #fff;
+            display: flex;
+        }
+        #header-bottom .menu:first-child {
+            background-color: #bd7591;
+            color: #3e0b42;
+        }
+        #header-bottom .menu p {
+            margin: auto;
+        }
+        /* Le bloc principal */
+        #block-main {
+            background-color: #6e1d83;
+            display: flex;
+            height: 300px;
+        }
+        aside {
+            background-color: #bd7591;
+            flex: 1; 
+            color: #fff;           
+        }
+        aside:first-child {
+            margin-right: 12px;       
+        }
+        aside:last-child {
+            margin-left: 12px;       
+        }
+        section {
+            background-color: #fff;
+            flex: 4;
+        }
+        aside p,
+        section p {
+            margin: 12px 5px;
+        }
+        /* Le footer */
+        footer {
+            background-color: #1a041b;
+            height: 90px;
+            padding: 15px 30px;
+            border-radius: 0 0 6px 6px;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-around;
+            align-content: space-between;            
+        }
+        footer a {
+            box-sizing: border-box;
+            height: 25px;
+            width: 25%;
+            color: #bd7591;
+        }
+    </style>
+</html>

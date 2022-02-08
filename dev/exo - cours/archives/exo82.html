@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Exo-82</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sub-container">
+                <div class="element">
+                    <div class="txt">1</div>
+                </div>
+                <div class="element">
+                    <div class="txt">2</div>
+                </div>
+                <div class="element">
+                    <div class="txt">3</div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style type="text/css">
+        .container {
+            width: fit-content;
+            border: 3px solid #fe2121;
+            margin: auto;
+        }
+        .sub-container {
+            width: 800px;
+            height: 500px;
+            padding: 3px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+        }
+        .element {
+            box-sizing: border-box;
+            height: 100%;
+            width: 70%;
+            border: 3px solid #fff;
+            background-color: #6495ed;
+            display: flex;
+            margin: auto;
+        }
+        .element:nth-child(2) {
+            width: 100%;
+        }
+        .txt {
+            margin: auto;
+            color: #fff;
+            font-size: 1.7em;
+            font-weight: 600;
+        }
+    </style>
+</html>
