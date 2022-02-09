@@ -1,0 +1,20 @@
+Les opérateurs logiques en javascript s'utilisent en général avec des valeurs booléennes.
+Quand c'est le cas, ils renvoient à leur tour une valeur booléenne;
+
+Il existe 3 opérateurs logique en Javascript:
+
+L'opérateur 'binaire' && (Et):
+- Retourne true (Vrai) si les 2 expressions valent true (Vrai)
+- Retourne false (Faux) dans tous les autres cas
+
+L'opérateur 'binaire' || (Ou)
+- Retourne false (Faux) si les deux expressions valent false (Faux)
+- Retourne true (Vrai) dans tous les autres cas
+
+L'opérateur 'unaire' !  (Non)
+- Retourne true (Vrai) si l'expression vaut false (Faux)
+- Retourne false (Faux) si l'expression vaut true (Vrai)
+
+
+Un opérateur 'unaire' est un opérateur arithmétique qui exécute une action sur un seul opérande.
+Un opérateur 'binaire' est un opérateur arithmétique qui exécute une action sur deux opérandes.
