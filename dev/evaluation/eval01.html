@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eval-01</title>
+</head>
+<body>
+    <div class="page-content">
+        <header>
+            <div class="header-left">
+                <p>Start Bootstrap</p>
+            </div>
+            <div class="header-right-small">
+                <a href="#"><img src="img/hamburger_menu.png" alt="Icone de menu cliquable"></a>
+            </div>
+            <div class="header-right-large">
+                <p><a href="#">Home</a></p>
+                <p><a href="#">About</a></p>
+                <p><a href="#">Contact</a></p>
+            </div>
+        </header>
+        <main>
+            <div class="item-head">                
+                <h1>A warm welcome!</h1>
+                <p>Boostrap utility classes are used to create this jumbotron since the old component has been removed from the framework. Why create custom CSS when you can use utilities?</p>
+                <form action="target.php" method="post">
+                    <input type="submit" value="Call to action">
+                </form>
+            </div>
+            <div class="item-grp">
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/layout.png" alt="">
+                    </div>
+                    <h2>Fresh new layout</h2>
+                    <p>With Bootstrap 5, we've created fresh new layout for this template!</p>
+                </div>
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/download.png" alt="">
+                    </div>
+                    <h2>Free to download</h2>
+                    <p>As always, Start Bootstrap has a powerful collectin free templates.</p>
+                </div>
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/jumbotron.png" alt="">
+                    </div>
+                    <h2>Jumbotron hero header</h2>
+                    <p>The heroic part of this template is the jumbotron hero header!</p>
+                </div>
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/feature_boxes.png" alt="">
+                    </div>
+                    <h2>Feature boxes</h2>
+                    <p>We've created some custom feature boxes using Bootstrap icons!</p>
+                </div>
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/clean_code.png" alt="">
+                    </div>
+                    <h2>Simple clean code</h2>
+                    <p>We keep our dependencies up to date and squash bugs as they come!</p>
+                </div>
+                <div class="item">
+                    <div class="picture-frame">
+                        <img src="img/trust.png" alt="">
+                    </div>
+                    <h2>A name you trust</h2>
+                    <p>Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>Copyright &copy; Your Website 2021</p>
+        </footer>
+    </div>
+</body>
+<style type="text/css">
+    
+    /* Parametrage général */
+    body, p, h2 {
+        margin: 0;
+    }
+    p {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    h1, h2 {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        letter-spacing: 1.2px;
+    }
+
+    /* Parametrage du header */
+    header {
+        padding: 10px;
+
+        background-color: #272727;
+        color: #c4c4c4;
+
+        display: flex;
+        justify-content: space-between;
+    }
+    header .header-left {
+        display: flex;
+        align-items: center;
+    }
+    header .header-left p {
+        font-size: 1.1em;
+    }
+    header .header-right-large {
+        display: none;
+    }
+    header .header-right-small img{
+        width: 32px;
+        vertical-align: middle;
+    }
+
+    /* Parametrage du main */
+    main .item-head {
+        max-width: 65%;
+        margin: 72px auto 0;
+
+        text-align: center;
+    }
+    main .item-head input {
+        padding: 8px;
+        border: 0;
+        border-radius: 5px;
+        margin-top: 24px;
+        
+        background-color: #0a74ff;
+        color: #fff;
+    }
+    main .item-grp {        
+        max-width: 90%;
+        margin: 72px auto 0;
+
+        text-align: center;
+    }
+    main .item {
+        margin-bottom: 48px;
+    }
+    main .item .picture-frame {
+        width: 56px;
+        height: 56px;
+        border-radius: 5px;
+        margin: 12px auto;
+        
+        background-color: #0a74ff;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main .item .picture-frame img {
+        width: 48px;
+        height: 48px;
+
+        vertical-align: middle;
+    }
+    main .item h2 {
+        margin-top: 12px;
+        font-size: 1.2em;
+    }
+    main .item p {
+        margin-top: 12px;
+        font-size: 0.9em;
+    }
+
+    /* Parametrage du footer */
+    footer {
+        padding: 15px 0;
+
+        background-color: #292929;
+        color: #fff;
+
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    @media screen and (min-width: 600px) {
+        header .header-right-large {
+            display: flex;
+        }
+        header .header-right-large a {
+            padding: 0 20px 0 0;
+
+            color: #a5a5a5;
+            text-decoration: none;;
+        }
+        header .header-right-large p:first-child a{
+            color: #c4c4c4;
+        }
+        header .header-right-small{
+            display: none;
+        }
+        main .item-head {
+            max-width: 80%;
+        }
+        main .item-grp {
+            max-width: 90%;
+
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        main .item {
+            width: 45%;
+        }
+    }
+</style>
+</html>
