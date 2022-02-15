@@ -1,0 +1,6 @@
+En javascript un tableau (array) est une liste de valeur indexé de 0 à nombre d'élément du tableau -1.
+Un tableau peut contenir n'importe quelle type de valeur supporté par javascript et sa taille peut varier à tout moment.
+
+Pour parcourir un tableau on peut utiliser n'importe quelle boucle, mais on preferera utiliser une boucle for clasique ou directement la méthode foreach.
+
+On peut aussi consulter un élément précis d'un tableau directement par son index (si on le connaît).

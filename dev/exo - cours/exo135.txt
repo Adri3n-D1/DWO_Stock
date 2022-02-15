@@ -1,0 +1,1 @@
+Ce code va afficher '1O'.

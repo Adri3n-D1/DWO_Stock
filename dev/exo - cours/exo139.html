@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-139</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    
+    function nombreDansLaPortee(nombre, min, max) {
+        if (typeof min != 'number') {
+            min = Number.NEGATIVE_INFINITY;
+        }
+        if (typeof max != 'number') {
+            max = Number.POSITIVE_INFINITY;
+        }
+
+        trueMin = Math.min(min, max);
+        trueMax = Math.max(min, max);
+
+        if (isNaN(nombre)) {
+            nombre = 0;
+        }
+        if (nombre <= trueMin) {
+            return trueMin;
+        }
+        else if (nombre >= trueMax) {
+            return trueMax;
+        }
+        else {
+            return nombre;
+        }
+    }
+</script>
+</html>

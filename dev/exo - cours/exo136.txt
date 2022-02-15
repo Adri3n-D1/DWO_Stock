@@ -1,0 +1,1 @@
+Ce code n'affichera rien mais la variable compteur vaudra '2'.

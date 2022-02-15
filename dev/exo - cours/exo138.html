@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-138</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    let i = 0;
+    let k = 1;
+
+    let boucle1 = 0;
+    let boucle2 = 0;
+    let boucle3 = 0;
+
+    do {
+        if (i == 0) {
+            boucle1++;
+        }
+        else {
+            boucle1 *= 2;
+        }
+        i++;
+    } while (i < 50)
+
+    for (let j = 0; j < 100; j++) {
+        if (j >= 42) {
+            break;
+        }
+        if (j % 2 == 0) {
+            boucle2 += 5;
+        }
+    }
+
+    while (k <= 35) {
+        if (boucle3 < 10) {
+            boucle3 += 0.5;
+        }
+        else {
+            boucle3 += 3;
+        }
+        k++;
+    }
+
+    console.log(boucle1, boucle2, boucle3);
+
+</script>
+</html>

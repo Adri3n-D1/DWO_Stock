@@ -1,0 +1,1 @@
+Ce code ne va rien afficher car la condition sera fausse dès le départ.
