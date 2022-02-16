@@ -1,0 +1,4 @@
+Une fonction constructeur d’objets est une fonction qui va nous permettre de créer des objets semblables.
+Cette fonction peut prendre des paramètres en entrée pour initialiser des valeurs spécifiques à l’instance de l’objet créé.
+Les propriétés et les méthodes de cette fonction devront être précédées du mot clé ‘this’ représentant une instance spécifique de l’objet.
+Pour créer une instance de l’objet que la fonction constructeur crée, il faudra utiliser le mot clé new devant le nom de la fonction constructeur.

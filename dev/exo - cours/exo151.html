@@ -7,22 +7,25 @@
     <title>Exo-151</title>
 </head>
 <body>
-</body>
-<script type="text/javascript">
+    <script type="text/javascript">
+        
+        let fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
+        console.log(fruits);
     
-    var fruits = [ 'Mangue', 'Raisin', 'Figue', 'Kiwi' ];
-    fruits.forEach(element => console.log(element));
-
-    do {
-        fruit = window.prompt("Quel fruit désirez-vous ?");
-        let index = fruits.indexOf(fruit)
-        if (index != -1) {
-            fruits.splice(index, 1);
-            console.log("Voilà votre fruit : " + fruit);
-        }
-    } while (fruits.length != 0);
-
-    console.log("Plus de fruits");
-
-</script>
+        let fruit = '';
+        let index = -1;
+    
+        do {
+            fruit = prompt("Quel fruit désirez-vous ?");
+            index = fruits.indexOf(fruit);
+            if (index != -1) {
+                fruits.splice(index, 1);
+                console.log("Voilà votre fruit : " + fruit);
+            }
+        } while (fruits.length > 0)
+    
+        console.log("Plus de fruits");
+    
+    </script>
+</body>
 </html>

@@ -1,0 +1,4 @@
+Les objet sont des entités qui peuvent contenir des propriétés et des méthodes.
+Les propriétés sont des valeurs dont est constitué notre objet et qui peuvent changer.
+Les méthodes représentent des tâches que nous auront associé à notre objet.
+Il existe deux notations pour créer et manipuler un objet, de manière littérale et par l’intermédiaire d’un constructeur.

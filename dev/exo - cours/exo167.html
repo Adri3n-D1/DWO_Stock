@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-167</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    
+    function vehicule(type, prix, position) {
+        this.type = type;
+        this.prix = prix;
+        this.position = position;
+        this.rouler = function() {
+            this.position += 10;
+        };
+    }
+    
+    let velo = new vehicule('Vélo', 400, 0);
+
+    console.log(
+        'Type de véhicule : ' + velo.type,
+        'Prix : ' + velo.prix,
+        'Position : ' + velo.position
+    );
+
+    velo.rouler();
+    
+    console.log(
+        'Type de véhicule : ' + velo.type,
+        'Prix : ' + velo.prix,
+        'Position : ' + velo.position
+    );
+
+
+</script>
+</html>

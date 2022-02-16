@@ -1,0 +1,21 @@
+Les prototypes sont un mécanisme au sein de JavaScript qui permettent aux objets JavaScript d'hériter des propriétés d'autres objets.
+
+Chaque objet peut avoir un prototype objet d'où il hérite des méthodes et des attributs.
+
+La propriété ‘prototype’ contient un objet où l'on définit les éléments dont vont pouvoir hériter les futurs objets instanciés.
+
+Cette propriété sera contenu uniquement dans la fonction constructrice de l’objet instancié.
+
+Donc les méthodes et attributs de l’objet instancié sont définis dans l'attribut prototype de la fonction constructrice de l'objet.
+
+La propriété (dépréciée) __proto__ contient la même chose que la propriété prototype, mais pour chaque instance de l’objet et non pour sa fonction constructrice:
+
+fonctionConstructrice.prototype === instance.__proto__
+
+Il est recommandé pour obtenir le prototype à partir de l’instance d’utiliser à la place de instance.__proto__, Object.getPrototypeOf(instance) :
+
+Object.getPrototypeOf(instance) === instance.__proto__
+
+donc
+
+fonctionConstructrice.prototype === Object.getPrototypeOf(instance)

@@ -18,21 +18,22 @@
             max = Number.POSITIVE_INFINITY;
         }
 
-        trueMin = Math.min(min, max);
-        trueMax = Math.max(min, max);
+        let trueMin = Math.min(min, max);
+        let trueMax = Math.max(min, max);
 
         if (isNaN(nombre)) {
             nombre = 0;
         }
+
         if (nombre <= trueMin) {
             return trueMin;
         }
         else if (nombre >= trueMax) {
             return trueMax;
         }
-        else {
-            return nombre;
-        }
+        
+        return nombre;
     }
+    
 </script>
 </html>

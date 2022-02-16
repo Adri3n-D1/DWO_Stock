@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+function objDyna(nbr) {
+    this.nbr = nbr;
+    this.name = 'OBJET DYNAMIQUE';
+    this.funcTest = function() {
+        return 'Je suis une fonction test de ' + this.name;
+    };
+}
+let instance1 = new objDyna(1); // Instance 1
+let instance2 = new objDyna(2); // Instance 2
+
+// La propriété prototype de la fonction constructrice
+// contient la même chose que la propriété __proto_ de l'instance
+if (objDyna.prototype === instance1.__proto__) {
+    // Cette condition est vrai
+}
+
+// La propriété __proto_ de l'instance (dévaluée)
+// contient la même chose que ce que renvoi Object.getPrototypeOf()
+if (instance1.__proto__ === Object.getPrototypeOf(instance1)) {
+    // Cette condition est vrai
+}
+
+// Donc la propriété prototype de la fonction constructrice
+// contient la même chose que ce que renvoi Object.getPrototypeOf()
+if (objDyna.prototype === Object.getPrototypeOf(instance1)) {
+    // Cette condition est vrai
+}
+
+// Donc chaque instance crée par la même fonction constructrice
+// partage le même prototype
+if (Object.getPrototypeOf(instance1) === Object.getPrototypeOf(instance2)) {
+    // Cette condition est vrai
+}
+
+
+let tab = [5, 9, 3];
+tab.forEach(element => console.log(element))
+
+</script>
+</html>

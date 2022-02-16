@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-168</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    function voiture(marque, modele, type_carburant, position) {
+        this.marque = marque;
+        this.modele = modele;
+        this.type_carburant = type_carburant;
+        this.position = position;
+
+        this.rouler = function() {
+            this.position += 20;
+        };
+        
+        this.affiche_position = function() {
+            if (this.position != 0) {
+                console.log(
+                    'Je suis une ' + this.marque + ' ' + this.modele +
+                    ' et j\'ai roulé ' + this.position +' km.'
+                );
+                return
+            }
+            console.log(
+                'Je suis une ' + this.marque + ' ' + this.modele +
+                ' et je n\'ai pas encore roulé.'
+            );
+        };
+    }
+
+    let car = new voiture('Tesla', 'Model S', 'Éléctricité', 0);
+
+    car.affiche_position();
+    car.rouler();
+    car.affiche_position();
+
+</script>
+</html>

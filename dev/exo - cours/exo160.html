@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-160</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+  let Person = {
+    fname: 'John',
+    lname: 'Doe',
+    age: 25
+  };
+
+  let Car = {
+    brand: 'Toyota',
+    date: '1980',
+    nbKm: 280000,
+    fuel: 'diesel'
+  };
+
+  Person.Car = Car;
+
+  console.log(
+    'Je m\'appele ' + Person.fname + ' ' + Person.lname +
+    ' et on m\'a offert une ' + Person.Car.brand +
+    ' avec un carburant ' + Person.Car.fuel + '.'
+  );
+
+</script>
+</html>

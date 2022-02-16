@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-165</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566
+    };
+
+
+    person.toString = function personToString() {
+        let str =
+            "Je m'appelle " + this.firstName + " " +
+            this.lastName + " et mon identifiant est " + this.id + ".";
+        return str;
+    }
+
+    console.log(person.toString());
+
+</script>
+</html>

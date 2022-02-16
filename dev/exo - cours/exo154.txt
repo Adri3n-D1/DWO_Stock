@@ -1,0 +1,8 @@
+- La programmation procédurale
+Paradigme de programmation qui considère un code comme un enchaînement de procédures ou d’étapes qui vont résoudre les problèmes un par un.
+
+- La programmation fonctionnelle
+Paradigme de programmation qui considère un code comme un enchaînement de fonctions qui vont toujours retourner le même résultat si on leur passe les mêmes arguments et qui ne vont retourner qu’une valeur sans modification au-delà de leur contexte.
+
+- La programmation orientée objet
+Paradigme de programmation qui considère un code autour du concept d’objets. Un objet est une entité qui peut être vue comme indépendante et qui va contenir un ensemble de variables et de fonctions
