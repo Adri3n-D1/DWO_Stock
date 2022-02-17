@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-170</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    function appareil(t, m){
+
+        this.type = t;
+        this.marque = m;
+        this.etat = 'éteint';
+
+        this.allumer = function() {
+            this.etat = 'allumer';
+        }
+        this.eteindre = function() {
+            this.etat = 'éteint';
+        }
+    }
+
+    pc = new appareil('Ordinateur', 'Asus');
+    console.log(pc);
+
+    pc.allumer();
+    console.log(pc);
+
+    pc.eteindre();
+    console.log(pc);
+
+</script>
+</html>

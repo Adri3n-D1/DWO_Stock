@@ -1,0 +1,5 @@
+Une classe est un plan général qui va servir à créer des objets similaires. Le code d’une classe va généralement être composé de propriétés et de méthodes dont vont hériter les objets qui vont être créés à partir de la classe.
+
+Le Javascript est un langage dont l’orienté objet est basé sur les prototypes, contrairement à d'autres langages basés sur les classes.
+
+Cependant la notion de classe à été introduite avec ECMAScript 2015, bien que ce soit que du ‘sucre syntaxique’. En effet, cette syntaxe n'introduit pas un nouveau modèle d'héritage dans JavaScript ! Elle fournit uniquement une syntaxe plus simple pour créer des objets et manipuler l'héritage. En réalité, les classes sont des fonctions spéciales.

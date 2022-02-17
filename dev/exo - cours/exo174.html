@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-174</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    class employe {
+        constructor(nom, prenom, salaire, statut) {
+            this.nom = nom;
+            this.prenom = prenom;
+            this.salaire = salaire;
+            this.statut = statut;
+        }
+        augmenter_salaire() {
+            this.salaire += 200;
+        }
+        baisser_salaire() {
+            this.salaire -= 200;
+        }
+        virer() {
+            this.statut = "Viré";
+        }
+        embaucher() {
+            this.statut = "En poste";
+        }
+    }
+    
+    let emp = new employe('Doe', 'John', 3000, 'En poste');
+
+    emp.virer();
+    console.log(emp);
+
+    emp.embaucher();
+    console.log(emp);
+    
+    emp.augmenter_salaire();
+    console.log(emp);
+    
+    emp.baisser_salaire();
+    console.log(emp);
+
+</script>
+</html>

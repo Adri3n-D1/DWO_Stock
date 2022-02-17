@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-173</title>
+</head>
+<body>
+    <div id="voiture"></div>
+    <script type="text/javascript">
+
+        class Voiture {
+            constructor(m, p, i) {
+                this.marque = m;
+                this.prix = p;
+                this.position = 0;
+                this.image_url = i;
+            }
+            rouler() {
+                this.position += 100;
+            }
+            afficher() {
+                document.getElementById('voiture').innerHTML =
+                    '<b>Marque : </b>' + this.marque + '<br>' +
+                    '<b>Prix : </b>' + this.prix + ' €<br>' +
+                    '<b>Position : </b>' + this.position + 'km<br>' +
+                    '<img src="'+this.image_url+'" alt="photo de la toyota">';
+            }
+        }
+
+        let car = new Voiture('Toyota', 20000, 'https://cdn.drivek.it/configurator-covermobile/cars/fr/768/TOYOTA/RAV4-PHEV/39823_SUV-5-DOORS/toyota-rav4-phev-2020-mobile.jpg'); 
+
+        car.rouler();
+        car.afficher();
+    
+    </script>
+</body>
+</html>
