@@ -1,0 +1,50 @@
+header {
+    padding: 10px;
+    background-image: url("img/bg/bg_header.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    height: 50vw;
+}
+header .name, header .slogan {
+    color: #fff;    
+    font-family: 'open_sansregular';
+    text-align: center;
+    letter-spacing: 5px;
+}
+header .name {
+    font-size: 1.9em;
+}
+header .slogan {
+    font-size: 1.4em;
+}
+header .button {
+    height:30x;
+    padding: 3px 12px;
+    border-radius: 20px;
+}
+
+header .row-button {
+    max-width: 200px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+header .row-button .button a{
+    text-decoration: none;
+}
+
+header .row-button .button.contact {
+    background-color: #2d2c2cb6;
+}
+header .row-button .button.contact a{
+    color: #ff861c;
+}
+
+header .row-button .button.about {
+    background-color: #ff861cb6;
+}
+header .row-button .button.about a {
+    color: #2d2c2c;
+}
