@@ -1,0 +1,1 @@
+L'objet ‘String’ permet de représenter et de manipuler une chaîne de caractères.

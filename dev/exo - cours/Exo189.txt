@@ -1,0 +1,1 @@
+En Javascript le D.O.M est la reprénsentation objet de la page HTML. Il permet donc de représenter les éléments de la page en tant qu'objet et de les manipule/modifier.

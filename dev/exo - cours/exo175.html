@@ -9,6 +9,39 @@
 <body>
 </body>
 <script type="text/javascript">
- 
+
+    function Animal(nom, vitesse, alimentation) {
+        this.nom = nom;
+        this.vitesse = vitesse;
+        this.alimentation = alimentation;
+
+        this.boire = function() {
+            return `${this.nom} se met à boire.`;
+        }
+        this.manger = function() {
+            return `${this.nom} se met à manger.`;
+        }
+    }
+
+    function Oiseau(nom, vitesse, alimentation) {
+        Animal.call(this, nom, vitesse, alimentation);
+
+        this.voler = function() {
+            return `${this.nom} vole.`;
+        }
+    }
+
+    function Poisson(nom, vitesse, alimentation) {
+        Animal.call(this, nom, vitesse, alimentation);
+
+        this.nager = function() {
+            return `${this.nom} nage.`;
+        }
+    }
+
+    const koala = new Animal("koala", 3.2, "carnivore");
+    const faucon = new Oiseau("faucon", 390, "carnivore");
+    const requin = new Poisson("requin", 50, "carnivore");
+
 </script>
 </html>

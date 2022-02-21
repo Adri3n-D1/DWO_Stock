@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-184</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    const tableau = [50, 20.56, 10.2, 7, 4, 3, 5];
+
+    let tmp = 0;
+
+    for (const value of tableau) {
+        tmp += value;
+    }
+
+    const resultat1 = tmp;
+
+    tableau[3] = "millieu";
+    
+    tableau.pop();
+    tableau.shift();
+
+    tmp = "";
+    for (const value of tableau) {
+        tmp += value;
+    }
+
+    const resultat2 = tmp;
+
+    const tableau2 = new Array();
+
+    for (let i = 0; i < 100; i++) {
+        tableau2.push(Math.round(Math.random() * (100 - 1) + 1));
+    }
+
+    const tableau3 = tableau.concat(tableau2);
+
+    const resultat3 = tableau3.includes("millieu");
+
+</script>
+</html>

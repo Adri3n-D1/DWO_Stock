@@ -1,0 +1,1 @@
+L'objet 'Date' est un objet permettant de stocker et de manipuler des dates.

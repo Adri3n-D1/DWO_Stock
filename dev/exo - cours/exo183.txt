@@ -1,0 +1,1 @@
+L'objet 'Array' permet de créer et de manipuler un tableau javascript.

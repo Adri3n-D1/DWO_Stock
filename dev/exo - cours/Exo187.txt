@@ -1,0 +1,1 @@
+Le timestamp est un mécanisme permettant d'associer une date et une heure à une action en particulier. Ce système compte le nombre de secondes écoulées depuis le 1er janvier 1970, donc ne dépend pas des fuseau horaire.
