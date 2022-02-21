@@ -7,14 +7,17 @@
     <title>Exo-190</title>
 </head>
 <body>
+    
 </body>
 <script type="text/javascript">
-// Créez 1 paragraphes en HTML avec du texte lorem Ipsum avec un id égal  à p1
 
-// Modifiez en javascript la couleur de texte de ce paragraphe en bleu.
-// Modifiez en javascript sa taille à 20px.
+    let newP = document.createElement("p");
+    newP.setAttribute("id", "p1");
+    newP.textContent  = "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ex, quam!";
+    newP.style.color = "blue";
+    newP.style.fontSize = "20px";
 
-document.querySelector("body").innerHTML("<p>")
+    document.body.append(newP);
 
 </script>
 </html>

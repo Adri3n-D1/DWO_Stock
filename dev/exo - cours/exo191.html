@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-191</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+
+    let newImg = document.createElement("img");
+    newImg.setAttribute("src", "http://www.snut.fr/wp-content/uploads/2015/12/image-de-nature-9.jpg");
+    newImg.setAttribute("alt", "image paisible de cascades");
+
+    newImg.style.width = "100%";
+
+    let bigImg = true;
+
+    newImg.addEventListener("click", function ( event ) {
+        if (bigImg) {
+            event.target.style.width = "50px";
+            bigImg = false;
+        }
+        else {
+            event.target.style.width = "100%";
+            bigImg = true;
+        }
+    });
+
+    document.body.append(newImg);
+
+</script>
+</html>
