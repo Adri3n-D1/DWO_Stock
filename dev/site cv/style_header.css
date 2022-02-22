@@ -1,10 +1,10 @@
 header {
-    min-height: 300px;
-    height: 50vw;
+    min-height: 280px;
+    height: 40vw;
 
     background-image: url("img/bg/bg_header.jpg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover ;
     background-position: left 18% top 64%;
 }
 /* La barre de navigation est fixée au top de la fenêtre */
@@ -107,12 +107,6 @@ header section .sep:last-child {
         letter-spacing: 5px;
         /* Pour contre-balancer le letter-spacing : */
         padding-left: 5px;
-    } 
-    header section .name {
-        font-size: 1.9em;
-    }
-    header section .slogan {
-        font-size: 1.4em;
     }
     header section .row-button {
         max-width: 230px;
@@ -138,7 +132,7 @@ header section .sep:last-child {
         font-size: 2.4em;
     }
     header section .slogan {
-        font-size: 1.7em;
+        font-size: 1.5em;
     }
     header section .row-button {
         max-width: 250px;
@@ -165,7 +159,7 @@ header section .sep:last-child {
         font-size: 3.0em;
     }
     header section .slogan {
-        font-size: 2.0em;
+        font-size: 1.8em;
     }
     header section .row-button {
         max-width: 350px;
@@ -184,10 +178,10 @@ header section .sep:last-child {
         padding-left: 30px;
     }
     header section .name {
-        font-size: 5.1em;
+        font-size: 5.2em;
     }
     header section .slogan {
-        font-size: 3.7em;
+        font-size: 3.0em;
     }
     header section .row-button {
         max-width: 600px;

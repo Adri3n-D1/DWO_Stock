@@ -1,24 +1,43 @@
-.quote {
+#quote {
     background-color: #ff861c;
 }
-.quote .page-content {
+#quote .page-content {
+    width: fit-content;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
     margin: auto;
     display: flex;
 }
-.quote p:first-child{
-    color: #2d2c2c;
-    font-size: 5em;
-    margin-bottom: -33px;
+#quote .box{
+    display: flex;
+    margin: auto;
 }
-.quote p:last-child{
+#quote img {
+    width: 72px;
+}
+#quote p{
+    max-width: 250px;
     color: #2d2c2c;
+    font-family: 'quicksandregular';
+
     font-size: 1.3em;
     text-align: center;
+    line-height: 2;
 }
-
 @media screen and (min-width: 240px) {
+    #quote p{
+        font-size: 1.3em;
+        letter-spacing: 1px;
+        margin-right: -1px;
+    }
 }
 @media screen and (min-width: 500px) {
+    #quote p{
+        font-size: 1.6em;
+    }
+    #quote img {
+        width: 102px;
+    }
 }
 @media screen and (min-width: 800px) {
 }

@@ -1,0 +1,18 @@
+#hard-skill .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+#hard-skill .icon-tag .box {
+    width: 150px;
+    height: 150px;
+    display: flex;
+
+}
+#hard-skill .icon-tag img {
+    height: 100px;
+    width: fit-content;
+    margin: auto;
+    /* vertical-align: middle; */
+}

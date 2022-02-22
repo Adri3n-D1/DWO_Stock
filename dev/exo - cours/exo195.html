@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-195</title>
+</head>
+<body>
+    <div class="page-content">
+        <form action="form_analysis.js" method="post">
+            <label for="form-fname">First name : </label>
+            <input type="text" id="form-fname">
+            <br>
+            <label for="form-lname">Last name : </label>
+            <input type="text" id="form-lname">
+            <br>
+            <button type="button" onclick="
+            console.log(document.getElementById(`form-fname`).value);console.log(document.getElementById(`form-lname`).value);alert(`Formulaire Validé`);">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
