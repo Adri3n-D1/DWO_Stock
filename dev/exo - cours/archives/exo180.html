@@ -9,20 +9,21 @@
 <body>
 </body>
 <script type="text/javascript">
-    // Utilisez les différentes méthodes de l'objet Number afin d'effectuer les actions ci-dessous que vous stockerez dans des constantes nommées 'resultat+n' (n correspondant au numéro de l'action demandée) :
-    // 1 : Verifier si 'num1' est un entier sûr,
-    // 2 : Convertir 'numStr1' en un entier,
-    // 3 : Convertir 'numStr2' en un entier,
-    // 4 : Convertir 'numStr3' en un entier,
-    // 5 : Convertir 'numStr4' en un nombre flottant,
-    // 6 : Transformer 'num2' en un nombre flottant avec 1 décimale,
-    // 7 : Convertir 'num2' en chaîne de caractère.
 
-    let num1 = new Number(0); // ???
-    let num2 = new Number(0); // ???
+    const numStr1 = "10011100110"; //(base binaire)
+    const numStr2 = "12164"; //(base octale)
+    const numStr3 = "ffcf";
+    const numStr4 = "10.99584";
+    const num1 = 9007199254740992;
+    const num2 = 12.58964;
 
-    const resultat1 = num1.isSafeInteger();
-    const resultat1 = num1.isSafeInteger();
+    const resultat1 = Number.isSafeInteger(num1);
+    const resultat2 = Number.isInteger(numStr1);
+    const resultat3 = Number.parseInt(numStr2);
+    const resultat4 = Number.parseInt(numStr3, 16);
+    const resultat5 = Number.parseFloat(numStr4);
+    const resultat6 = Number.parseFloat(num2).toFixed(1);
+    const resultat7 = num2.toString();
 
 </script>
 </html>

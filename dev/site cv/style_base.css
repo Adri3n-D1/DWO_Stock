@@ -1,0 +1,27 @@
+body, header, nav, section, footer, p, a, img, div, span {
+    margin: 0;
+    padding: 0;
+}
+
+.page-content {
+    padding: 0 5px;
+}
+
+
+@media screen and (min-width: 240px) {
+}
+@media screen and (min-width: 500px) {
+    .page-content {
+        padding: 0 7px;
+    }
+}
+@media screen and (min-width: 800px) {
+    .page-content {
+        padding: 0 15px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .page-content {
+        padding: 0 20px;
+    }
+}

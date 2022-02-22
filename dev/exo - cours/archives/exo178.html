@@ -9,21 +9,15 @@
 <body>
 </body>
 <script type="text/javascript">
-    //Utilisez les différentes méthodes de l'objet String afin d'effectuer les actions ci-dessous que vous stockerez dans des constantes nommées 'resultat+n' (n correspondant au numéro de l'action demandée) :
-    // 1 : Isoler la partie « Les bons programmeurs écrivent du code que les humains peuvent comprendre. »,
-    // 2 : Supprimer les espaces avant et après la chaine,
-    // 3 : Transformer l'intégralité de la chaîne en minuscule,
-    // 4 : Retourner le dernier index de « programmeur »,
-    // 5 : Remplacer « écrirre » par « écrire ».
+    
+    const chaine =
+        "  N’importe quel programmeur peut écrirre du code qu'un ordinateur peut comprendre. Les bons programmeurs écrivent du code que les humains peuvent comprendre.  ";
 
-    let str = new String(" Les bons programmeurs écrivent du code que les humains peuvent comprendre.  ");
-
-    const resultat1 = str.slice();
-    const resultat2 = str.trimStart().trimEnd();
-    const resultat3 = str.toLowerCase();
-    const resultat4 = str.lastIndexOf("programmeur");
-    const resultat5 = str.replace("écrirre", "écrire");
-
+    const resultat1 = chaine.slice(chaine.indexOf(`.`)+1, chaine.length-1);
+    const resultat2 = chaine.trimStart().trimEnd();
+    const resultat3 = chaine.toLowerCase();
+    const resultat4 = chaine.lastIndexOf(`programmeur`);
+    const resultat5 = chaine.replace(`écrirre`, `écrire`);
 
 </script>
 </html>
