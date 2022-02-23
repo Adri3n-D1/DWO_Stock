@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-197</title>
+</head>
+<body>
+    <form method="post" action="">
+        <div>
+            <label>Nom</label><br>
+            <input type="text" name="nom" />
+        </div>
+        <div>
+            <label>Prénom</label><br>
+            <input type="text" name="prenom" />
+        </div>
+        <div>
+            <label>Age</label><br>
+            <input type="text" name="age" />
+        </div>
+        <div>
+            <label>email</label><br>
+            <input type="text" name="email" />
+        </div>
+        <input type="submit" value="valider"/>
+    </form>
+</body>
+<script type="text/javascript">
+
+// Créez un code qui va vérifier le format de données de chaque champs texte.
+// -Les noms et prénom doivent être des texte sans nombres ni caractères spéciaux.
+// -L'age doit être un entier
+// -L'email doit être un texte avec un seul arobase et au moins un point.
+
+// Lors de la validation du formulaire, si l'un des champs n'est pas conforme, affichez une popup qui indique "tel champs n'est pas conforme"
+// Si tout les champs sont conformes, la popup doit afficher, "Inscription validée".
+
+// (Ne pas ajouter d'id ou de class dans les champs)
+
+let myForm = document.getElementsByTagName("form").item(0);
+
+myForm.onsubmit = function() {
+
+    if (validForm()) {
+        alert("Inscription Validé");
+    }
+
+    return false;
+}
+
+function validForm() {
+    // Vérifie si la chaine nom contient uniquement des caracteres unicode,
+    // et au minimum 1 caractères unicode
+    if (!evalNameAttribut("nom", /^\p{L}+$/gu)) {
+        return false;
+    }
+
+    // Vérifie si le prenom contient uniquement des caracteres unicode,
+    // et au minimum 1 caractères unicode
+    if (!evalNameAttribut("prenom", /^\p{L}+$/gu)) {
+        return false;
+    }
+    
+    // Vérifie si la chaine age contient uniquement des chiffres,
+    // et au minimum 1 chiffre
+    if (!evalNameAttribut("age", /^[0-9]+$/g)) {
+        return false;
+    }
+
+    // Vérifie si l'email contient,
+    // une suite de lettre + un arobase' + une suite de lettre.
+    // Chaque suite de lettre peut contenir un ou plusieurs points,
+    // à condition que chaque point soit précédé et suivi par au moins une lettre
+    if (!evalNameAttribut("email",
+        /^(?:[a-zA-Z]+[\.]?)*[a-zA-Z]+[@](?:[a-zA-Z]+[\.]?)*[a-zA-Z]+$/g)) {
+        return false;
+    }
+
+    return true;
+    
+}
+
+function evalNameAttribut(elementName, regex) {
+
+    let elementValue = document.getElementsByName(elementName).item(0).value;
+
+    if (elementValue.match(regex)) {
+        return true;
+    }
+
+    alert(`Le champs ${elementName} n'est pas conforme`);
+    return false;
+}
+
+</script>
+</html>

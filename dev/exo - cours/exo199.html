@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-199</title>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+<style>
+    
+.container{
+    display:  flex;
+    width:  156px;
+    height:  156px;
+    border:  1px solid blue;
+    flex-wrap: wrap;
+}
+
+.box{
+    width:  50px;
+    height:  50px;
+    border:  1px solid black;
+}
+
+</style>
+
+<script type="text/javascript">
+
+// Créez un code qui va donner une couleur aléatoire à chaque box.
+// Faites en sorte que lorsque l'on survole une box avec la souris, sa couleur de fond devienne noire.
+
+for (let element of document.getElementsByClassName('box')) {
+    
+    // Attribution d'une couleur de fond aléatoire pour chaque .box
+    let hexColor =
+        `rgb(` +
+        `${Math.round(Math.random() * 255)},` +
+        `${Math.round(Math.random() * 255)},` +
+        `${Math.round(Math.random() * 255)}` +
+        `)`;
+
+    element.style.backgroundColor = hexColor;
+}
+
+for (let element of document.getElementsByClassName('box')) {
+
+    // Ajout d'un écouteur d'évenement 'mouseover' pour chaque .box,
+    // au survol de la souris change temporairement le background-color en noir
+    element.addEventListener('mouseover', function() {
+        element.style.backgroundColor="black";
+        setTimeout(function(){
+            element.style.backgroundColor = "#ffd700";
+        }, 200);
+    });
+
+    // Ajout d'un second écouteur d'évenement 'mouseleave' pour chaque .box,
+    // lorsque la souris quitte la .box, le background-color devient jaune
+    element.addEventListener('mouseleave', function() {
+        element.style.backgroundColor = '#ffd700';
+    });
+}
+
+</script>
+</html>

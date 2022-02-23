@@ -1,0 +1,14 @@
+#about-me-section h2 {
+    margin-top: 50px;
+}
+#about-me-section h2 {
+    padding: 30px 0;
+    color: #fff;
+    background-color: #2d2c2c;
+    text-align: center;
+}
+#about-me-section p {
+    font-family: 'indie_flowerregular';
+    font-size: 1.2em;
+}
+

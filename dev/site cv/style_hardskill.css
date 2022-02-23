@@ -1,18 +1,37 @@
+#hard-skill .text-tag {
+    margin: 50px 0 0;
+    
+    font-family: 'indie_flowerregular';
+    font-family: 'Caroni-Regular';
+    font-family: 'SenjaSantuy';
+
+    color: #2d2c2c;
+
+    font-size: 1.6em;
+}
+
 #hard-skill .tag-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     width: 100%;
 }
-#hard-skill .icon-tag .box {
-    width: 150px;
-    height: 150px;
-    display: flex;
 
+#hard-skill .tag-row {
+    margin-bottom: 50px;
+}
+
+#hard-skill .icon-tag .tag-row:last-child{
+    margin-bottom: 0;
+}
+
+#hard-skill .icon-tag {
+    display: flex;
+    flex-wrap: wrap;
 }
 #hard-skill .icon-tag img {
-    height: 100px;
+    height: 50px;
     width: fit-content;
     margin: auto;
-    /* vertical-align: middle; */
+    vertical-align: middle;
 }

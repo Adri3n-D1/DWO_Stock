@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-194</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+    // Création du paragraphe
+    let newText = document.createElement('p');
+
+    // Insertion du contenu du paragraphe
+    newText.innerHTML =
+        `<b>Marque : </b> Toyota<br>` +
+        `<b>Prix : </b> 20000 €<br>` +
+        `<b>Position : </b> 100 km`;
+    
+    // Ajout du paragraphe au body    
+    document.body.appendChild(newText);
+    
+    // Création de l'image
+    let newImg = document.createElement('img');
+
+    // Réglage des attributs de l'image
+    newImg.setAttribute(`src`, `https://cdn.drivek.it/configurator-covermobile/cars/fr/768/TOYOTA/RAV4-PHEV/39823_SUV-5-DOORS/toyota-rav4-phev-2020-mobile.jpg`);
+
+    // Ajout de l'image au body
+    document.body.appendChild(newImg);
+        
+</script>
+</html>

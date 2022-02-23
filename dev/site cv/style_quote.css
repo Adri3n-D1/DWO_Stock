@@ -2,9 +2,11 @@
     background-color: #ff861c;
 }
 #quote .page-content {
-    width: fit-content;
     padding-top: 15px; 
     padding-bottom: 15px; 
+}
+#quote .row-quote {
+    width: fit-content;
     margin: auto;
     display: flex;
 }
@@ -12,10 +14,10 @@
     display: flex;
     margin: auto;
 }
-#quote img {
+#quote .row-quote img {
     width: 72px;
 }
-#quote p{
+#quote p {
     max-width: 250px;
     color: #2d2c2c;
     font-family: 'quicksandregular';
@@ -35,7 +37,7 @@
     #quote p{
         font-size: 1.6em;
     }
-    #quote img {
+    #quote .row-quote img {
         width: 102px;
     }
 }

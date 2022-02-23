@@ -1,10 +1,21 @@
-body, header, nav, section, footer, p, a, img, div, span {
+body, header, nav, section, footer, p, a, img, div, span, h2 {
     margin: 0;
     padding: 0;
 }
 
 .page-content {
     padding: 0 5px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.next-section {
+    margin-top: 50px;
+    text-align: center;
+}
+.next-section img {
+    vertical-align: middle;
+    width: 42px;
 }
 
 
