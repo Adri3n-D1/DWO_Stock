@@ -1,0 +1,1 @@
+Les expressions régulières sont des chaînes de caractères sur la base de règles syntaxiques permettant de décrire des séquences de caractères. On s'en sert par exemple pour vérifier qu'une chaîne soit écrite de façon à respecter certaines règles syntaxiques. On peut également isoler des morceaux de texte d'une séquence de caractère.

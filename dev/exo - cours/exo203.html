@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-203</title>
+</head>
+<body>
+</body>
+<script type="text/javascript">
+// En utilisant une expression régulière, Créez une fonction qui prend en paramètres un string et qui vérifie si ce string contient un chiffre de 1 à 9.
+// Si c'est le cas elle retourne true, sinon false.
+
+// En utilisant une expression régulière, Créez une autre fonction qui détecte si une chaine possède une virgule, un point ou un point d'interrogation
+
+// En utilisant une expression régulière, Créez une autre fonction qui détecte si une chaine possède un arobase et un point
+
+function test1(strToEval){
+    let regex = /^.*(?:[0-9]+).*$/;
+    return regex.test(strToEval);
+}
+function test2(strToEval){
+    let regex = /^(?=.*[,])(?=.*[\.|\?]).*$/;
+    return regex.test(strToEval);
+}
+function test3(strToEval){
+    let regex = /^(?=.*[@])(?=.*[\.]).*$/;
+    return regex.test(strToEval);
+}
+
+</script>
+</html>
