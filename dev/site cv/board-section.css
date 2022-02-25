@@ -1,0 +1,74 @@
+#board-section {
+    background-color: #2d2c2c;
+    padding-bottom: 50px;
+}
+#board-section h2 {
+    padding: 30px 0;
+    color: #fff;
+    background-color: #2d2c2c;
+    text-align: center;
+}
+#board-section .content {
+    padding-left: 50px;
+}
+#board-section .mark {
+    position: relative;
+    color: #8769dc;
+    font-size: 21px;
+}
+#board-section .experience .mark {
+    left: -47px;
+    top: 28px;
+    font-size: 21px;
+}
+#board-section .soft-skills .mark {
+    left: -45px;
+    top: 27px;
+    font-size: 23px;
+}
+#board-section .diplome .mark {
+    left: -44px;
+    top: 31px;
+    font-size: 27px;
+}
+#board-section .block {
+    display: flex;
+}
+#board-section .timeline-bar {
+    position: relative;
+    left: 15px;
+
+    min-width: 4px;
+    max-width: 4px;
+    border-radius: 2.5px;
+
+    background-color: #ffffff1a;
+}
+#board-section h3 {
+    font-family: 'RobotoMono-ExtraLight';
+    color: #ff861c;
+    font-weight: 500;
+}
+#board-section ul {
+    padding-left: 38px;
+}
+#board-section li {
+    font-family: 'RobotoMono-ExtraLight';
+    color: #fff;
+    list-style: "- ";
+}
+#board-section li.alt {    
+    color: #8769dc;
+    list-style: "--> ";
+}
+#board-section .link-cv {
+    display: block;
+    width: fit-content;
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin: 50px auto;
+    text-decoration: none;
+    font-size: 1.5em;
+    background-color: #8769dc;
+    color: #2d2c2c;
+}

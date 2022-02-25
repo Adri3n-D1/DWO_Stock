@@ -122,3 +122,96 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'RobotoMono-Bold';
+    src: url('fonts/RobotoMono-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-BoldItalic';
+    src: url('fonts/RobotoMono-BoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-';
+    src: url('fonts/RobotoMono-xxx.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-ExtraLight';
+    src: url('fonts/RobotoMono-ExtraLight.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-ExtraLightItalic';
+    src: url('fonts/RobotoMono-ExtraLightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-Italic';
+    src: url('fonts/RobotoMono-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-Light';
+    src: url('fonts/RobotoMono-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-LightItalic';
+    src: url('fonts/RobotoMono-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-Medium';
+    src: url('fonts/RobotoMono-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-MediumItalic';
+    src: url('fonts/RobotoMono-MediumItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-Regular';
+    src: url('fonts/RobotoMono-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'RobotoMono-SemiBold';
+    src: url('fonts/RobotoMono-SemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoMono-SemiBoldItalic';
+    src: url('fonts/RobotoMono-SemiBoldItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoMono-Thin';
+    src: url('fonts/RobotoMono-Thin.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoMono-';
+    src: url('fonts/RobotoMono-ThinItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
