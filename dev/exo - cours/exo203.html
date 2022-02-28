@@ -16,6 +16,8 @@
 
 // En utilisant une expression régulière, Créez une autre fonction qui détecte si une chaine possède un arobase et un point
 
+// En utilisant une expression régulière, Créez une autre fonction qui détecte si une chaine est une adresse email
+
 function test1(strToEval){
     let regex = /^.*(?:[0-9]+).*$/;
     return regex.test(strToEval);
@@ -26,6 +28,10 @@ function test2(strToEval){
 }
 function test3(strToEval){
     let regex = /^(?=.*[@])(?=.*[\.]).*$/;
+    return regex.test(strToEval);
+}
+function test4(strToEval){
+    let regex =  /^[a-zA-Z]+(?:[\.]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:[\.]?[a-zA-Z0-9]+)*\.[a-zA-Z0-9]+$/g;
     return regex.test(strToEval);
 }
 

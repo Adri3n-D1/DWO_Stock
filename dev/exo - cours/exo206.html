@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-206</title>
+</head>
+<body>
+    <form method="post" action="">
+        <div>
+            <label>Nom</label><br>
+            <input type="text" name="nom" />
+        </div>
+        <div>
+            <label>Prénom</label><br>
+            <input type="text" name="prenom" />
+        </div>
+        <div>
+            <label>Age</label><br>
+            <input type="text" name="age" />
+        </div>
+        <div>
+            <label>email</label><br>
+            <input type="text" name="email" />
+        </div>
+        <input type="submit" value="valider"/>
+    </form>
+</body>
+<script type="text/javascript">
+
+class Form {
+    constructor(lnameName, fnameName, ageName, emailName) {
+        this.formElement = document.forms[0];
+        this.lnameElement = document.getElementsByName(lnameName)[0];
+        this.fnameElement = document.getElementsByName(fnameName)[0];
+        this.ageElement = document.getElementsByName(ageName)[0];
+        this.emailElement = document.getElementsByName(emailName)[0];
+
+        this.initForm();
+    }
+    
+    initForm() {
+        this.formElement.onsubmit = () => {
+            this.inputEval();
+            return false;
+        }
+    }
+
+    inputEval() {
+        
+        if (!this.lnameEval()) {
+            alert(`Le champ 'nom' est invalide`);
+            return
+        }
+        if (!this.fnameEval()) {
+            alert(`Le champ 'prénom' est invalide`);
+            return
+        }
+        if (!this.ageEval()) {
+            alert(`Le champ 'âge' est invalide`);
+            return
+        }
+        if (!this.emailEval()) {
+            alert(`Le champ 'email' est invalide`);
+            return
+        }
+
+        alert("Inscription Validé");
+    }
+
+    lnameEval() {
+        let regex = /^\p{L}+$/gu;
+        return regex.test(this.lnameElement.value);
+    }
+
+    fnameEval() {
+        let regex = /^\p{L}+$/gu;
+        return regex.test(this.fnameElement.value);
+    }
+
+    ageEval() {
+        let regex = /^[0-9]+$/g;
+        return regex.test(this.ageElement.value);
+    }
+
+    emailEval() {
+        let regex = /^[a-zA-Z]+(?:[\.]?[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:[\.]?[a-zA-Z0-9]+)*\.[a-zA-Z0-9]+$/g;
+        return regex.test(this.emailElement.value);
+    }
+}
+
+let form = new Form('nom', 'prenom', 'age', 'email');
+
+</script>
+</html>
