@@ -22,7 +22,9 @@ body, header, nav, section, footer, p, a, img, div, span, h2, h3, ul, li {
     color: #2d2c2c;
 }
 
-
+.color-dark {
+    color: #ff861c;
+}
 @media screen and (min-width: 240px) {
 }
 @media screen and (min-width: 500px) {
