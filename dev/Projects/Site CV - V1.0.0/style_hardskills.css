@@ -1,0 +1,23 @@
+#hard-skills .tag-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#hard-skills .tag-row p {
+    font-size: 1.2em;
+}
+
+#hard-skills .tag-row img {
+    height: 40px;
+}
+
+@media screen and (min-width: 240px) {
+}
+@media screen and (min-width: 340px) {
+}
+@media screen and (min-width: 600px) {
+}
+@media screen and (min-width: 800px) {
+}
+@media screen and (min-width: 1200px) {
+}

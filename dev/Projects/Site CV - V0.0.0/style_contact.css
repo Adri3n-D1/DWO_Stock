@@ -1,0 +1,15 @@
+
+#contact-section .box {
+    color: #2c2b2b;
+}
+.svg-dark {
+    filter: invert(11%) sepia(5%) saturate(21%) hue-rotate(339deg) brightness(101%) contrast(85%);
+    display: inline-block;
+    vertical-align: -0.125em;
+}
+.svg-light {
+    filter: invert(56%) sepia(93%) saturate(1342%) hue-rotate(344deg) brightness(100%) contrast(103%);
+
+    display: inline-block;
+    vertical-align: -0.125em;
+}
