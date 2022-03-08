@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exo-234</title>
+</head>
+<body>
+	
+<h1>Exo 234 : </h1>
+
+<br>
+
+<div id="phrase1">Je suis dans la page html</div>
+
+<br>
+
+<div id="phrase2"></div>
+
+<button id="btn1">Faire voyager</button>
+<br><br>
+<h2>Consigne de l'exo 234</h2>
+<p>Créez un code qui fait en sorte que lorsque l'on clique sur le bouton 'Faire voyage', ça nous envoie la phrase contenue dans la div phrase 2 dans le serveur vers le fichier index234.php situé dans le dossier dev-web</p>
+<p>Une fois que la phrase a été envoyé au serveur, récupérer là en javascript et affichez-là dans la div d'id 'phrase2</p>
+</body>
+
+<!--  -->
+<script type="text/javascript">
+
+class BtnAction {
+    constructor(idBtn, idSrc, idTarget) {
+        this.btn = document.getElementById(idBtn);
+        this.str = document.getElementById(idSrc).textContent;
+        this.target = document.getElementById(idTarget);
+        this.btn.onclick = () => {this.dialServeur()};
+    }
+
+    dialServeur() {
+        let xhr = new XMLHttpRequest();
+
+        let targetUrl = 'http://localhost/DWO/dev/exo - cours/exo234-index.php';
+        targetUrl += '?phrase1=' + this.str;
+
+        xhr.open('GET', targetUrl);
+
+        xhr.responseType = "json";
+
+        xhr.send(this.str);
+
+        xhr.onload = (e) => {this.target.innerText = e.currentTarget.response};
+    }
+}
+
+new BtnAction('btn1', 'phrase1', 'phrase2');
+
+</script>
+
+</html>
+
+
+
+

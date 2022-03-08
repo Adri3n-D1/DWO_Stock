@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-235</title>
+</head>
+<body>
+</body>
+
+<script>
+// Créez une variable 'passed', de type undefined.
+// Créez une variable 'xhr', qui crée un objet XMLHttpRequest.
+// Ouvrez une requête avec en premier paramètre GET et en deuxième ./module/text.js.
+// Spécifiez un format de réponse json.
+// Envoyez la requête.
+// Établissez un événement 'onload', contenant la condition suivante :
+// • si le statut de la requête est différent de 200, la variable 'passed' passe à false,
+// • sinon la variable 'passed' passe à true.
+
+// Variable passed non initialisé (donc de type undefined)
+let passed;
+// Variable contenant une nouvelle instance de l'objet XMLHttpRequest
+let xhr = new XMLHttpRequest();
+// Requete ouverte de type GET
+xhr.open('GET', './module/text.js');
+// Réponse au format json attendu
+xhr.responseType = 'json';
+// Requete envoyée
+xhr.send();
+// Evenement onload établi
+xhr.onload = (event) => {
+    // Si la requête à bien été envoyée
+    if (event.currentTarget.status !== 200) {
+        passed = false;
+    }
+    // Sinon
+    else {
+        passed = true;
+    }
+}
+
+
+</script>
+
+</html>

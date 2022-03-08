@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-239</title>
+</head>
+<body>
+</body>
+
+<script>
+
+// Créer Une fonction nommée 'repas' qui affiche dans la console la phrase 'je suis en train de manger mon repas'.
+
+// Cette fonction doit prendre comme argument une fonction de rappel nommée 'boire' qui sera éxécutée une fois que la fonction repas sera terminée.
+
+// Cette fonction 'boire' doit afficher dans la console la phrase 'Je prend une boisson après mon repas'. Exéxutez la fonction repas et mettez lui en paramètre la fonction 'boire'
+
+function repas(callback) {
+    console.log(`Je suis en train de manger mon repas`);
+    callback();
+}
+
+function boire() {
+    console.log('Je prend une boisson après mon repas');
+}
+
+repas(boire);
+
+</script>
+
+</html>

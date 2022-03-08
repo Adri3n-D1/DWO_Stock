@@ -101,23 +101,24 @@ class Formulaire{
 	}
 
 	viewPopup(success, message){
-	  if(success) {
-	    this.btnPopup.style.backgroundColor = '#198754';
-	  }
-      else {
-	    this.btnPopup.style.backgroundColor = 'red';
-	  }
+        if(success) {
+            this.btnPopup.style.backgroundColor = '#198754';
+        }
+        else {
+            this.btnPopup.style.backgroundColor = 'red';
+        }
 
-	  this.popup.style.display = 'block';
-	  this.message.innerText = message;
+        this.popup.style.display = 'block';
+        this.message.innerText = message;
 	}
+
     sendForm() {
         
         //On crée un objet XMLHttpRequest
         let xhr = new XMLHttpRequest();
 
         //On initialise notre requête avec open()
-        xhr.open("POST", "index.php");
+        xhr.open("POST", "exo233-index.php");
 
         //On veut une réponse au format JSON
         xhr.responseType = "json";

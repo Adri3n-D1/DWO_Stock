@@ -1,0 +1,23 @@
+Exemple de code syncrone:
+
+let x = 0;
+
+while (x <= 10000000){
+    x++;
+}
+
+alert('Suite du script');
+
+
+/////////////////////////////
+
+
+Exemple de code asyncrone:
+
+console.log(`Ce texte s'affiche en 1er`);
+
+button.addEventListener('click', () => {
+  console.log(`Ce texte s'affiche après un clic sur le bouton`);
+});
+
+console.log(`Ce texte s'affiche en 2ème`);

@@ -1,0 +1,3 @@
+Les callbacks asynchrones ou fonctions de rappels asynchrones sont des fonctions qui sont passées comme arguments lors de l'appel d'une fonction qui commencera à exécuter du code en arrière-plan. Lorsque le code d'arrière-plan a fini de s'exécuter, il appelle la fonction de rappel pour vous faire savoir que le travail est terminé, ou pour vous faire savoir que quelque chose d'intéressant s'est produit.
+
+A noter que tous les callbacks ne sont pas asynchrones - certains s'exécutent de manière synchrone. Par exemple, la méthode Array.prototype.forEach().
