@@ -1,0 +1,34 @@
+<script type="text/javascript">
+
+function test() {
+    return new Promise((resolve, reject) => {
+        let dial = prompt(`Entre un texte qui ne contient pas la lettre 'a' :`);
+        if (dial.length == 0) {
+            reject(`Aucun texte saisi`);
+        }
+        if (dial.toLocaleLowerCase().includes('a')) {
+            reject(`Le texte contient la lettre 'a'.`);
+        }
+        resolve(`Ok !`);
+    });
+}
+
+test().then((result) => {
+    console.log(result);
+    return test();
+})
+.then((result) => {
+    console.log(result);
+    return test();
+})
+.then((result) => {
+    console.log(result);
+})
+.catch((result) => {
+    console.log(`Erreur : ${result}`);
+})
+.finally(() => {
+    console.log(`Fin du programme`);
+})
+
+</script>

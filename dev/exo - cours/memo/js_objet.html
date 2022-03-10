@@ -1,0 +1,31 @@
+<script type="text/javascript">
+
+// Création d'un objet littéral
+let myLiteralObject = {
+    // Cet objet contient 3 propriétés
+    property1 : 100,
+    property2 : ['a', 'b', 'c'],
+    property3 : 'Lorem ipsum...',
+
+    // Cet objet contient 1 méthode
+    method1: function() {
+        console.log(
+            `property1 : ${this.property1} ` +
+            `property2 : ${this.property2} ` +
+            `property3 : ${this.property3}`
+        );
+    }
+}
+
+// Utilisation de l'objet littéral
+// Appel de son unique méthode
+myLiteralObject.method1();
+// Récupération de la valeur de sa propriété 'property1'
+console.log(myLiteralObject.property1);
+
+myLitteralObject.myNewMethod = function() {
+    this
+}
+
+
+</script>

@@ -1,0 +1,49 @@
+<!--
+    En Javascript, une promesse est un objet (Promise).
+    Cet objet représente l'état d'une opération asyncrone.
+    Il peut prendre 3 états :
+    - pending (opération en cours)
+    - fulfilled (opération terminée avec succès)
+    - rejected (opération échouée)
+
+    Exemple de mise en oeuvre d'une promesse :
+-->
+
+<script>
+
+function dialServer() {
+    return new Promise(function(resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.open('GET', 'exo240-index.php');
+        xhr.send();
+
+        xhr.onload = (event) => {
+            let name = event.target.response;
+            // Si le statut de la requête n'est pas bon
+            if (event.target.status != 200) {
+                reject(event.target.status);
+            }
+            // Si la response du serveur n'est pas vide
+            else if (/.+/.test(name)) {
+                resolve(name);
+            }
+            // Si la réponse du serveur est vide
+            else {
+                reject('Le serveur ne retourne rien');
+            }
+        };
+    });
+}
+
+dialServer().then((result) => {
+// Si tout c'est bien passé, ce code sera exécuté :
+    console.log(`Le serveur retourne : ${result}`);
+}).catch((result) => {
+// Sinon si quelque chose c'est mal passé, alors ce code sera exécuté:
+    console.log(`ERREUR : ${result}`);
+}).finally(() => {
+// Quoiqu'il arrive ce code sera executé :
+    console.log('Fin du programme');
+});
+
+</script>

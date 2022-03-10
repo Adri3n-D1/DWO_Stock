@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-241</title>
+</head>
+<body>
+</body>
+
+<style type="text/css">
+
+    p {
+        text-align: center;
+        font-size: 1.2em;
+        color: #164b35;
+    }
+
+</style>
+
+<script type="text/javascript">
+    
+// Créez une fonction nommée getEmail qui retourne une promesse et qui va afficher une popup pour demander à l'utilisateur de sasir son email.
+// Si l'utilisateur à cliqué sur ok sans saisir son email, la promesse doit retourner une erreur et on doit afficher le message suivant dans la console :`L'email n'a pas été saisi`. 
+// Si l'utilisateur à bien saisi un email, la promesse nous retourne l'email saisi et nous affiche dans la page HTML le texte suivant : `Voici votre email : (email saisi)`.
+
+// L'affichage des message ci dessus doit ce faire après l'éxécution de la fonction getEmail.
+
+function getEmail() {
+    return new Promise((resolve, reject) => {
+        let email = prompt('Saisir votre email');
+        if (email.length != 0) {
+            resolve(email);
+        }
+        else {
+            reject(`L'email n'a pas été saisi`);
+        }
+    });
+}
+
+getEmail()
+.then((result) => {
+    document.write(`<p>Voici votre email : ${result}</p>`);
+})
+.catch((result) => {
+    console.log(result);
+});
+
+</script>
+
+</html>
