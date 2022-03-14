@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exo-246</title>
+</head>
+<body>
+</body>
+<script>
+// Créez une variable 'passed', de type undefined.
+// Utilisez fetch, avec l'url https://www.onlineformapro.com/.
+// Dans la promesse rendue, utilisez un format de réponse json.
+// Dans la nouvelle promesse rendue par la précédente, ajoutez une fonction qui passe 'passed' à true.
+// Établissez également un catch en cas d'erreur, qui renvoie une fonction qui passe 'passed' à false.
+
+let passed;
+
+fetch('https://www.onlineformapro.com/')
+.then(result => result.json())
+.then((result) => {
+    passed = true;
+})
+.catch((result) => {
+    passed = false;
+});
+
+</script>
+</html>

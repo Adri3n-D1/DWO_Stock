@@ -1,0 +1,14 @@
+<!-- 
+    L'api Fetch fournit une interface pour la récupération de ressources sur le reseau.
+    Elle ressemble à l'api XMLHttpRequest, en étant plus souple et plus puissante.
+ -->
+
+<script>
+
+let request = fetch('exo235-index.php');
+
+request
+.then(response => response.json())
+.then(response => console.log(response));
+
+</script>

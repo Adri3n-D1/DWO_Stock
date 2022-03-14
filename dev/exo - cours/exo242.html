@@ -25,24 +25,33 @@
 let promesses = [];
 let resultats = [];
 
-function promise(delayInMs) {
-    return new Promise((resolve, reject) => {
+function promise() {
+    return new Promise((resolve, reject) => {        
+        // const delay = Math.floor(Math.random() * (200 - 50) + 50);
+
+        const delayRaw = Math.random() * (200 - 50) + 50;
+        const delay = Math.floor(delayRaw);
+
+
         setTimeout(() => {
             if (delayInMs < 100) {
-                resolve(delayInMs);
+                resultats.push(delay);
+                resolve(delay);
             }
             else {
-                reject(delayInMs);
+                reject(delay);
             }
-        }, delayInMs);
+        }, delay);
     });
 }
 
 for (let i = 0; i < 2000; i++) {
-    let delayInMs = Math.floor(Math.random() * (200 - 50) + 50);
-
-    promesses.push(promise(delayInMs).then((result) => {resultats.push(result);console.log(result)}).catch((result)=>{console.log(result)}));
+    promesses.push(promise());
 }
+
+Promise.all(promesses)
+.then(() => {})
+.catch(() => {});
 
 </script>
 </html>
