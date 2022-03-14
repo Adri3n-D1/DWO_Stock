@@ -26,28 +26,21 @@ h2 {
     text-align: center;
     font-size: 1.1em;
 }
-.svg-dark {
-    filter: invert(11%) sepia(5%) saturate(21%) hue-rotate(339deg) brightness(101%) contrast(85%);
+.svg {
     display: inline-block;
     vertical-align: -0.125em;
+}
+.svg-dark {
+    filter: invert(11%) sepia(5%) saturate(21%) hue-rotate(339deg) brightness(101%) contrast(85%);
 }
 .svg-light {
     filter: invert(56%) sepia(93%) saturate(1342%) hue-rotate(344deg) brightness(100%) contrast(103%);
-
-    display: inline-block;
-    vertical-align: -0.125em;
 }
 .svg-secondary {
     filter: invert(47%) sepia(78%) saturate(1986%) hue-rotate(224deg) brightness(89%) contrast(93%);
-
-    display: inline-block;
-    vertical-align: -0.125em;
 }
 .svg-white {
     filter: invert(96%) sepia(0%) saturate(15%) hue-rotate(337deg) brightness(105%) contrast(104%);
-
-    display: inline-block;
-    vertical-align: -0.125em;
 }
 @media screen and (min-width: 240px) {
     h2 {
