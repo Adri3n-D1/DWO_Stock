@@ -1,0 +1,63 @@
+<!-- 
+    Vous disposez d'un formulaire composé d'éléments de classe champForm, sérialisez les valeurs de ces éléments sous forme de :
+
+    • chaîne de caractères dans la variable donneesTexte,
+    • liste d'objets dans la variable donneesObjet.
+    Affichez ensuite le contenu de donneesTexte dans l'élément seriTexte, et le contenu de donneesObjet dans l'élément seriObjet.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-263</title>
+</head>
+<body>
+
+    <form action="" method="post" id="form">
+        <label for="identifiant">Identifiant :</label>
+        <input type="text" name="identifiant" id="identifiant" class="champForm" />
+        <br/>
+        <label for="motDePasse">Mot de passe :</label>
+        <input type="text" name="motDePasse" id="motDePasse" class="champForm" />
+        <br/>
+        <button type="button" id="validation">Sérialisons !</button>
+    </form>
+    <p>Sérialisation en texte : <span id="seriTexte"></span></p>
+    <p>Sérialisation en objets : <span id="seriObjet"></span></p>
+
+<script>
+
+$(document).ready(function(){
+    let donneesTexte, donneesObjet;
+  
+});
+
+</script>
+
+<style>
+
+form, input, p{
+    font-size: 16px;
+}
+
+button{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+span{
+    font-weight: bold;
+    font-family: Arial;
+}
+
+.champForm{
+    margin-top: 10px;
+}
+
+</style>
+
+</body>
+</html>

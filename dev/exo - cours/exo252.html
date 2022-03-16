@@ -1,0 +1,66 @@
+<!-- 
+    Réalisez les mises en forme suivantes :
+
+    • modifier l'identifiant de l'élément p1 en sectionEnGras,
+    • ajouter la classe souligne à l'élément p2,
+    • ajouter dans l'événement click du bouton b3 l'ajout/suppression de la classe vert à l'élément p3.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-252</title>
+</head>
+<body>
+
+    <div id="cours">
+      <h1 class="titre">Cours de jQuery</h1>
+      <p>jQuery est une <span id="p1">librairie</span> qui permet d'étendre les possibilités de JavaScript.</p>
+      <p>Elle est constituée de <span id="p2">méthodes</span> permettant d'agir sur les propriétés des éléments de la page.</p>
+      <p>Grâce à jQuery, il devient possible de <span id="p3">modifier</span> la page sans la recharger.
+      <button id="b3">Colorer/Décolorer</button></p>
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+        $(`#p1`).attr(`id`, `sectionEnGras`);
+        $(`#p2`).addClass(`souligne`);
+
+        $("#b3").click(function(){
+            $(`#p3`).toggleClass(`vert`);
+        });
+    
+  });
+
+</script>
+
+<style>
+
+div{
+    font-size: 16px;
+}
+
+p{
+    font-family: "Arial";
+}
+
+#sectionEnGras{
+    font-weight: bold;
+}
+
+.souligne{
+    text-decoration: underline;
+}
+
+.vert{
+    color: green;
+}
+
+</style>
+
+</body>
+</html>

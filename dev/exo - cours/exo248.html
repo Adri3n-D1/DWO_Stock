@@ -1,0 +1,71 @@
+<!-- 
+    Complétez chaque méthode avec le ciblage adéquat :
+
+    • la première cible tous les enfants de l'élément type ul,
+    • la seconde cible le parent direct de l'élément de type ul,
+    • la troisième cible l'élément-frère précédant l'élément de type ul,
+    • la dernière cible l'élément-frère du parent de l'élément de type ul et possédant la classe colonne.
+ -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-248</title>
+</head>
+<body>
+
+    <div></div>
+    <h1 id="titre">Cours de jQuery</h1>
+    <div class="colonne" id="page">
+        <h3>Page globale</h3>
+        
+        <div class="colonne" id="colonne1">
+            <h3>Première colonne</h3>
+            <p>Premier texte</p>
+            <p>Second texte</p>
+        </div>
+        <div class="colonne paragraphe" id="colonne2">
+            <h3>Seconde colonne</h3>
+            <p>Premier paragraphe</p>
+            <p>Second paragraphe</p>
+            <ul>
+                <li>Premier élément</li>
+                <li>Second élément</li>
+                <li>Troisième élément</li>
+                <li>Quatrième élément</li>
+            </ul>
+        </div>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    $("ul").children().css("color", "#F6F");
+    $("ul").parent().css("color", "#66F");
+    $("ul").prev().css("font-style", "italic");
+    $("ul").parent().siblings('.colonne').css("background-color", "#CCC");
+});
+
+</script>
+
+<style>
+
+body{
+    width: 280px;
+}
+
+h3{
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.colonne{
+    border: 1px solid #000;
+    margin: 5px;
+}
+
+</style>
+</body>
+</html>

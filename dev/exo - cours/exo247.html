@@ -1,0 +1,64 @@
+<!--
+    Complétez chaque méthode avec le ciblage adéquat :
+
+    • la première cible tous les éléments de type div,
+    • la seconde cible un élément dont l'identifiant est titre,
+    • la troisième cible les éléments de type p contenant un élément de type span,
+    • la dernière cible un élément de classe colonne mais ne possédant pas la classe paragraphe.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-247</title>
+</head>
+<body>
+
+<div></div>
+<h1 id="titre">Cours de jQuery</h1>
+<p>Texte avec <span>span</span></p>
+<p>Texte sans span</p>
+<div class="colonne">
+    <h3>Première colonne</h3>
+    <p>Premier texte</p>
+    <p>Second texte</p>
+</div>
+<div class="colonne paragraphe">
+    <h3>Seconde colonne</h3>
+    <p>Premier paragraphe</p>
+    <p>Second paragraphe</p>
+</div>
+
+<script>
+
+$(document).ready(function(){
+    $("div").css("background-color", "#9F9");
+    $("#titre").css("color", "#99F");
+    $("p span").parent().css("background-color", "#F99");
+    $(".colonne:not(.paragraphe)").css("color", "#00C");
+});
+
+</script>
+
+<style>
+
+body{
+    width: 280px;
+}
+
+h3{
+    border-bottom: 1px solid #000;
+text-align: center;
+}
+
+.colonne{
+    border: 1px solid #000;
+    margin: 5px;
+}
+
+</style>
+</body>
+</html>

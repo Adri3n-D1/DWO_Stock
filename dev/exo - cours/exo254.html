@@ -1,0 +1,98 @@
+<!-- 
+    Modifiez le comportement des éléments ci-dessous en fonction des actions de l'utilisateur :
+
+    • l'élément bouton1 doit s'activer en cas de clic, et ajouter ou retirer la graisse de la légende à droite,
+    • l'élément bouton2 doit changer le fond de l'image en jaune (code #FF0) tant que l'utilisateur maintient le clic, et revenir au vert (code #0F0) le reste du temps,
+    • la légende doit disparaître lorsque le curseur survole l'élément blocImage, et apparaître le reste du temps,
+    • les deux boutons doivent obtenir la classe over quand et seulement quand la souris les survole.
+
+    Note : la méthode show() sera utilisée pour demander l'affichage de la légende, la méthode hide() pour la masquer.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Exo-254</title>
+</head>
+<body>
+
+    <div id="cours">
+        <p style="width: 290px; text-align: justify;">Le jQuery permet de nombreuses modifications des éléments de votre page web de manière simple et rapide.<br/>Il facilite notamment la gestion des événements de la souris en réduisant le code nécessaire à quelques lignes.</p>
+        <div class="bloc">
+            <p id="texte">Entraînez-vous à manipuler l'image ci-contre.</p>
+            <input type="button" id="bouton1" class="bouton" value="Gras" />
+            <input type="button" id="bouton2" class="bouton" value="Couleur" />
+        </div>
+        <div id="blocImage" class="bloc">
+            <div id="image"></div>
+            <p id="legende">Légende de l'image</p>
+        </div>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    // Méthodes d'apparition/disparition de la légende
+    $("#legende").hide();
+    $("#legende").show();
+
+    $(`#bouton1`).on(`click`, () => {
+            $(`#legende`).toggleClass(`gras`);
+    });
+    $(`#bouton2`).on(`mousedown`, () => {
+        $(`#image`).css(`background-color`, `#FF0`);
+    });
+    $(`#bouton2`).on(`mouseup`, () => {
+        $(`#image`).css(`background-color`, `#0F0`);
+    });  
+});
+
+</script>
+
+<style>
+
+body{
+    font-size: 16px;
+}
+
+input{
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.bloc{
+    float: left;
+    margin: 10px;
+    width: 120px;
+}
+
+ #blocImage{
+    border: 1px solid red;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+#image{
+    background-color: #0F0;
+    width: 100%;
+    height: 100px;
+}
+
+.gras{
+    font-weight: bold;
+}
+
+.over{
+    background-color: #369;
+    color: #FFF;
+}
+
+</style>
+
+</body>
+</html>

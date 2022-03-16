@@ -1,0 +1,83 @@
+<!-- 
+    Ajoutez des événements supplémentaires pour complexifier davantage le formulaire ci-dessous :
+
+    • cliquer sur le bouton validation doit permettre de valider le formulaire,
+    • à la validation du formulaire, envoyez vers l'élément nom la valeur saisie dans l'élément saisie par l'utilisateur,
+    • cliquer sur le bouton test doit simule la validation du formulaire sans l'envoyer.
+
+    Attention, les événements déjà associés aux éléments validation et test risquent d'interférer avec ceux que vous voulez ajouter. Assurez-vous de les dissocier au préalable.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-257</title>
+</head>
+<body>
+
+    <form action="/my-handling-form-page" method="post">
+        <p>Merci d'indiquer votre nom ci-dessous :</p>
+        <input type="text" id="saisie" />
+        <br/>
+        <p style="text-align: left;">Nous vous répondrons dans les meilleurs délais.</p>
+        <div id="boutons">
+            <button type="button" id="validation">Valider</button>
+            <button type="button" id="test">Tester</button>
+        </div>
+    </form>
+    <p>Nom saisi : <span id="nom"></span></p>
+
+<script>
+
+$(document).ready(function(){
+    // IMPORTANT !!! Ne pas effacer, merci - J. Leblanc
+    $("#validation").off().on("click", function(){
+        console.log("Vérification de validation - penser à supprimer plus tard");
+    });
+    $("#test").off().on("click", function(){
+        console.log("Vérification de test - penser à supprimer plus tard");
+    });
+    //--------------------//
+    $(`#validation`).click(function() {
+        $(`form`).trigger(`submit`);
+    });
+    $(`#test`).click(function() {
+        $(`form`).triggerHandler(`submit`);
+    });
+    $(`form`).submit(function() {
+        $(`#nom`).text($(`#saisie`).val());
+    })
+});
+
+</script>
+
+<style>
+
+form{
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #000;
+    width: 260px;
+    height: 230px;
+    text-align: center;
+}
+
+input{
+    font-size: 20px;
+}
+
+button{
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#boutons{
+    float: right;
+}
+</style>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- 
+    Pour chacun des éléments titre et texte, ciblez-le et remplacez-en le contenu à l'aide de la méthode html() comme suit :
+
+    • l'élément titre doit contenir « Cours de jQuery »,
+    • l'élément texte doit contenir « Étudions la programmation ».
+    Utilisez ensuite la méthode text() pour récupérer le contenu de l'élément titre et affichez-le dans la console.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-249</title>
+</head>
+<body>
+
+    <div id="cours">
+        <h1 id="titre">Titre par dÃ©faut</h1>
+        <p id="texte">Texte de remplissage.</p>
+    </div>
+
+<script>
+
+    $(document).ready(function(){
+        $("#titre").html("Cours de jQuery");
+        $("#texte").html("Étudions la programmation");
+        console.log($("#titre").text());
+    });
+    
+
+</script>
+
+<style>
+
+    div {
+        font-size: 16px;
+    }
+
+    p {
+        font-family: "Arial";
+    }
+
+</style>
+
+</body>
+</html>

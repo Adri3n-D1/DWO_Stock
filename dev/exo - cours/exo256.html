@@ -1,0 +1,77 @@
+<!-- 
+    Ajoutez les événements aux éléments du formulaire
+
+    • le fond de l'élément de type input doit devenir jaune (code #FF0) lorsque l'élément gagne le focus, et redevenir blanc lorsqu'il le perd,
+    • tout changement de l'input doit être affiché dans l'élément saisie (attention, le changement d'un input est pris en compte à sa perte du focus),
+    • le fait de cliquer sur l'élément bouton1 doit donner le focus à l'input, et cliquer sur l'élément bouton2 le retirer,
+    • valider le formulaire doit faire apparaître le contenu de l'input dans la console.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Exo-256</title>
+</head>
+<body>
+
+    <form action="/my-handling-form-page" method="post">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" />
+        <p>Nom saisi : <span id="saisie"></span></p>
+        <button type="button" id="bouton1">Donner le focus</button>
+        <button type="button" id="bouton2">Retirer le focus</button>
+        <br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+
+<script>
+
+$(document).ready(function(){
+    // Au focus devient jaune
+    $(`input`).focusin(function() {
+        $(this).css(`background-color`, `#ff0`);
+    });
+    // A la perte de focus redevient blanc
+    $(`input`).focusout(function() {
+        $(this).css(`background-color`, `#fff`);
+    });
+    // Au changement de valeur affiche la valeur
+    $(`input`).change(function() {
+        $(`#saisie`).text($(this).val());
+    });
+    // Au click sur le bouton1 le focus sur l'input est gagné
+    $(`#bouton1`).click(function() {
+        $(`input`).focusin();
+    });
+    // Au click sur le bouton2 le focus sur l'input est perdu
+    $(`#bouton2`).click(function() {
+        $(`input`).blur();
+    });
+    // A la validation du formulaire la valeur de l'input est affichée dans la console
+    $(`form`).submit(function(event) {
+        if ($(`input`).val() !== ""){
+            console.log($(`input`).val());
+        }
+        event.preventDefault();
+    });
+});
+
+</script>
+
+<style>
+
+form, input{
+    font-size: 16px;
+}
+
+button{
+    font-size: 14px;
+}
+
+</style>
+
+</body>
+</html>

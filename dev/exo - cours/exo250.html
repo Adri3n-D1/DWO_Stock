@@ -1,0 +1,47 @@
+<!-- 
+    Insérez les éléments suivants :
+
+    • une balise h1 avec comme identifiant titre dans l'élément cours,
+    • puis insérez une balise div avec comme identifiant enonce après l'élément titre,
+    • enfin, insérez une balise p avec comme identifiant texte avant l'élément enonce.
+
+    Remplissez l'élément titre avec « Cours de jQuery », l'élément texte avec
+    « Étudions la programmation » et l'élément enonce avec « Réalisez l'exercice suivant ».
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-250</title>
+</head>
+<body>
+
+    <div id="cours"></div>
+
+<script>
+
+$(document).ready(function(){
+    $("#cours").append(`<h1 id="titre">Cours de jQuery</h1>`);
+    $("#titre").after(`<div id="enonce">Réalisez l'exercice suivant</div>`);
+    $("#enonce").before(`<p id="text">Étudions la programmation</p>`);
+});
+
+</script>
+
+<style>
+
+div {
+    font-size: 16px;
+}
+
+p {
+    font-family: "Arial";
+}
+
+</style>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!--
+    Ajoutez la détection de l'appui d'une touche du clavier afin de rendre l'évènement visible :
+
+    • pour cela, associez l'appui d'une touche à un changement de couleur du texte de l'élément couleur afin qu'il devienne bleu,
+    • puis associez le relâchement d'une touche à un changement en rouge,
+    • enfin, remplacez le contenu de l'élément touche par le code de la touche relâchée.
+-->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-255</title>
+</head>
+<body>
+
+    <div id="cours">
+        <p>Le jQuery permet de nombreuses modifications des éléments de votre page web de manière simple et rapide.</p>
+        <p>Il facilite notamment la gestion des événements du clavier en réduisant le code nécessaire à quelques lignes.</p>
+        <p>Ainsi, ici l'appui et le relâchement de la touche <span id="touche"></span> ont mis en valeur <span id="couleur">cet élément</span>.</p>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    $(`body`).keydown(() => {
+        $(`#couleur`).css(`color`, `blue`);
+    });
+    $(`body`).keyup(() => {
+        $(`#couleur`).css(`color`, `red`);
+        $(`#touche`).html(`${event.which}`);
+    });
+});
+
+</script>
+
+<style>
+
+#cours{
+    width: 300px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+#touche, #couleur{
+    font-weight: bold;
+}
+
+</style>
+
+</body>
+</html>

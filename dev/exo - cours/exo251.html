@@ -1,0 +1,72 @@
+<!-- 
+    Effectuez les modifications suivantes :
+
+    • cloner l'ensemble de l'élément colonne,
+    • supprimer l'élément texte2,
+    • remplacer l'élément texte1 par un élément de type div et contenant « Article remplacé »,
+    • remplacer tous les éléments de type p par un élément de type span contenant la phrase « Exercice de remplacement »,
+    • ajouter le clone avant l'élément d'origine colonne.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <title>Exo-251</title>
+</head>
+<body>
+
+    <div id="article">
+        <h1>Cambriolage au musée</h1>
+        <div id="corpsDeTexte">
+            <p id="texte1">Un vol a eu lieu au musée du Louvres hier dans la matinée.</p>
+            <p id="texte2">Le montant du forfait s'élèverait à plus de <b>5 M€</b>, selon les autorités.</p>
+        </div>
+        <div id="colonne">
+            <p><i>"Un vol impossible" déclare le directeur, qui soupçonne une aide interne.</i></p>
+            <p>(suite en page 5)</p>
+        </div>
+    </div>
+
+<script>
+
+  $(document).ready(function(){
+      let tmp = $(`#colonne`).clone();
+      $(`#texte2`).remove();
+      $(`#texte1`).replaceWith(`<span>Article remplacé</span>`);
+      $(`<span>Exercice de remplacement</span>`).replaceAll(`p`);
+      tmp.appendTo(`#colonne`);
+  });
+
+</script>
+
+<style>
+
+div{
+    font-size: 16px;
+}
+
+p{
+    font-family: "Arial";
+}
+
+span{
+    color: blue;
+}
+
+#corpsDeTexte{
+    width: 200px;
+    margin-bottom: 10px;
+}
+
+#colonne{
+    width: 200px;
+    border: 1px solid #000;
+}
+
+</style>
+
+</body>
+</html>

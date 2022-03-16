@@ -1,0 +1,111 @@
+<!-- 
+    Pour les besoins de votre site, l'élément imageDeDemo doit suivre une animation spécifique.
+    Au clic sur le bouton start, les effets suivants doivent s'appliquer l'un après l'autre, dans cet ordre :
+
+    • un déplacement de 100px vers la droite en 2 secondes,
+    • le remplacement de la classe rouge par la classe vert, ou réciproquement,
+    • un déplacement de 100px vers la gauche en 2 secondes,
+    • l'incrémentation de la variable cycles de un et son affichage dans l'élément nbCycles.
+    Il est également nécessaire de prévoir que le bouton stop permette à l'utilisateur de terminer immédiatement l'animation dans son ensemble.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-261</title>
+</head>
+<body>
+
+    <div id="cours">
+        <div style="margin-bottom: 20px;">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+        <div id="imageDeDemo" class="vert">
+            <div id="tete"></div>
+            <div id="corps"></div>
+        </div>
+        <p>Nombre de cycles :  <span id="nbCycles">0</span></p>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    let cycles = 0;
+    $("#start").click(function() {
+        $("#imageDeDemo")
+        .animate({left: "+=100px"}, {queue: true, duration: 2000})
+        .queue(function() {
+            $("#imageDeDemo").toggleClass("rouge vert");
+            $(this).dequeue();
+        })
+        .animate({left: "-=100px"}, {queue: true, duration: 2000})
+        .queue(function() {
+            cycles++;
+            $("#nbCycles").text(cycles);
+            $(this).dequeue();
+        });
+
+    });
+
+    $("#stop").click(function() {
+        $("#imageDeDemo").finish();
+    });
+  
+});
+
+</script>
+
+<style>
+
+body{
+    font-size: 16px;
+}
+
+button{
+    font-size: 14px;
+}
+
+#imageDeDemo{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 3px solid #666;
+    overflow: hidden;
+}
+
+#tete{
+    position: relative;
+    top: 30px;
+    left: 40px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background-color: #FCC;
+    z-index: 2;
+}
+
+#corps{
+    position: relative;
+    top: 20px;
+    left: 25px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px 50px 10px 10px;
+    background-color: #CCF;
+}
+
+.vert{
+    background-color: #6F6;
+}
+.rouge{
+    background-color: #F66;
+}
+
+</style>
+
+</body>
+</html>

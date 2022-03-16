@@ -1,0 +1,109 @@
+<!-- 
+    Ajoutez des animations simples sur les éléments ci-dessous
+
+    • l'élément legende doit apparaître avec un fondu de deux secondes lorsque le curseur passe au-dessus de l'élément image,
+    • ce même élément doit disparaître en fondu d'une seconde lorsque le curseur sort de l'élément,
+    • ajoutez ensuite un déroulement vertical rapide de l'élément menu au clic sur l'élément openMenu, et une rétractation de ce même menu au clic suivant.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-258</title>
+</head>
+<body>
+
+    <div id="cours">
+        <div class="bloc">
+            <div id="openMenu">Menu</div>
+            <div id="menu">
+                <div class="sousMenu">&nbsp;> Liste des images</div>
+                <div class="sousMenu">&nbsp;> Catégories</div>
+                <div class="sousMenu">&nbsp;> Crédits</div>
+            </div>
+        </div>
+        <div id="blocImage" class="bloc">
+            <div id="image"></div>
+            <p id="legende">Légende de l'image</p>
+        </div>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    $("#image").mouseenter(function() {
+        $("#legende").fadeIn(2000);
+    });
+    $("#image").mouseleave(function() {
+        $("#legende").fadeOut(1000);
+    });
+    $("#openMenu").click(function() {
+        $("#menu").slideToggle(500);
+    });
+
+});
+
+</script>
+
+<style>
+
+body{
+  font-size: 16px;
+}
+
+.bloc{
+  float: left;
+  margin: 5px;
+  width: 130px;
+}
+
+ #blocImage{
+   border: 1px solid red;
+   padding: 5px;
+   width: 130px;
+   height: 163px;
+   text-align: center;
+}
+
+#image{
+  background-color: #0F0;
+  width: 100%;
+  height: 100px;
+}
+
+#legende{
+  display: none;
+}
+
+#openMenu{
+  background-color: #CCC;
+  font-weight: bold;
+  text-align: center;
+  width: 130px;
+  height: 28px;
+  padding-top: 5px;
+}
+
+#menu{
+  width: 130px;
+  height: 126px;
+}
+
+.sousMenu{
+  background-color: #666;
+  color: #FFF;
+  font-family: Arial;
+  font-size: 12px;
+  width: 100%;
+  height: 30px;
+  padding-top: 10px;
+  border-bottom: 2px solid #CCC;
+}
+
+</style>
+
+</body>
+</html>

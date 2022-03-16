@@ -1,0 +1,113 @@
+<!-- 
+    Réalisez les animations complexes et simultanées ci-dessous :
+
+    L'élément menu :
+    • doit se dérouler verticalement lorsque la souris passe par-dessus l'élément zone1,
+    • et se rétracter dans le même axe lorsque la souris passe par-dessus l'élément zone2,
+    • l'apparition doit être rapide, tandis que la disparition doit être linéaire.
+
+    Lors du clic sur l'élément openMenu trois effets s'appliquent au même moment pour l'élément menu :
+    • l'apparition ou la disparition (selon son état) de l'élément en deux secondes,
+    • l'augmentation de 5% du margin-left de l'élément en une seconde,
+    • l'augmentation de la graisse de police à 700 en une demi-seconde.
+ -->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-260</title>
+</head>
+<body>
+
+    <div id="cours">
+        <div class="bloc">
+            <div id="openMenu">Cours jQuery</div>
+            <div id="menu">
+                <div class="sousMenu">&nbsp;> Modules</div>
+                <div class="sousMenu">&nbsp;> Cours vidéo</div>
+                <div class="sousMenu">&nbsp;> Exercices</div>
+            </div>
+        </div>
+        <div>
+            <div class="zone" id="zone1">Zone 1</div>
+            <div class="zone" id="zone2">Zone 2</div>
+        </div>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    $(`#zone1`).mouseover(function() {
+        $(`#menu`).slideDown(300, "linear");
+    });
+    $(`#zone2`).mouseover(function() {
+        $(`#menu`).slideUp("fast");
+    });
+    $(`#openMenu`).click(function() {
+        $(`#menu`).slideToggle(2000)
+        .animate({marginLeft: '+=5%'}, {queue: false, duration: 1000})
+        .animate({fontWeight: '700'}, {queue: false, duration: 500});
+    });
+});
+
+</script>
+
+<style>
+
+body{
+    font-size: 16px;
+}
+
+.bloc{
+    margin: 10px;
+    width: 130px;
+}
+
+.zone{
+    float: left;
+    position: absolute;
+    top: 200px;
+    width: 110px;
+    height: 60px;
+    margin-left: 5px;
+    padding: 10px;
+    border: 2px dashed #000;
+}
+
+#zone2{
+    left: 150px;
+}
+
+#openMenu{
+    background-color: #99F;
+    font-weight: bold;
+    text-align: center;
+    width: 160px;
+    height: 28px;
+    padding-top: 5px;
+}
+
+#menu{
+    width: 160px;
+    height: 126px;
+}
+
+.sousMenu{
+    background-color: #33F;
+    color: #FFF;
+    font-family: Arial;
+    font-size: 14px;
+    width: 100%;
+    height: 30px;
+    padding-top: 10px;
+    border-top: 1px solid #444;
+    border-bottom: 2px solid #333;
+}
+
+</style>
+
+</body>
+</html>

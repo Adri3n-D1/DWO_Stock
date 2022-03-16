@@ -1,0 +1,70 @@
+<!--
+    Ajoutez les mises en forme suivantes :
+
+    • modifiez les propriétés CSS de l'élément sectionEnGras en ajoutant une bordure de 2 pixels de couleur noire,
+    • modifiez ensuite la largeur de tous les éléments de type p à 200 pixels,
+    • ajoutez un élément de type p et d'identifiant position, puis récupérez la longueur de l'élément p3 et affichez-le dans l'élément position.
+-->
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Exo-253</title>
+</head>
+<body>
+
+    <div id="cours">
+        <h1 class="titre">Cours de jQuery</h1>
+        <p>jQuery est une <span id="sectionEnGras">librairie</span> qui permet d'étendre les possibilités de JavaScript.</p>
+        <p>Elle est constituée de <span id="p2" class="souligne">méthodes</span> permettant d'agir sur les propriétés des éléments de la page.</p>
+        <p>Grâce à jQuery, il devient possible de <span id="p3">modifier</span> la page sans la recharger.
+        <button id="b3">Colorer/Décolorer</button></p>
+        <br>
+        <span id="position"></span>
+    </div>
+
+<script>
+
+$(document).ready(function(){
+    $(`#sectionEnGras`).css(`border`, `2px solid #000`);
+    $(`p`).css(`width`, `200px`);
+    let text = `L'élément p3 mesure ${$(`#p3`).outerWidth()}px`;
+    $(`#position`).html(`<p id="position">${text}</p>`);
+    $("#b3").click(function(){
+        $("#p3").toggleClass("vert");
+    });
+  
+  
+});
+
+</script>
+
+<style>
+
+div{
+    font-size: 16px;
+}
+
+p{
+    font-family: "Arial";
+}
+
+#sectionEnGras{
+    font-weight: bold;
+}
+
+.souligne{
+    text-decoration: underline;
+}
+
+.vert{
+    color: green;
+}
+
+</style>
+
+</body>
+</html>

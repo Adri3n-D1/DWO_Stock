@@ -1,0 +1,49 @@
+#game-board {
+    width: fit-content;
+}
+.game-row {
+    display: flex;
+}
+.game-block {
+    box-sizing: border-box;
+    width: 64px;
+    height: 64px;
+}
+/*  */
+.texture-wall {
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: -128px 0px;
+}
+.texture-ground {
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: 0px -64px;
+}
+.texture-box {
+    background: url("sprites.png");
+    background-position: -256px -256px;
+}
+.texture-start {
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: 0px -64px;
+}
+.texture-exit {
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: 0px -64px;
+}
+/*  */
+.texture-bug-blue-up {    
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: -128px -192px;
+}
+.texture-bug-blue-right {    
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: -128px -128px;
+}
+.texture-bug-blue-down {    
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: -192px -128px;
+}
+.texture-bug-blue-left {    
+    background: url("SokobanClone_byVellidragon.png");
+    background-position: -192px -192px;
+}
