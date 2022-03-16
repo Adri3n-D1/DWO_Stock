@@ -17,10 +17,10 @@
 <body>
 
     <form action="" method="post" id="form">
-        <label for="identifiant">Identifiant :</label>
+        <label for="identifiant">Identifiant :</label>
         <input type="text" name="identifiant" id="identifiant" class="champForm" />
         <br/>
-        <label for="motDePasse">Mot de passe :</label>
+        <label for="motDePasse">Mot de passe :</label>
         <input type="text" name="motDePasse" id="motDePasse" class="champForm" />
         <br/>
         <button type="button" id="validation">Sérialisons !</button>
@@ -32,7 +32,12 @@
 
 $(document).ready(function(){
     let donneesTexte, donneesObjet;
-  
+    $("button#validation").click(function() {
+        donneesTexte = $("form").serialize();
+        donneesObjet = $("form").serializeArray();
+        $("#seriTexte").text(donneesTexte);
+        $("#seriObjet").text(donneesObjet);
+    });
 });
 
 </script>

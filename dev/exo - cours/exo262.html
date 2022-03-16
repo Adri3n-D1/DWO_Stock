@@ -21,7 +21,18 @@
 
 $(document).ready(function(){
     let resultat = "";
-  
+    $.ajax({
+        url: "adresseServeur.com",
+        methode: "GET",
+        name: "j.leblanc",
+        password: "jleblanc123",
+    })
+    .done(function(response) {
+        resultat = response;
+    })
+    .fail(function() {
+        console.log("Erreur de requête");
+    });
 });
 
 </script>
