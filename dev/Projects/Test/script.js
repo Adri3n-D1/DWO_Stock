@@ -4,7 +4,6 @@ class Sokoband {
         $("#game-content").css(`width`, `${this.map[0].length * SIZE_BLOC}px`);
         $("#game-content").css(`height`, `${this.map.length * SIZE_BLOC}px`);
         $("body").keydown((event) => {
-            console.log(event.which);
             switch (event.which) {
                 case KEY_UP:
                     this.moveCharacter(UP);
@@ -98,7 +97,7 @@ class Sokoband {
         switch(direction) {
             case UP:
                 this.character.css(`background-position`, `-64px -480px`);
-                this.character.css(`top`, `-=3px`);
+                this.character.css(`top`, `-=2px`);
                 break;
             case RIGHT:
                 this.character.css(`background-position`, `-64px -448px`);
@@ -113,6 +112,8 @@ class Sokoband {
                 this.character.css(`left`, `-=2px`);
                 break;
         }
+        
+        console.log(this.character.offset());
     }
 }
 

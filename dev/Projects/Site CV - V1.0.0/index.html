@@ -14,6 +14,8 @@
     <link rel='stylesheet' type='text/css' href='style_contact.css'>
     <link rel='stylesheet' type='text/css' href='style_footer.css'>
 
+    <script type="text/javascript" src="form_validation.js" defer></script>
+
     <title>Adrien Delcros - Site C.V.</title>
 </head>
 <body>
@@ -97,7 +99,7 @@
     <div id='about'>
         <h2>À propos de moi</h2>
         <div class='page-content'>
-            <img src='img/question-2736480_1920.jpg' alt='Photo de moi, Adrien Delcros'>
+            <img class="photo" src='img/question-2736480_1920.jpg' alt='Photo de moi, Adrien Delcros'>
             <div class="block-text">
                 <p>
                     Je m'appelle Adrien Delcros et je suis développeur web. J'ai commencé à coder en autodidacte pendant quelques années avant de rejoindre une formation de développeur web pour approfondir mes connaissances et valider mes acquis.
@@ -171,7 +173,6 @@
                 <h3><div class='mark'><img class="svg-secondary" src="img/school_black_24dp.svg" alt=""></div>Titre Pro - Développeur web et web mobile (bac+2)</h3>  
             </div>
         </div>
-        <a  class='link-cv' href='#'><img class="svg svg-dark" src="img/file.svg" alt="">Télécharger mon C.V.</a>
         <!-- Link to the next section -->
         <div class='to-next-section'>
             <a href='#'><img class="svg svg-white" src="img/caret-down-square-fill.svg" alt=""></a>
@@ -181,48 +182,58 @@
     <div id='contact'>
         <div class="page-content">
             <div class='top-section'>
-                <h2>Info</h2>
                 <div class="box-info">
-                    <div class='box'>
-                        <img class="svg svg-white" src="img/id-card.svg" alt="">
-                        <p>Adrien Delcros</p>
-                    </div>
+                    <h2>Info</h2>
+                    <div class="grp">
+                        <div class='box'>
+                            <img class="svg svg-white" src="img/id-card.svg" alt="">
+                            <p>Adrien Delcros</p>
+                        </div>
 
-                    <div class='box'>
-                        <img class="svg svg-white" src="img/briefcase.svg" alt="">
-                        <p>Développeur Web</p>
-                    </div>
+                        <div class='box'>
+                            <img class="svg svg-white" src="img/briefcase.svg" alt="">
+                            <p>Développeur Web</p>
+                        </div>
 
-                    <div class='box'>
-                        <img class="svg svg-white" src="img/phone-call.svg" alt="">
-                        <p><a href='tel:+33659775380'>06 59 77 53 80</a></p>
-                    </div>
+                        <div class='box'>
+                            <img class="svg svg-white" src="img/phone-call.svg" alt="">
+                            <p><a href='tel:+33659775380'>06 59 77 53 80</a></p>
+                        </div>
 
-                    <div class='box'>
-                        <img class="svg svg-white" src="img/at.svg" alt="">
-                        <p><a href='mailto:ad.delcros@gmail.com'>ad.delcros@gmail.com</a></p>
+                        <div class='box'>
+                            <img class="svg svg-white" src="img/at.svg" alt="">
+                            <p><a href='mailto:ad.delcros@gmail.com'>ad.delcros@gmail.com</a></p>
+                        </div>   
+                    
+                        <div class='box'>
+                            <a href="#"><img class="svg svg-white" src="img/facebook-square.svg" alt=""></a>
+                            <a href="#"><img class="svg svg-white" src="img/linkedin-square.svg" alt=""></a>
+                            <a href="#"><img class="svg svg-white" src="img/twitter-square.svg" alt=""></a>
+                        </div>                     
                     </div>
                     
-                    <div class='box'>
-                        <a href="#"><img class="svg svg-white" src="img/facebook-square.svg" alt=""></a>
-                        <a href="#"><img class="svg svg-white" src="img/linkedin-square.svg" alt=""></a>
-                        <a href="#"><img class="svg svg-white" src="img/twitter-square.svg" alt=""></a>
-                    </div>
+                    <a  class='link-cv' href='#'><img class="svg svg-dark" src="img/file.svg" alt="">Télécharger mon C.V.</a>
                 </div>
                 <div class='box-form'>
+                    <h2>Formulaire</h2>
                     <form id="form-contact">
-                        <h2>Formulaire</h2>
                         <div class="box">
                             <label for="lname">Nom</label>
                             <input type="text" id="lname" name="lname" placeholder="Votre nom &gt;&gt;&gt;">
+                            <p class="inputValueError" style="display:none"></p>
                         </div>
                         <div class="box">
                             <label for="email">Email</label>
                             <input type="text" id="email" name="email" placeholder="Votre email &gt;&gt;&gt;">
+                            <p class="inputValueError" style="display:none"></p>
                         </div>
                         <div class="box">
                             <label for="message">Message</label>
                             <textarea id="message" name="message" placeholder="Votre message &gt;&gt;&gt;"></textarea>
+                            <p class="inputValueError" style="display:none"></p>
+                        </div>
+                        <div class="box">
+                            <input type="submit" value="Envoyer">
                         </div>
                     </form>
                 </div>

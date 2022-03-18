@@ -5,36 +5,51 @@
     color: #ffffff;
 }
 #contact .box-info {
-    margin-top: 25px;
+    width: fit-content;
+    margin: auto;
 }
 #contact .box-info .box{
     display: flex;
 
     width: 100%;
-    margin-top: 25px;
+    margin: 25px auto 0;
 }
 #contact .box-info .box:last-child {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 100%;
 }
 #contact .box-info .box img{
     padding-right: 5px;
 }
 #contact .box-info p {
-    text-align: center;
     font-family: 'indie_flowerregular';
+    font-size: 1em;
     color: #ffffff;    
 }
 #contact .box-info a {
     text-decoration: none;
     color: #ffffff;    
 }
+#contact .box-info .link-cv {
+    display: flex;
+    align-items: center;
 
+    width: fit-content;
+    padding: 7px 15px;
+    border-radius: 5px;
+    margin: 50px auto;
+
+    font-family: 'RobotoMono-regular';
+    text-decoration: none;
+    font-size: 0.9em;
+    background-color: #fff;
+    color: #2c2c2c;
+}
 #form-contact .box {
     display: flex;
     flex-direction: column;
-    margin-top: 15px
+    margin-top: 15px;
 }
 #form-contact label {
     padding: 12px;
@@ -55,13 +70,78 @@
     border-radius: 0 0 5px 5px;
 }
 #form-contact textarea {    
+    border: 0;   
     resize: vertical;
-
+    height: 120px;
     padding: 12px;
 
     font-family: 'indie_flowerregular';
     font-size: 1.0em;
 }
-#form-contact input:focus {
-    outline-color: blueviolet;
+#form-contact input:focus,
+#form-contact textarea:focus {
+    outline-color: #8769dc;
+}
+#form-contact textarea {
+    border-radius: 0 0 0 5px;
+}
+#form-contact input[type="submit"] {
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: 900;
+    color: #2c2c2c;
+}
+#form-contact .inputValueError{
+    margin-top: 10px;
+    color: #2c2c2c;
+    text-align: center;
+    font-size: 1.2em;
+}
+@media screen and (min-width: 240px) {
+    #contact .box-info p {
+        font-size: 1.2em;    
+    }
+}
+@media screen and (min-width: 340px) {
+    #contact .box-info p {
+        font-size: 1.3em;    
+    }
+}
+@media screen and (min-width: 600px) {
+    #contact .top-section {
+        display: flex;
+    }
+    #contact .box-info {
+        margin: 0;
+    }
+    #contact .box-info{
+        margin: 0 50px 0 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;  
+    }
+    #contact .box-info .link-cv {
+        margin: 0;
+    }
+    #contact .box-form {
+        flex: 1;
+    }
+    
+    #contact .box-info .box{
+        margin:46px auto;
+    }
+}
+@media screen and (min-width: 800px) {
+    
+    #contact .box-info {
+        margin-right: 20%;
+    }
+    #contact .box-form {
+        flex: 50%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    #contact .box-info {
+        margin-right: 30%;
+    }
 }

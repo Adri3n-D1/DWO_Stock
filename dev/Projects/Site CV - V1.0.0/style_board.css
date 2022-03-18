@@ -36,7 +36,7 @@
     font-size: 0.9em;
 }
 #board ul {
-    padding-left: 35px;
+    padding-left: 22px;
     font-size: 0.8em;
 }
 #board li {
@@ -49,18 +49,34 @@
     color: #8769dc;
     list-style: "-> ";
 }
-#board .link-cv {
-    display: flex;
-    align-items: center;
 
-    width: fit-content;
-    padding: 7px 15px;
-    border-radius: 5px;
-    margin: 50px auto;
 
-    font-family: 'RobotoMono-regular';
-    text-decoration: none;
-    font-size: 0.9em;
-    background-color: #8769dc;
-    color: #2d2c2c;
+@media screen and (min-width: 600px) {
+    #board h3 {
+        font-size: 1.1em;
+    }
+    #board ul {
+        font-size: 1.0em;
+    }
+}
+@media screen and (min-width: 800px) {
+    #board {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #board .experience,
+    #board .soft-skills,    
+    #board .diplome {
+        position: relative;
+        width: 50%;
+    }
+    
+    #board .experience {
+        box-sizing: border-box;
+        padding-right: 15px;
+    }
+    #board .to-next-section {
+        width: 100%;
+    }
 }

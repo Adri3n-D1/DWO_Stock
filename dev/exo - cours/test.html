@@ -1,150 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Exo 205</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-    <form id="form-signin">
-        <input id ="lname" name="lname" type="text" placeholder="Votre Nom">
-        <input id ="email" name="email" type="text" placeholder="Votre Email">
-        <input type="submit">
-    </form>
-
-    <p id="signin-message-box"></p>
-
+    <div id="conteneur">
+        <div id="box1"></div>
+        <div id="box2"></div>
+    </div>
 </body>
-
-<style type="text/css">
-
-body {
-    margin: 0;
-    max-width: 500px;
-    margin: auto;
-
+<style>
+#conteneur {
+    display: flex;
+    height: 100px;
 }
-input {
-    box-sizing: border-box;
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #2d2d2d;
-    margin-bottom: 25px;
+#box1 {
+    width: 50px;
+    background-color: aqua;
 }
-#signin-message-box {
-    padding: 12px;
-    text-align: center;
-    text-transform: uppercase;
+#box2 {
+    width: 50px;
+    background-color: brown;
 }
-.signin-message-box-info {
-    background-color: #2d2d2d;
-    color: #fff;
-}
-.signin-message-box-success {
-    padding: 12px;
-    background-color: #22fd1b;
-    color: #868686;
-}
-.signin-message-box-error {
-    padding: 12px;
-    background-color: #f80707;
-    color: #fff;
-}
-
 </style>
-
-<script type="text/javascript">
-    
-class Form {
-    constructor(formElement, inputLastNameElement, inputEmailElement, messageBox) {
-        this.form = formElement;
-        this.lname = inputLastNameElement;
-        this.email = inputEmailElement;
-        this.message = messageBox;
-        this.formSend = false;
-        
-        this.setDialMessage('info', 'renseigner votre nom et votre email');
-        this.initFormSubmit();
-    }
-
-    isValidName(name) {
-        return /.+/.test(name);
-    }
-
-    isValidEmail(email) {
-        return /.+/.test(email);
-    }
-
-    setDialMessage(messageType, messageText) {
-
-        switch (messageType) {
-            case 'info':
-                this.message.className = 'signin-message-box-info';
-                break;
-            case 'success':
-                this.message.className = 'signin-message-box-success';
-                break;
-            case 'error':
-                this.message.className = 'signin-message-box-error';
-                break;
-            default:
-                this.message.className = 'signin-message-box-info';
-                break;
-        }
-
-        this.message.innerHTML = messageText;
-    }
-
-    sendForm() {
-        let data = `lname=${this.lname.value}&email=${this.email.value}`;
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', `test.php`);
-        xhr.responseType = 'json';
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.send(data);
-        xhr.onload = (event) => {
-            this.setDialMessage('info', event.currentTarget.response)
-        }
-        return true;
-    }
-
-    initFormSubmit() {
-        this.form.addEventListener('submit', (event) => {
-            event.preventDefault();
-            
-            console.log(this.formSend)  
-            if (this.formSend) {
-                this.setDialMessage('info', `Le formulaire à déjà été envoyé`);
-                return;
-            } 
-
-            if (!this.isValidName(this.lname.value)) {
-                this.setDialMessage('error', `Le prénom n'est pas valide`);
-                return
-            }            
-            if (!this.isValidEmail(this.email.value)) {
-                this.setDialMessage('error', `L'email n'est pas valide`);
-                return
-            }
-            
-            if (!this.sendForm()) {
-                this.setDialMessage('error', `Echec lors de l'envoi du formulaire`);
-                return
-            }
-            this.setDialMessage('success', `Formulaire envoyé`);
-            this.formSend = true;
-        });
-    }
-}
-new Form(
-    document.getElementById('form-signin'),
-    document.getElementById('lname'),
-    document.getElementById('email'),
-    document.getElementById('signin-message-box'),
-    document.getElementById('signin-message')
-);
-
-</script>
-
 </html>

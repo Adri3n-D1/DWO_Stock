@@ -7,7 +7,8 @@
 #about img {
     padding-top: 20px;
     display: block;
-    max-width: 100%;
+    width: 100%;
+    max-width: 600px;
     margin: auto;
 }
 #about .block-text {
@@ -18,4 +19,16 @@
     font-family: 'indie_flowerregular';
     text-align: justify;
 
+}
+@media screen and (min-width: 340px) {
+    #about .block-text p {
+        font-size: 1.2em;
+    }
+}
+@media screen and (min-width: 600px) {
+    #about .block-text p {
+        font-size: 1.3em;
+    }
+    #about img.photo {
+    }
 }
