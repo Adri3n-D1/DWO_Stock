@@ -11,31 +11,30 @@ header nav {
     display: flex;
     justify-content: space-between;
 }
-header .link-menu, header .link-menu img {
+header .link-menu,
+header .link-menu img {
     height: 33px;
     display: none;
 }
 header #menu-nav {
     display: flex;
     flex-direction: column;
-    margin: auto;
     text-align: center;
+
+    width: 100%;
 }
 header #menu-nav a {
-    padding: 5px;
+    box-sizing: border-box;
+    padding: 10px 2px;
     border-bottom: 1px solid #ff861c;
-    
     font-family: 'RobotoMono-Thin';
-    font-size: 0.9em;
+    font-size: 0.8em;
     color: #fff;
     text-decoration: none;
 }
+
 header #menu-nav a img {
     height: 20px;
-}
-header #menu-nav a:last-child {
-    border-bottom: 0;
-    padding-bottom: 0;
 }
 
 /* Sub-part INTRODUCTION */
@@ -95,7 +94,7 @@ header #menu-nav a:last-child {
     padding: 3px 5px;
     border-radius: 5px;    
     margin-top: 10px;
-    border: 3px solid #fff;
+    border: 1px solid #fff;
 
     font-family: 'quicksandregular';
     font-size: 1em;
@@ -104,17 +103,25 @@ header #menu-nav a:last-child {
     text-align: center;
 }
 .introduction-section .button.contact {
-    background-color: #ff861ce0;
+    background-color: #2c2c2cb4;
 }
 .introduction-section .button.about {
-    background-color: #8769dce0;
+    background-color: #2c2c2cb4;
 }
 
 
-@media screen and (min-width: 240px) {    
-    header #menu-nav a {      
-        font-size: 1.0em;
+@media screen and (min-width: 240px) {
+
+    header #menu-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
+    header #menu-nav a {
+        margin: 0 1%;
+        flex: 1 1 max-content;
+    }
+
     .introduction-section .name {
         font-size: 1.7em;
     }

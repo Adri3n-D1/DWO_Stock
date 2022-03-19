@@ -80,7 +80,7 @@
     }    
     #hard-skills p.alt {
         margin-top: 75px;
-        font-size: 1.7em;
+        font-size: 1.4em;
     }   
 }
 @media screen and (min-width: 800px) {
@@ -88,14 +88,14 @@
         margin-top: 55px;
     }
     #hard-skills .text-tag .tag-row p {
-    font-size: 2.0em;
+    font-size: 1.8em;
     }
     #hard-skills .logo-tag .tag-row img {
         height: 80px;
     }
     #hard-skills p.alt {
         margin-top: 90px;
-        font-size: 2.0em;
+        font-size: 1.5em;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -103,13 +103,13 @@
         margin-top: 60px;
     }
     #hard-skills .text-tag .tag-row p {
-    font-size: 2.5em;
+    font-size: 2.1em;
     }
     #hard-skills .logo-tag .tag-row img {
         height: 90px;
     }
     #hard-skills p.alt {
         margin-top: 110px;
-        font-size: 2.2em;
+        font-size: 1.8em;
     }
 }

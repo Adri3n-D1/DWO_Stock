@@ -60,7 +60,7 @@
     }
 }
 @media screen and (min-width: 800px) {
-    #board {
+    #board .page-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -69,11 +69,12 @@
     #board .soft-skills,    
     #board .diplome {
         position: relative;
+        box-sizing: border-box;
         width: 50%;
     }
     
-    #board .experience {
-        box-sizing: border-box;
+    #board .experience,    
+    #board .diplome {
         padding-right: 15px;
     }
     #board .to-next-section {
