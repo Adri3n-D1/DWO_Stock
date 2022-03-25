@@ -1,19 +1,10 @@
 <script>
-let userChoice = 0;
-let validChoice;
-
-switch (userChoice) {
-    case 0:
-        validChoice = false;
-        let myVar = 15;
-        break;
-    case 1:
-        validChoice = true;
-        break;
-    default:
-        validChoice = false;
-}
-
-myVar += 15;
-
+let test = function(){
+    this.age = 10;
+    let nbr = 10;
+    function test2() {
+        console.log(this.age)
+    };
+};
+test.test2();
 </script>
