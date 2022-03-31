@@ -1,0 +1,31 @@
+<script>
+
+// (?=...)
+// Vérifie la présence de ce groupe sans consommer les caractères,
+// Donc ces caractères peuvent se retrouver dans d'autre groupe.
+// En gros cela permet de concatener plusieurs regex en une seule.
+
+// (?=.{6,})
+// La chaine doit faire 6 caractères minimum
+
+// (?=.*\p{Lu})
+// La chaine peut commencer par n'importe quel nombre de n'importe quel caractère
+// Mais doit contenir au moins une lettre unicode majuscule
+
+// (?=.*[^\p{L}\d])
+// La chaine peut commencer par n'importe quel nombre de n'importe quel caractère
+// Mais doit contenir au moins un caractère qui n'est pas une lettre unicode ou un chiffre
+// (Donc ce caractère sera un caractère special)
+
+let regexPassword = /(?=.{6,})(?=.*\p{Lu})(?=.*[^\p{L}\d])/u;
+
+
+console.log('Test 01 : ' + regexPassword.test('123456')); // ne match pas
+console.log('Test 02 : ' + regexPassword.test('1234a-')); // ne match pas
+console.log('Test 03 : ' + regexPassword.test('1234A-')); // match
+console.log('Test 04 : ' + regexPassword.test('1234À-')); // match
+console.log('Test 05 : ' + regexPassword.test('-1234A')); // match
+console.log('Test 06 : ' + regexPassword.test('-1234À')); // match
+console.log('Test 07 : ' + regexPassword.test('-123À'));  // ne match pas
+
+</script>

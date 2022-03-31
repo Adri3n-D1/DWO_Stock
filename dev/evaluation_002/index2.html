@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Evaluation Javascript</title>
+</head>
+<body>
+    <div class="page-content mx-auto">
+        <h1 id="page-title" class="text-center mb-5"></h1>
+        <main id="main-content" class="row">
+            <form id="login-form" class="border p-5">
+                <div class="mb-3">
+                    <label for="login-email" class="form-label">Adresse email</label>
+                    <input type="email" class="form-control" id="login-email" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="login-password" class="form-label">Mot de passe</label>
+                    <input type="password" class="form-control" id="login-password">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="popup-form-validation" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div id="popup-content" class="modal-body">
+                    Blablabla
+                </div>
+                <div class="modal-footer">
+                    <button id="popup-btn" type="button" class="btn btn-success mx-auto" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+
+class Login {
+    constructor(idPageTitle, idMainContent, idForm, idEmailInput, idPasswordInput, idPopup, idPopupContent, idPopupButton) {
+
+        this.pageTitle = $('#' + idPageTitle);
+        this.pageTitle.text('Connexion');
+        this.mainContent = $('#' + idMainContent);
+        //
+        this.form = $('#' + idForm);
+        this.emailInput = $('#' + idEmailInput);
+        this.passwordInput = $('#' + idPasswordInput);
+        //       
+        this.popup = new bootstrap.Modal($('#' + idPopup));        
+        this.popupContent = $('#' + idPopupContent);
+        this.popupButton = $('#' + idPopupButton);
+        //
+        this.form.submit((event) => {
+            event.preventDefault();
+            if (!this.isValidEmail(this.emailInput.val())) {              
+                this.showPopup('Email non valide !', false);
+                return;
+            }
+            if (!this.isValidPassword(this.passwordInput.val())) {                
+                this.showPopup('Mot de passe non valide !', false);
+                return;
+            }
+
+            this.showPopup('Formulaire validé !');
+            this.form.remove();
+            this.pageTitle.text('Articles');
+
+            this.pageTitle.after('<button id="remove-articles" class="btn btn-primary">Tout faire disparaître</button>');
+            $('#remove-articles').click(() => {
+                this.mainContent.empty();
+            });
+
+            this.pageTitle.after('<button id="load-articles" class="btn btn-primary me-5">Charger les articles</button>');
+            $('#load-articles').click(() => {
+                fetch('https://jsonplaceholder.typicode.com/posts')
+                .then(articles => articles.json())
+                .then((articles) => {
+                    for (let article of articles) {
+                        this.mainContent.append(
+                            `<div class="card col-md-3">
+                                <img class="card-img-top" src="https://images-ext-1.discordapp.net/external/9oOLUGpr_aWtQTPSCtOmf1LxsV0qTNbgzc6AURTDV9w/http/www.ccmirecourtdompaire.fr/wp-content/uploads/2021/09/document-app-icon-or-logo-icon-design-template-7b6cac8de4b9abdd949f7643fe00924e_screen.jpeg?width=676&height=676" alt="Card image cap">
+                                <div class="card-body">
+                                    <h5 class="card-title">${article.title}</h5>
+                                    <p class="card-text">${article.body}</p>
+                                </div>
+                            </div>`);
+                    }
+                    
+                    $('.card').click(function() {
+                        $(this).fadeOut('500');
+                    });
+                });
+            });
+        });
+    }
+    
+    isValidEmail(email) {
+        let regex = /^[a-z]+(?:[\.\-_]?\w+)*@[a-z]+(?:[\.\-_][a-z]+)*\.[a-z]+$/i;
+        return regex.test(email);
+    }
+
+    isValidPassword(password) {
+        let regex = /(?=.{6,})(?=.*\p{Lu})(?=.*[^\p{L}\d])/u;
+        return regex.test(password);
+    }
+    
+    showPopup(message, success=true) {
+        this.popupButton.removeClass();
+
+        if (success) {
+            this.popupButton.addClass('btn btn-success mx-auto');
+        }
+        else {            
+            this.popupButton.addClass('btn btn-danger mx-auto');
+        }
+        
+        this.popupContent.text(message);
+        this.popup.show();
+    }
+
+
+}
+
+$(document).ready(function() {
+    new Login(
+        'page-title', 'main-content', 'login-form', 'login-email', 'login-password',
+        'popup-form-validation', 'popup-content', 'popup-btn'
+    );
+});
+
+</script>
+
+<style type="text/css">
+    .page-content {
+        max-width: 800px;
+    }
+</style>
+</html>
