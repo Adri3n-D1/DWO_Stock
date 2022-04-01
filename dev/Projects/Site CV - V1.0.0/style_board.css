@@ -11,8 +11,8 @@
     padding-left: 37px;
 }
 #board .mark {
-    position:absolute;
-    left: 9px;
+    position: absolute;
+    left: 11px;
 }
 #board .block {
     display: flex;
@@ -50,8 +50,15 @@
     list-style: "-> ";
 }
 
-
+@media screen and (min-width: 340px) {
+    #board .mark {
+        left: 19px;
+    }
+}
 @media screen and (min-width: 600px) {
+    #board .mark {
+        left: 24px;
+    }
     #board h3 {
         font-size: 1.1em;
     }
@@ -60,6 +67,9 @@
     }
 }
 @media screen and (min-width: 800px) {
+    #board .mark {
+        left: 9px;
+    }
     #board .page-content {
         display: flex;
         flex-wrap: wrap;

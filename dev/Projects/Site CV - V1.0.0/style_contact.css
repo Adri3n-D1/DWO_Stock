@@ -52,7 +52,7 @@
 #form-contact .box {
     display: flex;
     flex-direction: column;
-    max-width: 95%;
+    /* max-width: 95%; */
     margin: 15px auto;
 }
 #form-contact label {
@@ -112,19 +112,8 @@
     }
 }
 @media screen and (min-width: 340px) {
-    #contact .box-info .grp {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 2%;
-        justify-content: space-between;
-        /* align-content: center;
-        align-items: center;
-        margin: auto; */
-    }
-    #contact .box-info .grp .box{
-        /* min-width: 34%;
-        max-width: max-content; */
-        flex: 1 1 max-content;
+    #contact .box-info {
+        width: 70%;
     }
     #contact .box-info .grp .box:nth-child(2),
     #contact .box-info .grp .box:nth-child(4) {
@@ -137,19 +126,48 @@
     #contact .box-info .grp .box:last-child a img{
         height: 35px;
     }
-    #contact .box-info .grp .box p {
-        font-size: 1.0em;
-    }
     #contact .box-info .grp .box a img {
         height: 25px;
     }
-    /* #form-contact .box {
-        max-width: 95%;
-        margin: 15px auto;
-    } */
 }
 @media screen and (min-width: 600px) {
-    
+    #contact .top-section {
+        display: flex;
+    }
+    #contact .box-info .grp .box:nth-child(2),
+    #contact .box-info .grp .box:nth-child(4) {
+        justify-content: initial;
+    }
+    #contact .box-info .grp .box:last-child{
+        min-width: initial;
+    }
+    #contact .box-info .link-cv {
+        margin: 0px auto;
+    }
+
+    #contact .box-info {
+        margin-top: 0;
+        width: fit-content;
+    }
+    #contact .box-form {
+        flex: 1;
+        margin-left: 55px;
+    }
+    #contact .box-info .grp {
+        min-height: 410px;
+    }
+    #contact .box-form form{
+        flex: 0%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #contact .box-form form .box{
+        width: 100%;
+    }
+    #contact .box-form .box:first-child{
+        margin-top: 50px;
+    }
     #contact .box-info .grp .box p {
         font-size: 1.2em;
     }
@@ -161,16 +179,34 @@
     }
     
     #contact .box-info .box{
-        margin:46px auto;
+        margin: 46px auto;
+    }
+    #form-contact .box:last-child {
+        margin-bottom: 0;
     }
 }
 @media screen and (min-width: 800px) {
-    #contact .box-form {
-        flex: 50%;
+    #contact .box-form form {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #contact .box-form .box:nth-child(1),
+    #contact .box-form .box:nth-child(2) {
+        width: 45%;
+        margin-top: 50px;
+    }
+    #contact .box-form .box:nth-child(1){
+        margin-right: 10%;
+    }
+    #contact .box-form textarea{
+        height: 217px;
     }
 }
 @media screen and (min-width: 1200px) {
     #contact .box-info {
-        margin-right: 30%;
+        margin-right: 10%;
+    }
+    #contact .box-form {
+        flex: 1;
     }
 }

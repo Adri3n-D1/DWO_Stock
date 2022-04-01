@@ -35,7 +35,7 @@
 @media screen and (min-width: 240px) {
     #hard-skills .logo-tag .tag-row img {
         height: 45px;
-        flex: initial;
+        flex: 1;
     }
     #hard-skills p.alt {
         font-size: 1.2em;

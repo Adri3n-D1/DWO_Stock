@@ -1,3 +1,25 @@
+<?php
+    $hardSkillImgName = [
+        'html5', 'css3', 'bootstrap', 'javascript', 'wordpress', 'php', 'mysql', 'jquery',
+    ];
+    $exp = [
+        ['Formation développeur web et mobile',
+            ['De Janvier à Octobre 2022',
+            'HTML, CSS, Bootstrap, JS, JQuery',
+            'PHP, Symfony, MySQL',
+            'Maquettage de site',
+            ],
+        ],
+        ['Apprentissage en autodidact',
+            ['Jusqu\'à 2022',
+            'HTML & CSS - MOOC sur Openclassrom.com',
+            'PHP, MySQL - MOOC sur Openclassroom.com',
+            'Architecture MVC - MOOC sur Openclassroom.com',
+            'Python3 - MOOC sur Funmooc',
+            ],
+        ],
+    ]
+?>
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -43,19 +65,6 @@
             </div>
         </div>
     </section>
-    <!-- Part QUOTE -->
-    <!-- <section class='quote-section'>
-        <div class='page-content'>
-            <div class='row'>
-                <img class="svg svg-dark" src='img/quote.svg' alt=''>
-                <p>Et si de l'utile venait l'agréable...</p>
-            </div> -->
-            <!-- Link to the next section -->
-            <!-- <div class='to-next-section'>
-                <a href='#'><img class="svg svg-dark" src="img/caret-down-square-fill.svg" alt=""></a>
-            </div>
-        </div>
-    </section> -->
     <!-- Part HARD SKILLS -->
     <section id='hard-skills'>
         <div class='page-content'>
@@ -75,17 +84,21 @@
                 </div>
             </div>
             <div class='logo-tag'>
-                <div class='tag-row'>
-                    <img class="svg svg-dark" src="img/html5.svg" alt="Logo HTML5">
-                    <img class="svg svg-dark" src="img/css3.svg" alt="Logo CSS3">
-                    <img class="svg svg-dark" src="img/bootstrap.svg" alt="Logo Bootstrap">
-                    <img class="svg svg-dark" src="img/javascript.svg" alt="Logo Javascript">
-                </div>
-                <div class='tag-row'>                    
-                    <img class="svg svg-dark" src="img/wordpress.svg" alt="Logo HTML5">
-                    <img class="svg svg-dark" src="img/php.svg" alt="Logo HTML5">
-                    <img class="svg svg-dark" src="img/mysql.svg" alt="Logo HTML5">
-                    <img class="svg svg-dark" src="img/jquery.svg" alt="Logo HTML5">
+
+                <?php
+                $tagOpened = false;
+                foreach ($hardSkillImgName as $index => $imgName) {
+                    if (!$tagOpened) {
+                        echo '<div class="tag-row">';
+                        $tagOpened = true;
+                    }
+                    echo '<img class="svg svg-dark" src="img/' . $imgName . '.svg" alt="Logo HTML5">';
+                    if (is_int(($index + 1) / 4)) {
+                        echo '</div>';
+                        $tagOpened = false;
+                    }
+                }
+                ?>
                 </div>
                 <p class="alt">Et plus encore...</p>
             </div>
@@ -130,22 +143,21 @@
                 <div class='block'>
                     <div class='timeline-bar'></div>
                     <div class='content'>
-                        <h3><div class='mark'><img class="svg-secondary" src="img/circle.svg" alt=""></div>Formation développeur web et mobile</h3>
-                        <ul>
-                            <li class='alt'>De Janvier à Octobre 2022
-                            </li>
-                            <li>HTML, CSS, Bootstrap, JS, JQuery</li>
-                            <li>PHP, Symfony, MySQL</li>
-                            <li>Maquettage de site</li>
-                        </ul>
-                        <h3><div class='mark'><img class="svg-secondary" src="img/circle.svg" alt=""></div>Apprentissage en autodidacte</h3>
-                        <ul>
-                            <li class='alt'>Jusqu'à 2022</li>
-                            <li>HTML & CSS - MOOC sur Openclassrom.com</li>
-                            <li>PHP, MySQL - MOOC sur Openclassroom.com</li>
-                            <li>Architecture MVC - MOOC sur Openclassroom.com</li>
-                            <li>Python3 - MOOC sur Funmooc</li>
-                        </ul>
+                        <?php
+                        foreach ($exp as $value) {
+                            echo '<h3><div class="mark"><img class="svg-secondary" src="img/circle.svg" alt=""></div>' . $value[0] .'</h3>';
+                            echo '<ul>';
+                            foreach ($value[1] as $key => $subValue) {
+                                if ($key === 0) {
+                                    echo '<li class="alt">' . $subValue . '</li>';
+                                }
+                                else {
+                                    echo '<li>' . $subValue . '</li>';
+                                }
+                            }
+                            echo '</ul>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
