@@ -7,9 +7,9 @@
 // • Créez un formulaire HTML vers la page connexion.php avec la méthode POST et les champs suivants :
 // • un champ 'mail' de type « email »,
 // • un champ 'pass' de type « password ».
+
 // -Dans le fichier connexion.php :
 // Démarrez une session,
-
 // Faites la déclaration des variables suivantes :
 // • 'servername' avec la valeur « localhost »,
 // • 'username' avec la valeur « root »,
@@ -60,3 +60,35 @@
 // • Exécutez la requête et affichez le message « Nouveau utilisateur ajouté !<br> »
 
 // Sinon, renvoyez l'utilisateur vers la page index.php.
+
+session_start();
+if (isset($_SESSION['utilisateur_co']) && !empty($_SESSION['utilisateur_co'])) {
+    header('Location: exo314_compte.php');
+    die();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Exo 314 - Index</title>
+</head>
+<body>
+    <form action="exo314_connexion.php" method="POST" class="container">
+        <div class="form-group">
+            <label for="form-email">Adresse email</label>
+            <input type="email" class="form-control" id="form-email" name="form-email">
+        </div>
+        <div class="form-group">
+            <label for="form-password">Mot de passe</label>
+            <input type="password" class="form-control" id="form-password" name="form-password">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Submit</button>
+    </form>
+</body>
+</html>
