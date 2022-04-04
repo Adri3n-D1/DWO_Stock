@@ -1,5 +1,5 @@
 <?php
-    $hardSkillImgName = [
+    $hardSkill = [
         'html5', 'css3', 'bootstrap', 'javascript', 'wordpress', 'php', 'mysql', 'jquery',
     ];
     $exp = [
@@ -87,7 +87,7 @@
 
                 <?php
                 $tagOpened = false;
-                foreach ($hardSkillImgName as $index => $imgName) {
+                foreach ($hardSkille as $index => $imgName) {
                     if (!$tagOpened) {
                         echo '<div class="tag-row">';
                         $tagOpened = true;
