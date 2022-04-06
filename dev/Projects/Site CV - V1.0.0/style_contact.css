@@ -102,9 +102,10 @@
 }
 #form-contact .inputValueError{
     margin-top: 10px;
-    color: #2c2c2c;
+    color: #fff;
     text-align: center;
     font-size: 1.2em;
+    border: 2px dashed #fff;
 }
 @media screen and (min-width: 240px) {
     #contact .box-info p {

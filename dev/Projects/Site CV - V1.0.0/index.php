@@ -3,23 +3,44 @@
         'html5', 'css3', 'bootstrap', 'javascript', 'wordpress', 'php', 'mysql', 'jquery',
     ];
     $exp = [
-        ['Formation développeur web et mobile',
-            ['De Janvier à Octobre 2022',
-            'HTML, CSS, Bootstrap, JS, JQuery',
-            'PHP, Symfony, MySQL',
-            'Maquettage de site',
+        [
+            'Formation développeur web et mobile',
+            [
+                'De Janvier à Octobre 2022',
+                'HTML, CSS, Bootstrap, JS, JQuery',
+                'PHP, Symfony, MySQL',
+                'Maquettage de site',
             ],
         ],
-        ['Apprentissage en autodidact',
-            ['Jusqu\'à 2022',
-            'HTML & CSS - MOOC sur Openclassrom.com',
-            'PHP, MySQL - MOOC sur Openclassroom.com',
-            'Architecture MVC - MOOC sur Openclassroom.com',
-            'Python3 - MOOC sur Funmooc',
+        [
+            'Apprentissage en autodidacte',
+            [
+                'Jusqu\'à 2022',
+                'HTML & CSS - MOOC sur Openclassrom.com',
+                'PHP, MySQL - MOOC sur Openclassroom.com',
+                'Architecture MVC - MOOC sur Openclassroom.com',
+                'Python3 - MOOC sur Funmooc',
             ],
         ],
-    ]
+    ];
+    $softSkills = [
+        [
+            'Indépendant',
+            'Initialement autodidacte, je suis capable de me former et de réaliser des projets à taille humaine seul',
+        ],
+        [
+            'Consciencieux',
+            'J\'aime accomplir mes objectifs comme il le faut jusque dans les détails',
+        ],
+        [
+            'Observateur',
+            'J\'arrive facilement à remettre les problèmes dans leur contexte, et en découvrir leur origine',
+        ],
+    ];
+    $diplomes = ['Titre Pro - Développeur web & web mobile (bac+2)'];
+
 ?>
+
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -87,7 +108,7 @@
 
                 <?php
                 $tagOpened = false;
-                foreach ($hardSkille as $index => $imgName) {
+                foreach ($hardSkill as $index => $imgName) {
                     if (!$tagOpened) {
                         echo '<div class="tag-row">';
                         $tagOpened = true;
@@ -165,25 +186,21 @@
             <div class='soft-skills'>
                 <h2>Savoir-Être</h2>
                 <div class='content'>
-                    <h3><div class='mark'><img class="svg-secondary" src="img/star.svg" alt=""></div>Indépendant</h3>
-                    <ul>
-                        <li class='alt'>Initialement autodidacte, je suis capable de me former et de réaliser des projets à taille humaine seul</li>
-                    </ul>  
-                    <h3><div class='mark'><img class="svg-secondary" src="img/star.svg" alt=""></div>Consciencieux</h3>
-                    <ul>
-                        <li class='alt'>J'aime accomplir mes objectifs comme il le faut jusque dans les détails</li>
-                    </ul>  
-                    <h3><div class='mark'><img class="svg-secondary" src="img/star.svg" alt=""></div>Observateur</h3>
-                    <ul>
-                        <li class='alt'>J'arrive facilement à remettre les problèmes dans leur contexte, et en découvrir leur origine</li>
-                    </ul>  
+                    <?php foreach($softSkills as $softSkill): ?>
+                        <h3><div class='mark'><img class="svg-secondary" src="img/star.svg" alt=""></div><?= $softSkill[0] ?></h3>
+                        <ul>
+                            <li class='alt'><?= $softSkill[1] ?></li>
+                        </ul>  
+                    <?php endforeach; ?>
                 </div>
             </div>
             <!-- Sub-part DIPLOME -->
             <div class='diplome'>
                 <h2>Diplômes</h2>
                 <div class='content'>
-                    <h3><div class='mark'><img class="svg-secondary" src="img/school_black_24dp.svg" alt=""></div>Titre Pro - Développeur web & web mobile (bac+2)</h3>  
+                    <?php foreach($diplomes as $diplome) : ?>
+                        <h3><div class='mark'><img class="svg-secondary" src="img/school_black_24dp.svg" alt=""></div><?= $diplome ?></h3>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </div>
@@ -234,7 +251,7 @@
                         <div class="box">
                             <label for="lname">Nom</label>
                             <input type="text" id="lname" name="lname" placeholder="Votre nom &gt;&gt;&gt;">
-                            <p class="inputValueError" style="display:block"></p>
+                            <p class="inputValueError" style="display:none"></p>
                         </div>
                         <div class="box">
                             <label for="email">Email</label>
