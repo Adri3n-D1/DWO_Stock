@@ -9,19 +9,30 @@ header {
 }
 header nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
-header .link-menu,
+header #grp-btn-menu {
+    display: none;
+    justify-content: flex-start;
+}
+header #btn-menu {
+    display: flex;
+    align-items: center;
+}
+header #btn-text-menu {
+    color: #fff;
+    margin-left: 5px;
+}
 header .link-menu img {
     height: 33px;
-    display: none;
 }
 header #menu-nav {
     display: flex;
+    flex: 1;
     flex-direction: column;
     text-align: center;
-
-    width: 100%;
 }
 header #menu-nav a {
     box-sizing: border-box;

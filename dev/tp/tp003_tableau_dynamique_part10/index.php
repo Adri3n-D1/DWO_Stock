@@ -254,7 +254,13 @@ catch (PDOException $e)
             event.stopPropagation();
         });
         // Losqu'on touche 
-        element.addEventListener('keyup', function(event) {
+        element.addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                console.log("touche Entrer");
+            }
+        });
+        //
+        element.addEventListener('change', function(event) {
             let id = parseInt(event.target.id);
             let value = event.target.value;
             event.target.previousSibling.innerText = value;

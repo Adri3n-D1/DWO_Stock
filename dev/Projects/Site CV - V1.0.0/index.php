@@ -1,44 +1,63 @@
 <?php
-    $hardSkill = [
-        'html5', 'css3', 'bootstrap', 'javascript', 'wordpress', 'php', 'mysql', 'jquery',
-    ];
-    $exp = [
-        [
-            'Formation développeur web et mobile',
-            [
-                'De Janvier à Octobre 2022',
-                'HTML, CSS, Bootstrap, JS, JQuery',
-                'PHP, Symfony, MySQL',
-                'Maquettage de site',
-            ],
-        ],
-        [
-            'Apprentissage en autodidacte',
-            [
-                'Jusqu\'à 2022',
-                'HTML & CSS - MOOC sur Openclassrom.com',
-                'PHP, MySQL - MOOC sur Openclassroom.com',
-                'Architecture MVC - MOOC sur Openclassroom.com',
-                'Python3 - MOOC sur Funmooc',
-            ],
-        ],
-    ];
-    $softSkills = [
-        [
-            'Indépendant',
-            'Initialement autodidacte, je suis capable de me former et de réaliser des projets à taille humaine seul',
-        ],
-        [
-            'Consciencieux',
-            'J\'aime accomplir mes objectifs comme il le faut jusque dans les détails',
-        ],
-        [
-            'Observateur',
-            'J\'arrive facilement à remettre les problèmes dans leur contexte, et en découvrir leur origine',
-        ],
-    ];
-    $diplomes = ['Titre Pro - Développeur web & web mobile (bac+2)'];
+try {
 
+    $serverName = 'localhost';
+    $dbname = 'site_cv';
+    $port = '3006';
+    $charset = 'utf8';
+
+    $username = 'root';
+    $password = '';
+
+    $db = new PDO(
+        'mysql:host='.$serverName.';dbname='.$dbname.';charset='.$charset,
+        $username, $password,
+        [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+    );
+
+    // get the hardskills from database
+    $sql = 'SELECT body FROM hardskills';
+    $request = $db->prepare($sql);
+    $request->execute();
+    
+    $hardSkills = [];
+    foreach ($request->fetchAll() as $hardSkill) {
+        $hardSkills[] = $hardSkill['body'];
+    }
+    // get the softskills from database
+    $sql = 'SELECT title, body FROM softskills';
+    $request = $db->prepare($sql);
+    $request->execute();
+    
+    $softSkills = [];
+    foreach ($request->fetchAll() as $softSkill) {
+        $softSkills[] = [
+            $softSkill['title'],
+            $softSkill['body'],
+        ];
+    }
+    // get the experience from database
+    $sql = 'SELECT title, period, body FROM experiences';
+    $request = $db->prepare($sql);
+    $request->execute();
+    
+    $experiences = [];
+    foreach ($request->fetchAll() as $xp) {
+        $experiences[$xp['title']][$xp['period']][] = $xp['body'];
+    }
+    // get the diplomes from database
+    $sql = 'SELECT body FROM diplomes';
+    $request = $db->prepare($sql);
+    $request->execute();
+    
+    $diplomes = [];
+    foreach ($request->fetchAll() as $diplome) {
+        $diplomes[] = $diplome['body'];
+    }
+}
+catch (PDOException $e) {
+    die('Erreur : ' . $e->getMessage());
+}
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +76,7 @@
     <link rel='stylesheet' type='text/css' href='style_contact.css'>
     <link rel='stylesheet' type='text/css' href='style_footer.css'>
 
+    <script type="text/javascript" src="nav_menu.js" defer></script>
     <script type="text/javascript" src="form_validation.js" defer></script>
 
     <title>Adrien Delcros - Site C.V.</title>
@@ -64,8 +84,10 @@
 <body>
     <!-- Part HEADER -->
     <header>
-        <nav class="">
-            <a class='link-menu' href='javascript:void(0);' onclick='toogleMenu()'><img class="svg svg-light" src='img/menu-burger2.svg' alt=''></a>
+        <nav>
+            <div id="grp-btn-menu">
+                <a id="btn-menu" class="link-menu" href="javascript:void(0);" onclick="toggleMenu()"><img class="svg svg-light" src='img/menu-burger2.svg' alt=''><span id="btn-text-menu"><span></a>
+            </div>
             <div id='menu-nav'>
                 <a href="#"><img class="svg svg-white" src="img/home.svg" alt="Lien vers l'accueil"></a>
                 <a href="#">Moi</a>
@@ -108,7 +130,7 @@
 
                 <?php
                 $tagOpened = false;
-                foreach ($hardSkill as $index => $imgName) {
+                foreach ($hardSkills as $index => $imgName) {
                     if (!$tagOpened) {
                         echo '<div class="tag-row">';
                         $tagOpened = true;
@@ -165,18 +187,17 @@
                     <div class='timeline-bar'></div>
                     <div class='content'>
                         <?php
-                        foreach ($exp as $value) {
-                            echo '<h3><div class="mark"><img class="svg-secondary" src="img/circle.svg" alt=""></div>' . $value[0] .'</h3>';
+                        foreach ($experiences as $title => $experiencesByPeriod) {
+                            echo '<h3><div class="mark"><img class="svg-secondary" src="img/circle.svg" alt=""></div>' . $title .'</h3>';
                             echo '<ul>';
-                            foreach ($value[1] as $key => $subValue) {
-                                if ($key === 0) {
-                                    echo '<li class="alt">' . $subValue . '</li>';
-                                }
-                                else {
-                                    echo '<li>' . $subValue . '</li>';
+                            $i = 0;
+                            foreach ($experiencesByPeriod as $period => $experiences) {
+                                echo '<li class="alt">' . $period . '</li>';
+                                foreach ($experiences as $experience) {
+                                    echo '<li>' . $experience . '</li>';
                                 }
                             }
-                            echo '</ul>';
+                            echo '<\ul>';
                         }
                         ?>
                     </div>
