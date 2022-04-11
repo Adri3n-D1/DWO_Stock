@@ -177,21 +177,6 @@ catch (PDOException $e)
             </tr>
         </thead>
         <tbody id="table-content">
-        <?php foreach ($result as $row): ?>
-            <tr>
-                <td><?= $row['id'] ?></td>
-                <td><span class="label"><?= $row['name'] ?></span><textarea id="name-<?= $row['id'] ?>" class="name text-area"><?= $row['name'] ?></textarea></td><td><span class="label"><?= $row['price'] ?></span><textarea id="price-<?= $row['id'] ?>" class="price text-area"><?= $row['price'] ?></textarea></td>
-                <td><span class="label"><?= $row['city'] ?></span><textarea id="city-<?= $row['id'] ?>" class="city text-area"><?= $row['city'] ?></textarea></td>
-                <td>
-                <td><span class="label"><?= $row['address'] ?></span><textarea id="address-<?= $row['id'] ?>" class="address text-area"><?= $row['address'] ?></textarea></td>
-                <td>
-                    <form action="" method="POST">
-                        <input type="hidden" name="item-to-remove" value="<?= $row['id'] ?>">
-                        <input type="submit" class="btn btn-danger" value="Supprimer">
-                    </form>
-                </td>
-            </tr>
-        <?php endforeach; ?>
         </tbody>
     </table>
 </body>
@@ -224,7 +209,7 @@ catch (PDOException $e)
         }
     }
 
-    // Cette fonction fait ociller l'état de la popup entre affichée ou pas affichée.
+    // Cette fonction fait occiller l'état de la popup entre affichée ou pas affichée.
     function togglePopup() {
         if (popup.style.display == 'none') {
             popup.style.display = 'flex';
@@ -233,89 +218,126 @@ catch (PDOException $e)
             popup.style.display = 'none';
         }
     }
-
-    // Lorsqu'on clique sur le document, on ferme les text-area
-    document.addEventListener('click', function() {        
-        showAdress();
-    });
-
-    // Boucles sur les spans des adresses
-    for (element of document.getElementsByClassName('label')) {
-        //Lorsqu'on clique sur les span
-        element.addEventListener('click', function(event) {
-            // L'evenement ne se propage pas,
-            // de façon à pouvoir ouvrir les text-area
-            event.stopPropagation();
-            // On ferme les possibles text-area
-            showAdress();
-            // Les span sont fermés, les text-area ouvertes
-            event.target.style.display = 'none';
-            event.target.nextSibling.style.display = 'block';
-        });
+    
+    function getTd(data) {
+        return `<td>${data}</td>`;
     }
+    function initPage() {
 
-    // Boucles sur tous les text-area
-    for (element of document.getElementsByClassName('text-area')) {
-        // Lorsqu'on clique sur les text-area
-        element.addEventListener('click', function(event) {
-            // L'evenement ne se propage pas,
-            // de façon à ne pas fermer la text-area déjà ouverte
-            event.stopPropagation();
-        });
-        // Losqu'on touche 
-        element.addEventListener('keydown', function(event) {
-            if (event.keyCode === 13) {
-                console.log("touche Entrer");
+        let tbody = document.getElementById('table-content');
+        let html = '';
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', 'get-biens.php');
+        xhr.responseType = 'json';
+        xhr.send();
+        xhr.onload = function(event) {
+            if (this.status == 200) {
+
+                for(let row of this.response) {
+                    html += '<tr>';
+                    // td id
+                    html += `<td>${row['id']}</td>`;
+                    // td name
+                    html += `<td><span class="label">${row['name']}</span><textarea id="name-${row['id']}" class="name text-area">${row['name']}</textarea></td>`;
+                    // td price
+                    html += `<td><span class="label">${row['price']}</span><textarea id="price-${row['id']}" class="price text-area">${row['price']}</textarea></td>`;
+                    // td city
+                    html += `<td><span class="label">${row['city']}</span><textarea id="city-${row['id']}" class="city text-area">${row['city']}</textarea></td>`;
+                    // td address
+                    html += `<td><span class="label">${row['address']}</span><textarea id="address-${row['id']}" class="address text-area">${row['address']}</textarea></td>`;
+                    html += '</tr>';
+                }
+                tbody.innerHTML = html;
+                initEvent();
             }
+        }
+    }
+
+    function initEvent() {
+        // Lorsqu'on clique sur le document, on ferme les text-area
+        document.addEventListener('click', function() {        
+            showAdress();
+        });
+
+        // Boucles sur les spans des adresses
+        for (element of document.getElementsByClassName('label')) {
+            //Lorsqu'on clique sur les span
+            element.addEventListener('click', function(event) {
+                // L'evenement ne se propage pas,
+                // de façon à pouvoir ouvrir les text-area
+                event.stopPropagation();
+                // On ferme les possibles text-area
+                showAdress();
+                // Les span sont fermés, les text-area ouvertes
+                event.target.style.display = 'none';
+                event.target.nextSibling.style.display = 'block';
+            });
+        }
+
+        // Boucles sur tous les text-area
+        for (element of document.getElementsByClassName('text-area')) {
+            // Lorsqu'on clique sur les text-area
+            element.addEventListener('click', function(event) {
+                // L'evenement ne se propage pas,
+                // de façon à ne pas fermer la text-area déjà ouverte
+                event.stopPropagation();
+            });
+            // Losqu'on touche 
+            element.addEventListener('keydown', function(event) {
+                if (event.keyCode === 13) {
+                    console.log("touche Entrer");
+                }
+            });
+        }
+        // Boucles sur les text-area des nom
+        for (element of document.getElementsByClassName('name')) {
+            element.addEventListener('change', function(event) {
+                let id = parseInt(event.target.id.replace('name-', ''));
+                let value = event.target.value;
+                event.target.previousSibling.innerText = value;
+                sendRequest(id, value, 'name');
+            });
+        }
+        // Boucles sur les text-area des prix
+        for (element of document.getElementsByClassName('price')) {
+            element.addEventListener('change', function(event) {
+                let id = parseInt(event.target.id.replace('price-', ''));
+                let value = event.target.value;
+                event.target.previousSibling.innerText = value;
+                sendRequest(id, value, 'price');
+            });
+        }
+        // Boucles sur les text-area des ville
+        for (element of document.getElementsByClassName('city')) {
+            element.addEventListener('change', function(event) {
+                let id = parseInt(event.target.id.replace('city-', ''));
+                let value = event.target.value;
+                event.target.previousSibling.innerText = value;
+                sendRequest(id, value, 'city');
+            });
+        }
+        // Boucles sur les text-area des adresses
+        for (element of document.getElementsByClassName('address')) {
+            element.addEventListener('change', function(event) {
+                let id = parseInt(event.target.id.replace('address-', ''));
+                let value = event.target.value;
+                event.target.previousSibling.innerText = value;
+                sendRequest(id, value, 'address');
+            });
+        }
+        //////// Parametrage de la popup
+        let popup = document.getElementById('popup-container');
+        let form = document.getElementById('popup-content');
+        // Cliquer en dehors du formulaire cache la popup
+        popup.addEventListener('click', () => {
+            togglePopup();
+        });
+        // Cliquer sur le formulaire ne fait rien
+        form.addEventListener('click', (event) => {
+            event.stopPropagation();
         });
     }
-    // Boucles sur les text-area des nom
-    for (element of document.getElementsByClassName('name')) {
-        element.addEventListener('change', function(event) {
-            let id = parseInt(event.target.id.replace('name-', ''));
-            let value = event.target.value;
-            event.target.previousSibling.innerText = value;
-            sendRequest(id, value, 'name');
-        });
-    }
-    // Boucles sur les text-area des prix
-    for (element of document.getElementsByClassName('price')) {
-        element.addEventListener('change', function(event) {
-            let id = parseInt(event.target.id.replace('price-', ''));
-            let value = event.target.value;
-            event.target.previousSibling.innerText = value;
-            sendRequest(id, value, 'price');
-        });
-    }
-    // Boucles sur les text-area des ville
-    for (element of document.getElementsByClassName('city')) {
-        element.addEventListener('change', function(event) {
-            let id = parseInt(event.target.id.replace('city-', ''));
-            let value = event.target.value;
-            event.target.previousSibling.innerText = value;
-            sendRequest(id, value, 'city');
-        });
-    }
-    // Boucles sur les text-area des adresses
-    for (element of document.getElementsByClassName('address')) {
-        element.addEventListener('change', function(event) {
-            let id = parseInt(event.target.id.replace('address-', ''));
-            let value = event.target.value;
-            event.target.previousSibling.innerText = value;
-            sendRequest(id, value, 'address');
-        });
-    }
-    //////// Parametrage de la popup
-    let popup = document.getElementById('popup-container');
-    let form = document.getElementById('popup-content');
-    // Cliquer en dehors du formulaire cache la popup
-    popup.addEventListener('click', () => {
-        togglePopup();
-    });
-    // Cliquer sur le formulaire ne fait rien
-    form.addEventListener('click', (event) => {
-        event.stopPropagation();
-    });
+    initPage();
 </script>
 
 <style>
