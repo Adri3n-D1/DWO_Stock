@@ -26,14 +26,17 @@ function addToDb() {
     $request->execute($setting);
 }
 
-if(
-    ! empty($_FILES['img']) &&
-    $_FILES['img']['error'] == UPLOAD_ERR_OK &&
-    is_uploaded_file($_FILES['img']['tmp_name']))
-{
-    echo "Stocké dans : " . $_FILES["img"]["tmp_name"]; 
-    move_uploaded_file($_FILES["img"]["tmp_name"], $_FILES["img"]["name"]);
-    addToDb($_FILES["img"]["name"]);
+if (! empty($_FILES['img']) && $_FILES['img']['error'] == UPLOAD_ERR_OK && is_uploaded_file($_FILES['img']['tmp_name'])) {
+    $extensions = ['jpg', 'jpeg', 'png', 'svg', 'ico', 'gif'];
+    $imgInfo = new SplFileInfo($_FILES["img"]["name"]);
+    $extension = $imgInfo->getExtension();
+
+
+    if (in_array(strtolower($extension), $extensions)) {
+        $newPathFileName = 'img/' . uniqid() . '.' . $extension;
+        move_uploaded_file($_FILES["img"]["tmp_name"], $newPathFileName);
+        addToDb($_FILES["img"]["name"]);
+    }
 }
 
 header('Location: index.php');

@@ -7,7 +7,7 @@ function init() {
     getProperties();
     initFilterEvent();
     initPopupEvent();
-    initArrowEvent();
+    initPagingEvent();
     getMaxPage();
 }
 
@@ -51,16 +51,6 @@ function initInputEvent() {
             updateProperty(propertyId, propertyColumn, propertyValue);
         });
     }
-    
-    // Un envoi de formulaire delete-property
-    let formsDelete = document.getElementsByClassName('delete-property');
-    for (let form of formsDelete) {
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            let propertyId = event.target.parentElement.parentElement.id;
-            deleteProperty(propertyId);
-        });
-    }
 
     // Un clique sur le label de pagination le cache et affiche son input
     let paginationLabel = document.getElementById('paging-label');
@@ -87,15 +77,9 @@ function initInputEvent() {
         paginationLabel.style.display = "block";
         paginationLabel.nextElementSibling.style.display = "none";
     });
+}
 
-    // L'image n'apparaît que si son src est renseigné
-    let formsAddPhoto = document.getElementsByClassName('set-photo');
-    for (let formAddPhoto of formsAddPhoto) {
-        if (formAddPhoto.nextElementSibling != null) {
-            formAddPhoto.style.display = 'none';
-        }
-    }
-
+function initImgEvent() {
     // Un clique sur l'image fait appaître le formulaire
     let images = document.getElementsByClassName('img-property');
     for (let image of images) {
@@ -106,6 +90,37 @@ function initInputEvent() {
         });
     }
 
+    // Un fichier choisi declanchera l'event change
+    let imageInputs = document.getElementsByClassName('img-input');
+    for (let imageInput of imageInputs) {
+        imageInput.addEventListener('change', function(event) {
+            let id = event.target.parentElement.parentElement.id;
+
+            let formData = new FormData();
+            formData.append('action', 'updateimg');
+            formData.append('id', id);
+            formData.append('img', event.target.files[0]);
+
+            fetch('bdd.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(() => {
+                getProperties();
+            })
+        });
+    }
+}
+
+function initDeleteEvent() {
+    // Un envoi de formulaire delete-property
+    let formsDelete = document.getElementsByClassName('delete-property');
+    for (let form of formsDelete) {
+        form.addEventListener('click', function(event) {
+            let propertyId = event.target.parentElement.parentElement.id;
+            deleteProperty(propertyId);
+        });
+    }
 }
 
 function initFilterEvent() {
@@ -135,7 +150,7 @@ function initPopupEvent() {
     });
 }
 
-function initArrowEvent() {
+function initPagingEvent() {
     let arrowPrevious = document.getElementById('arrow-previous-page');
     arrowPrevious.addEventListener('click', function(event) {        
         getMaxPage(previousPage);
@@ -159,25 +174,8 @@ function closeAll() {
     for (let image of images) {
         image.style.display = 'block';
         image.previousElementSibling.style.display = 'none';
-    }
+    }    
 }
-
-// function getProperty() {
-//     let action = 'getproperty';
-//     let xhr = new XMLHttpRequest();
-//     xhr.open('POST', 'bdd.php');
-//     xhr.responseType = 'json';
-
-//     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-//     xhr.send(`action=${action}&limit=${limit}&offset=${Math.ceil(limit*(page))}`);
-
-//     xhr.onreadystatechange  = function(event) {
-//         if (this.readyState == 4 && this.status == 200) {
-//             showProperties(event.target.response['result']);
-//         }
-//     };
-// }
 
 function getProperties(filter=false) {
     let xhr = new XMLHttpRequest();
@@ -239,10 +237,6 @@ function addProperty() {
         hidePopup();
     };
 }
-
-// function addImg() {
-    
-// }
 
 function showPopup() {
     document.getElementById('popup-container').style.display = 'flex';
@@ -325,7 +319,8 @@ function deleteProperty(propertyId) {
 function showProperties(properties) {
     let html = '';
     for (let property of properties) {
-        html += `
+        html +=
+        `
         <tr id="${property['id']}">
             <td>${property['id']}</td>
             <td>
@@ -345,29 +340,26 @@ function showProperties(properties) {
                 <textarea class="address text-area">${property['address']}</textarea>
             </td>
             <td>
-                <form action="upload_img.php" method="POST" class="set-photo"  enctype="multipart/form-data">
-                    <input type="hidden" name="img-id" value="${property['id']}">
-                    <input type="file" name="img">
-                    <input type="submit">
-                </form>`;
+                <input class="img-input" type="file" name="img">
+            `;
 
             if (property['img']) {
-                html += `<img class="img-property" src="${property['img']}" alt="image du bien immobilier">`;
+                html += `<img class="img-property" src="img/${property['img']}" alt="image du bien immobilier">`;
             }
 
-            html += `
-                </td>
-                <td>
-                    <form class="delete-property">
-                        <input type="hidden" name="item-to-remove" value="${property['id']}">
-                        <input type="submit" class="btn btn-danger" value="Supprimer">
-                    </form>
-                </td>
-            </tr>
-            `;
+        html += `
+            </td>
+            <td>
+                <div class="delete-property btn btn-danger">Supprimer de la bdd</div>
+            </td>
+        </tr>
+        `;
     }
     tbody.innerHTML = html;
     initInputEvent();
+    initDeleteEvent();
+    initImgEvent();
+    closeAll();
 }
 
 function getMaxPage(callback=null) {
