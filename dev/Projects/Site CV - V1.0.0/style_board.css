@@ -75,7 +75,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    #board .experience,
+    #board #experience,
     #board .soft-skills,    
     #board .diplome {
         position: relative;
@@ -83,7 +83,7 @@
         width: 50%;
     }
     
-    #board .experience,    
+    #board #experience,    
     #board .diplome {
         padding-right: 15px;
     }

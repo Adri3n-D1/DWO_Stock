@@ -84,6 +84,7 @@ function initImgEvent() {
     let images = document.getElementsByClassName('img-property');
     for (let image of images) {
         image.addEventListener('click', function(event) {
+            closeAll();
             image.style.display = 'none';
             image.previousElementSibling.style.display = 'block';
             event.stopPropagation();

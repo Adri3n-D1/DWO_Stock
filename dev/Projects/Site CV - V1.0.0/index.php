@@ -86,14 +86,14 @@ catch (PDOException $e) {
     <header>
         <nav>
             <div id="grp-btn-menu">
-                <a id="btn-menu" class="link-menu" href="javascript:void(0);" onclick="toggleMenu()"><img class="svg svg-light" src='img/menu-burger2.svg' alt=''><span id="btn-text-menu"><span></a>
+                <a id="btn-menu" class="link-menu" href="javascript:void(0);" onclick="toggleMenu()"><img id="icon-menu" class="svg svg-light" src='img/open-menu.svg' alt=''><span id="btn-text-menu"><span></a>
             </div>
             <div id='menu-nav'>
                 <a href="#"><img class="svg svg-white" src="img/home.svg" alt="Lien vers l'accueil"></a>
-                <a href="#">Moi</a>
-                <a href="#">Mes Compétences</a>
-                <a href="#">Mon Experience</a>
-                <a href="#">Me Contacter</a>
+                <a href="#goto-hard-skills">Mes Compétences</a>
+                <a href="#goto-about">Moi</a>
+                <a href="#goto-experience">Mon Experience</a>
+                <a href="#goto-contact">Me Contacter</a>
             </div>
         </nav>            
     </header>
@@ -103,12 +103,13 @@ catch (PDOException $e) {
             <p class='name'>ADRIEN DELCROS</p>
             <p class='slogan'>Créateur du<br>web</p>
             <div class='row-button'>
-                <a class='button contact' href='#contact'>Contactez-moi</a>
-                <a class='button about' href='#about'>En savoir +</a>
+                <a class='button contact' href='#goto-contact'>Contactez-moi</a>
+                <a class='button about' href='#goto-about'>En savoir +</a>
             </div>
         </div>
     </section>
     <!-- Part HARD SKILLS -->
+    <div id="goto-hard-skills" class="goto"></div>
     <section id='hard-skills'>
         <div class='page-content'>
             <div class='text-tag'>
@@ -147,11 +148,12 @@ catch (PDOException $e) {
             </div>
             <!-- Link to the next section -->
             <div class='to-next-section'>
-                <a href='#'><img class="svg svg-light" src="img/caret-down-square-fill.svg" alt=""></a>
+                <a href='#goto-about'><img class="svg svg-light" src="img/caret-down-square-fill.svg" alt=""></a>
             </div>
         </div>
     </section>
     <!-- Part ABOUT ME -->
+    <div id="goto-about" class="goto"></div>
     <div id='about'>
         <h2>À propos de moi</h2>
         <div class='page-content'>
@@ -174,14 +176,15 @@ catch (PDOException $e) {
         <!-- End -->
             <!-- Link to the next section -->
             <div class='to-next-section'>
-                <a href='#'><img class="svg svg-dark" src="img/caret-down-square-fill.svg" alt=""></a>
+                <a href='#goto-experience'><img class="svg svg-dark" src="img/caret-down-square-fill.svg" alt=""></a>
             </div>
     </div>
     <!-- Part BOARD -->
     <div id='board'>
         <div class="page-content">
             <!-- Sub-part EXPERIENCE -->
-            <div class='experience'>
+            <div id="goto-experience" class="goto"></div>
+            <div id='experience'>
                 <h2>Expériences</h2>
                 <div class='block'>
                     <div class='timeline-bar'></div>
@@ -197,13 +200,14 @@ catch (PDOException $e) {
                                     echo '<li>' . $experience . '</li>';
                                 }
                             }
-                            echo '<\ul>';
+                            echo '</ul>';
                         }
                         ?>
                     </div>
                 </div>
             </div>
             <!-- Sub-part SOFT SKILLS -->
+            <div id="goto-soft-skills" class="goto"></div>
             <div class='soft-skills'>
                 <h2>Savoir-Être</h2>
                 <div class='content'>
@@ -227,10 +231,11 @@ catch (PDOException $e) {
         </div>
         <!-- Link to the next section -->
         <div class='to-next-section'>
-            <a href='#'><img class="svg svg-white" src="img/caret-down-square-fill.svg" alt=""></a>
+            <a href='#goto-contact'><img class="svg svg-white" src="img/caret-down-square-fill.svg" alt=""></a>
         </div>
     </div>
     <!-- Part CONTACT -->
+    <div id="goto-contact" class="goto"></div>
     <div id='contact'>
         <div class="page-content">
             <div class='top-section'>
@@ -264,7 +269,7 @@ catch (PDOException $e) {
                         </div>                     
                     </div>
                     
-                    <a  class='link-cv' href='#'><img class="svg svg-dark" src="img/file.svg" alt="">Télécharger mon C.V.</a>
+                    <a  class='link-cv' href='cv_adrien_delcros_dev_web.pdf' download><img class="svg svg-dark" src="img/file.svg" alt="">Télécharger mon C.V.</a>
                 </div>
                 <div class='box-form'>
                     <h2>Formulaire</h2>
