@@ -4,6 +4,18 @@ export default class Table{
 
     constructor(tbody){
         this.tbody = tbody;
+        
+        this.filterCity = false;
+
+        this.nbMaxResults = 3;
+        this.currentPage = 0;
+        this.numberPage = 0;
+
+        
+        this.initTableContent();
+        this.getNumberResults();
+        this.initPaging();
+        this.initFormSearch();
     }
 
     reloadElements(){
@@ -15,18 +27,35 @@ export default class Table{
         this.input_file_img = document.querySelectorAll('.img-estate');
     }
 
-    initTableContent(){
+    initTableContent(filterCity=false){
         /***** Récupération en AJAX de la liste des bien au moment du chargement de la page ************************** */
+        
+        let paging = (filterCity == this.filterCity);
+        if (! paging) {
+            this.filterCity = filterCity;
+            this.currentPage = 0;
+        }
+
         let xhr = new XMLHttpRequest();
         xhr.open('POST', `get-biens.php`);
         xhr.responseType = 'json';
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.send();
+
+        if (filterCity == false) {
+            xhr.send(`limit=${this.nbMaxResults}&offset=${this.nbMaxResults * this.currentPage}`);
+        }
+        else {
+            xhr.send(`limit=${this.nbMaxResults}&offset=${this.nbMaxResults * this.currentPage}&city-filter=${filterCity}`);
+        }
+
         
         xhr.onload = (event)=>{
             this.generate(event.target.response); // On régénère le contenu du tbody
             this.reloadElements(); // On récupère les nouveaux éléments HTML pour les mettre dans les propriétés de la classe
             this.initTable(); // On régénère les actions javascript du nouveau contenu de tbody
+            if (! paging) {
+                this.getNumberResults();
+            }
         }
     }
 
@@ -51,7 +80,7 @@ export default class Table{
                         <textarea cols="60" rows="1" class="textarea-address" id="textarea-address${bien.id}">${bien.address}</textarea>
                     </td>
                     <td>
-                        <img src="img/${bien.image}" id="img-upload${bien.id}" class="img-bien">
+                        <img src="img/${bien.img}" id="img-upload${bien.id}" class="img-bien">
                         <form action="" method="post" enctype="multipart/form-data">
                         <div>
                             <input type="file" name="image" class="img-estate">
@@ -93,8 +122,7 @@ export default class Table{
         })        
     }
 
-    initTable(){
-
+    initTable() {
         this.initSpanCity();
         this.initTextareaCity();
         this.initSpanAddress();
@@ -102,7 +130,6 @@ export default class Table{
         this.initBtnDeleteEstate();
         this.initInputFileImage();
         this.initDocumentClick();
-
     }
 
     initSpanCity(){
@@ -156,6 +183,19 @@ export default class Table{
             })
         
         }
+    }
+
+    initFormSearch() {
+        document.querySelector('#form-city').addEventListener('submit', (event) => {
+
+            event.preventDefault();
+
+            let city = document.querySelector('#input-city-filter').value;
+            if(city != ''){
+                this.initTableContent(city);
+            }
+
+        });
     }
 
     initSpanAddress(){
@@ -239,8 +279,6 @@ export default class Table{
                     this.initTable(); // On régénère les actions javascript du nouveau contenu de tbody
     
                 }
-    
-    
         
             })
     
@@ -283,4 +321,64 @@ export default class Table{
         }
     }
 
+    initPaging() {
+        document.querySelector('#img-previous').addEventListener('click', () => {
+            console.log('PREVIOUS');
+            console.log(`current page : ${this.currentPage}`);
+            if (this.currentPage > 0) {
+                this.currentPage = this.currentPage - 1;
+                console.log(`previous page : ${this.currentPage}`);
+                this.initTableContent();
+            }
+            else {                
+                console.log(`Error`);
+            }
+        });
+        document.querySelector('#img-next').addEventListener('click', () => {
+            console.log('NEXT');
+            console.log(`current page : ${this.currentPage}`);
+            if (this.currentPage < this.numberPage-1) {
+                this.currentPage = this.currentPage + 1;
+                console.log(`next page : ${this.currentPage}`);
+                this.initTableContent();
+            }
+            else {                
+                console.log(`Error`);
+            }
+        });
+        document.querySelector('#page_actuelle').addEventListener('keyup', (event) => {
+            let requestedPage = event.target.value;
+            console.log('SELECTED');
+            if (requestedPage != '') {
+                if (requestedPage >= 0 && requestedPage <= this.numberPage-1) {                    
+                    this.currentPage = requestedPage;
+                    console.log(`selected page : ${this.currentPage}`);
+                    this.initTableContent();
+                }
+                else {                
+                    console.log(`Error`);
+                }
+            }
+        });
+    }
+
+    getNumberResults() {
+        console.log(`appel de getNumberResults avec pour filtre ${this.filterCity}`)
+        let xhr = new XMLHttpRequest();
+        xhr.open('POST', `pagination.php`);
+        xhr.responseType = 'json';
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        if (this.filterCity) {
+            xhr.send(`city-filter=${this.filterCity}`);
+        }
+        else {
+            xhr.send();
+        }
+        
+        xhr.onload = (event)=>{
+            let nbResult = event.target.response;
+            this.numberPage = Math.ceil(nbResult / this.nbMaxResults);            
+            console.log(this.numberPage);
+        }
+    }
 }

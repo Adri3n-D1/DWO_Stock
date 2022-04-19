@@ -139,7 +139,7 @@ td{
     height: 100px;
 }
 #img-previous{
-    display: none;
+    /* display: none; */
 }
 </style>
 </body>

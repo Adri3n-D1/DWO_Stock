@@ -17,7 +17,7 @@ if(isset($_FILES['image'])){
 
             if($result){
 
-                $query = "UPDATE products SET image = :image WHERE id = :id";
+                $query = "UPDATE products SET img = :image WHERE id = :id";
 
                 $requete = $connexion->prepare($query);
                 $requete->bindValue('image', $filename, PDO::PARAM_STR);

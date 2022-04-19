@@ -1,4 +1,4 @@
-let host = 'http://localhost/dev-web/tp/prets/tableau-dynamique-demo-refacto-js/';
+let host = 'http://localhost/DWO/dev/tp/tp003_tableau_dynamique_part19/';
 
 function send(data){
 
