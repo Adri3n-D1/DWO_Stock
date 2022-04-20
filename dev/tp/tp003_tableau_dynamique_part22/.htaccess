@@ -1,0 +1,15 @@
+# -------------------------------------
+# Config
+# -------------------------------------
+
+# The server must follow the symbolics links
+Options +FollowSymlinks
+
+# Activation of the url rewrite module
+RewriteEngine on
+
+# -------------------------------------
+# Url rewrite rule
+# -------------------------------------
+
+RewriteRule ^home$ index.php [L]

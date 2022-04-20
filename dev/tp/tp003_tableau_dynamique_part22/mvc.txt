@@ -1,0 +1,14 @@
+L'architecture MVC (model view controler) permet de structurer un projet pour une application graphique.
+
+Cette architecture divise en 3 types de fichiers sources, selon leurs actions sur le programme:
+
+- Les fichiers Models, seront préposés à la récupération des données, typiquement dans une base donnée.
+
+- Les fichiers Views, s'occuperont purement de l'affichage, le seul code autorisé ormis celui purement de l'affichage sera celui de comuniquer avec les fichiers Model pour récupérer les données à afficher.
+
+- Les fichiers Controlers, seront quant à eux sont les chefs d'orchestre qui commande quel fichier View doit être appelés et également les opérations internes.
+
+En MVC en PHP, on utilise un SUPER Controler qui fera office de router. Ce sera index.php qui jouera ce role en interceptant le trafic interne au site et en appelant un élément d'un fichier Controler selon la requête. Ce élément fera ensuite les opérération nécéssaire puis générera une vue grace à un des fichiers View.
+
+
+Voila de mémoire ce qu'est l'architecture MVC.
