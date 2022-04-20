@@ -29,35 +29,32 @@ $validData = false;
 if (isset($_POST['form-email'], $_POST['form-password'], $_POST['form-age'])) {
     $validData = true;
     // Si un champs est vide afficher un message
-    if (empty($_POST['form-email'])) {
-        ?>
+    if (empty($_POST['form-email'])) : ?>
             <div class="alert alert-danger" role="alert">
                 Veuillez saisir un email correct !
             </div>
         <?php
         $validData = false;
-    }
-    if (empty($_POST['form-password'])) {
-        ?>
+    endif;
+    if (empty($_POST['form-password'])) : ?>
             <div class="alert alert-danger" role="alert">
                 Veuillez saisir un mot de passe correct !
             </div>
         <?php
-        $validData = false;
-    }
-    if (empty($_POST['form-age'])) {
-        ?>
+        $validData = false;    
+    endif;
+    if (empty($_POST['form-age'])) : ?>
             <div class="alert alert-danger" role="alert">
                 Veuillez saisir un age correct !
             </div>
         <?php
         $validData = false;
-    }
+    endif;
 }
 
 if ($validData) {
     $_SESSION['login'] = true;
-    $_SESSION['isMajor'] = $_POST['form-age'] >= 18;
+    $_SESSION['isMajor'] = ($_POST['form-age'] >= 18);
 
     if (isset($_POST['form-remember'])) {
         setcookie('ageRestriction', $_SESSION['isMajor'], time() + 3600 * 24);
@@ -66,9 +63,8 @@ if ($validData) {
     header('Location: nav.php');
     die();
 }
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
