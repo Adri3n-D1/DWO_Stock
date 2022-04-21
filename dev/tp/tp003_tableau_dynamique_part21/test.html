@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<img src="img/16498590656256d9f96e6cb.png" id="moi" style="width:100px;height:100px;position:absolute;" alt="">
+
+<input id="fileupload" type="file" name="fileupload" onchange="uploadFile()" /> 
+<button id="upload-button" onclick="uploadFile()"> Upload </button>
+
+<!-- Ajax JavaScript File Upload Logic -->
+<script>
+async function uploadFile() {
+let formData = new FormData(); 
+formData.append("file", fileupload.files[0]);
+await fetch('update-image.php', {
+  method: "POST", 
+  body: formData
+}); 
+alert('The file has been uploaded successfully.');
+}
+</script>
+
+<script>
+
+
+let move = false;
+
+document.addEventListener("click", function(e){
+    if(move){
+        move = false;
+    }else{
+        move = true;
+    }
+})
+
+document.addEventListener("mousemove", function(e){
+    console.log('toto')
+            if(move){
+                var x = e.clientX;
+                var y = e.clientY;
+                document.querySelector("#moi").style.left = x + "px";
+                document.querySelector("#moi").style.top = y + "px";                
+            }
+
+})
+
+</script>
+
+
+</body>
+</html>

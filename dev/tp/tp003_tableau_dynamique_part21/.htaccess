@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+# index.php est le front controller
+RewriteRule ^$ index.php?class=MainController&method=estateList
+RewriteRule ^getbiens$ index.php?class=EstateController&method=getBiens
+RewriteRule ^updateCity$ index.php?class=EstateController&method=updateCity
+RewriteRule ^updateAddress$ index.php?class=EstateController&method=updateAddress
+RewriteRule ^addBien$ index.php?class=EstateController&method=addBien
+RewriteRule ^deleteBien$ index.php?class=EstateController&method=deleteBien
