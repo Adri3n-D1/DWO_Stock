@@ -1,8 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine on
 
-# index.php est le front controller
-RewriteRule ^$ index.php?class=MainController&method=estateList
+RewriteRule ^$ index.php?class=MainController&method=homepage
 RewriteRule ^getbiens$ index.php?class=EstateController&method=getBiens
 RewriteRule ^updateCity$ index.php?class=EstateController&method=updateCity
 RewriteRule ^updateAddress$ index.php?class=EstateController&method=updateAddress
