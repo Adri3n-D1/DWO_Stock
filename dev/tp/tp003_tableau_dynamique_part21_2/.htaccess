@@ -1,0 +1,24 @@
+# Le serveur doit suivre liens symboliques
+Options +FollowSymlinks
+
+# Activation du module de réécriture d'url
+
+RewriteEngine on
+
+# Règles de réécriture d'url
+
+RewriteRule ^$ index.php?class=MainController&method=estateList
+# URL appelée en AJAX
+RewriteRule ^get-biens$ index.php?class=EstateController&method=getBiens
+# URL appelée en AJAX
+RewriteRule ^update-city$ index.php?class=EstateController&method=updateCity
+# URL appelée en AJAX
+RewriteRule ^update-address$ index.php?class=EstateController&method=updateAddress
+# URL appelée en AJAX
+RewriteRule ^delete-estate$ index.php?class=EstateController&method=deleteEstate
+# URL appelée en AJAX
+RewriteRule ^insertion$ index.php?class=EstateController&method=insertion
+# URL appelée en AJAX
+RewriteRule ^pagination$ index.php?class=EstateController&method=pagination
+# URL appelée en AJAX
+RewriteRule ^update-image$ index.php?class=EstateController&method=updateImage

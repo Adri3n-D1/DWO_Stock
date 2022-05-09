@@ -1,0 +1,11 @@
+{
+    "name": "osengo/tp003_tableau_dynamique_part21_2",
+    "autoload": {
+        "psr-4": {
+            "Osengo\\Tp003TableauDynamiquePart212\\": "src/",
+            "App\\": "controller/",
+            "Model\\": "model"
+        }
+    },
+    "require": {}
+}
